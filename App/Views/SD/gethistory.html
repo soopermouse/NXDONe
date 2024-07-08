@@ -1,0 +1,49 @@
+{% extends "csbase.html" %}
+{% block title %}RMA Intake {% endblock %}
+{% block body %}
+<h1> Device History</h1>
+
+<table class="table table-striped table-bordered">
+
+    <thead>
+    <th>Purchase date</th>
+    <th>Device IMEI</th>
+    <th>Device model</th>
+    <th>Cost</th>
+    <th>Event Name</th>
+    <th>Problem Name</th>
+    <th>Status Type</th>
+    <th>Comments</th>
+    <th>Date</th>
+
+
+
+    <td>Details</td>
+    <th>Previous RMAs</th>
+
+
+
+
+
+    </thead>
+    {% for result in results %}
+    <tr>
+        <td>{{result.date}}</td>
+        <td>{{result.device_imei}}</td>
+        <td>{{result.device_model}}</td>
+        <td>{{result.offer}}</td>
+        <td>{{result.event_name}}</td>
+        <td>{{result.problem_name}}</td>
+        <td>{{result.status_type}}</td>
+        <td>{{result.comments}}</td>
+        <td>{{result.date}}</td>
+
+        <td>n/a</td>
+        <td></td>
+
+    </tr>
+
+    {% endfor %}
+</table>
+
+{% endblock %}

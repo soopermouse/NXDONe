@@ -1,0 +1,58 @@
+{% extends "csbase.html" %}
+{% block title %}RMA Intake {% endblock %}
+{% block body %}
+<h1> RMA Accept</h1>
+
+
+<table class="table table-md table-striped table-bordered">
+    <thead>
+    <th>RMA ID</th>
+    <th>RMA Date</th>
+    <th>Device Imei</th>
+    <th>Defect</th>
+    <th>Comments</th>
+    <th>History</th>
+
+
+
+
+    </thead>
+    {% for result in results %}
+    <tr>
+        <td>{{result.rma_id}}</td>
+        <td>{{result.rma_date}}</td>
+        <td>{{result.device_imei}}</td>
+        <td>{{result.problem_name}}</td>
+        <td>{{result.comments}}</td>
+        <td><a href="gethistory"><button class="btn btn-danger">Device History</button></a></td>
+
+
+
+
+
+
+    </tr>
+
+
+
+    {% endfor %}
+
+
+
+
+</table>
+
+</table>
+<br />
+
+<form  class="form" action="rmaacceptupdate" method="POST">
+    <label>Accept RMA</label>
+    <select class="form-control"  name="status" >
+        <option value="7">RMA Accepted</option>
+        <option value="11">RMA Refused</option>
+
+    </select>
+    <button class="btn btn-primary" name="submit">Submit</button>
+</form>
+
+{% endblock %}

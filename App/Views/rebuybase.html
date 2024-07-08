@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+<body>
+<nav class="navbar navbar-dark bg-dark">
+    <!-- Navbar content -->
+
+    <a href="http://forzaerp.nl" class="pull-left"><img src="/assets/images/smalllogo.png" width="200"></a>
+
+
+    <a class="navbar-link" href="/home/login">Login</a>
+
+
+    <a class=" nav-link" href="/rebuy/index">Rebuy</a>
+    <a class=" nav-link" href="/RMA/index">RMA</a>
+
+
+    <a class="nav-link" href="/finance/index">Finance</a>
+
+    <a class="nav-link" href="/sales/index">Sales</a>
+
+    <a class="nav-link" href="/repair/index">Repair</a>
+
+    <a class="nav-link" href="/logistics/index">Logistics</a>
+
+    <a class="nav-link" href="/cs/index">Customer Support</a>
+
+    <a class="nav-link" href="/orders/index">Test Orders</a>
+    <a class="nav-link" href="/it/index">IT</a>
+    <a class="nav-link" href="/returns/index">Returns</a>
+
+    <a class="nav-link" href="/admin/index">Admin</a>
+
+
+
+</nav>
+
+
+
+<div class="container-fluid">
+    <div class="row">
+        <nav class="col-sm-3 col-md-2 hidden-xs-down bg-dark sidebar">
+            <ul class="nav nav-pills flex-column">
+                <li class="nav-item">
+                    <a class="nav-link active" href="http://forza-refurbished.co.uk/erp/rebuy/index">Overview <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="http://forza-refurbished.co.uk/erp/rebuy/index">Overview <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="http://forza-refurbished.co.uk/erp/rebuy/reports">Reports</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="http://forza-refurbished.co.uk/erp/rebuy/shipping">Shipping Status</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="http://forza-refurbished.co.uk/erp/rebuy/status">Status</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="http://forza-refurbished.co.uk/erp/rebuy/checkorders">Check</a>
+                </li>
+            </ul>
+
+            <ul class="nav nav-pills flex-column">
+                <li class="nav-item">
+                    <a class="nav-link" href="http://forza-refurbished.co.uk/erp/rebuy/inspection">Inspection</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="http://forza-refurbished.co.uk/erp/rebuy/quoteorders">Quote</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="http://forza-refurbished.co.uk/erp/rebuy/mail">Mail</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="http://forza-refurbished.co.uk/erp/rebuy/secondOffer">Second Offer</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/rebuy/payments">Payments</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/rebuy/returns">Returns</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/rebuy/recycle">Recycle</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/rebuy/close">Close Orders</a>
+                </li>
+            </ul>
+
+            <ul class="nav nav-pills flex-column">
+                <li class="nav-item">
+                    <a class="nav-link" href="http://forza-refurbished.co.uk/erp/rebuy/edit">Order Edit</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="http://forza-refurbished.co.uk/erp/rebuy/addtags">Sales Tags</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="http://forza-refurbished.co.uk/erp/rebuy/enterorder">Enter Test Orders</a>
+                </li>
+            </ul>
+        </nav>
+
+
+
+
+
+
+
+        <div class="col-md-8">
+
+
+            {% block body %}
+
+
+
+
+
+            {% endblock %}
+        </div>
+
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+
+
+</body>
+</html>

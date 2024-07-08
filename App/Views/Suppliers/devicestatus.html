@@ -1,0 +1,35 @@
+{% extends "suppliersbase.html" %}
+
+{% block title %} Supplier Order Devices {% endblock %}
+
+{% block body %}
+
+<h1>Device Status and Actions</h1>
+
+
+<table class="table table-striped table-bordered">
+
+    <tr>
+        <td>Order Id</td>
+        <td>IMEI</td>
+        <td>Device Model</td>
+        <td>Device Storage</td>
+        <td>Device Status</td>
+        <td>Next Action</td>
+
+
+    </tr>
+    {% for result in results %}
+    <tr>
+        <td>{{ result.order_id }}</td>
+        <td>{{result.device_imei}}</td>
+        <td>{{result.device_model}}</td>
+        <td>{{result.storage_type_name}}</td>
+        <td>{{result.status_name}}</td>
+        <td>{{result.action_type}}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+
+{% endblock %}

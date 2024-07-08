@@ -1,0 +1,95 @@
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: 'Raleway';
+    font-weight: 200;
+}
+
+.wrapper {
+    padding: 0;
+    /*box-shadow: 0 1px 3px 0 rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 2px 1px -1px rgba(0,0,0,.12);*/
+}
+
+@font-face {
+    font-family:"icomoon";
+    src:url("https://cdn.rawgit.com/angular/material/master/docs/app/fonts/icomoon.eot");
+    font-weight:normal;
+    font-style:normal;
+}
+
+@font-face {
+    font-family: 'icomoon';
+    src:url('https://cdn.rawgit.com/angular/material/master/docs/app/fonts/icomoon.eot?-cmq1um');
+    src:url('https://cdn.rawgit.com/angular/material/master/docs/app/fonts/icomoon.eot?#iefix-cmq1um') format('embedded-opentype'),
+    url('https://cdn.rawgit.com/angular/material/master/docs/app/fonts/icomoon.woff?-cmq1um') format('woff'),
+    url('https://cdn.rawgit.com/angular/material/master/docs/app/fonts/icomoon.ttf?-cmq1um') format('truetype'),
+    url('https://cdn.rawgit.com/angular/material/master/docs/app/fonts/icomoon.svg?-cmq1um#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.pa-header {
+    position: relative;
+}
+
+
+.pa-footer {
+    font-size: 12px;
+    text-align: center;
+}
+
+.pa-footer a, .pa-footer a:hover, .pa-footer a:active, .pa-footer a:focus ,
+a, a:hover, a:active, a:focus {
+    color: #006591;
+    text-decoration: none;
+}
+
+.pa-header-title {
+    color: #FFF;
+}
+
+
+.pa-header-title .material-icons{
+    font-size: 3rem;
+    position: relative;
+    top: 5px;
+}
+
+.pa-header-title .part-two {
+    color: #006591;
+    font-weight: 600;
+    position: relative;
+    left: -8px;
+}
+
+.pa-header .pa-menu-right {
+}
+
+md-content {
+    min-height: 50vh;
+}
+
+md-content.md-content-auto-height {
+    min-height: auto;
+}
+
+.md-button {
+    margin: 0;
+}
+
+.md-open-menu-container {
+    padding: 0;
+    margin-top: 50px;
+}
+
+.display-none {
+    display: none;
+}
+
+
+.text-center {
+    text-align: center;
+}

@@ -1,0 +1,20 @@
+{% extends "rebuybaselocal.html" %}
+{#% extends "rebuybase.html" %#}
+
+{% block title %} Rebuy {% endblock %}
+
+{% block body %}
+
+<h1>
+
+    Offer Refused</h1>
+
+{% for result in results %}
+{{result.order_id}}
+{{result.imei}}
+{{result.accepted}}
+{{result.quote_type}}
+</br>
+{% endfor %}
+
+{% endblock %}

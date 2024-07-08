@@ -1,0 +1,18 @@
+{% extends "csbase.html" %}
+{% block title %} Edit Orders {% endblock %}
+
+{% block body %}
+
+
+<h3>Rebuy Customer Data</h3>
+
+Please enter First and Last Name
+
+<form class="form" action="findcustomerdata" method="POST">
+    <input type="text" class="form-control" name="first_name">
+    <input type="text" class="form-control" name="last_name">
+    <button type="submit" class="btn tbn-danger">Search</button>
+
+</form>
+
+{% endblock %}

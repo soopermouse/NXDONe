@@ -1,0 +1,43 @@
+{% extends "repairbase.html" %}
+
+{% block title %} Repair{% endblock %}
+
+{% block body %}
+
+<h1>Repair</h1>
+<table class="table table-striped table-bordered">
+<thead>
+<th>Repair Order</th>
+<th>IMEI</th>
+<th>Device Type</th>
+<th>Device Storage</th>
+<th>Device Connection</th>
+<th>Device Status</th>
+<th>Device Action</th>
+<th>Repair Type</th>
+
+
+</thead>
+{% for result in results %}
+<tr>
+
+   <td>{{result.repair_id}}</td>
+ <td>{{result.imei}}</td>
+
+    <td>{{result.device_model}}</td>
+    <td>{{result.storage_type_name}}</td>
+    <td>{{result.connection_type_name}}</td>
+    <td>{{result.status_name}}</td>
+    <td>{{result.action_name}}</td>
+    <td>{{result.repair_type}}</td>
+
+
+
+
+</tr>
+
+
+
+{% endfor %}
+</table>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends "suppliersbase.html" %}
+
+{% block title %} Suppliers Index {% endblock %}
+
+{% block body %}
+
+
+<h1>Create Supplier</h1>
+
+<form class="form" action="createsup" method="POST">
+    <label>Supplier Codename</label>
+    <input type="text" class="form-control" name="supplier" />
+    <button class="btn btn-warning" type="submit" name="submit">Submit</button>
+</form>
+
+{% endblock %}

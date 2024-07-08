@@ -1,0 +1,44 @@
+{% extends "rebuybaselocal.html" %}
+{#% extends "rebuybase.html" %#}
+
+{% block title %} Rebuy {% endblock %}
+
+{% block body %}
+<h1>Close order</h1>
+
+<table class="table">
+    <tr>
+        <td>Order Id</td>
+        <td>Device Model</td>
+        <td>Forza Status</td>
+        <td>Customer Status</td>
+        <td>Close Order</td>
+
+
+
+
+
+
+
+
+    </tr>
+    {% for result in results %}
+
+    <tr>
+        <td>{{ result.order_id }}</td>
+        <td>{{ result.device_model }}</td>
+        <td> {{result.status_name}}</td>
+        <td>{{result.cust_status_name}}</td>
+        <td><form action="orderclose" method="POST">
+
+
+            <button class="btn btn-primary" name="submit">Close Order</button>
+        </form></td>
+
+    </tr>
+    {% endfor %}
+</table>
+<br />
+
+
+{%endblock %}

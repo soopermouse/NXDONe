@@ -1,0 +1,33 @@
+{% extends "rebuybaselocal.html" %}
+{#% extends "rebuybase.html" %#}
+
+{% block title %} Rebuy {% endblock %}
+
+{% block body %}
+
+<h1>Refused Offers</h1>
+
+Refused First Offer
+
+<table class="table table-bordered">
+
+    <tr>
+        <td>Order_id</td>
+
+    <td>Offer Refused</td>
+    <td>Choose Action</td>
+
+
+    </tr>
+
+    {% for result in results %}
+    <tr>
+    <td>{{result.order_id}}</td>
+
+    <td>{{result.quote}}</td>
+        <td><a href="{{result.order_id}}/takeaction"><button class="btn btn-success" name="submit">Take Action</button></a></td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}

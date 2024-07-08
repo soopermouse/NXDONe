@@ -1,0 +1,160 @@
+
+
+// Fonts
+@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+// Variables
+@import "variables";
+
+body, html {
+  height: calc(100vh - 16px);
+  min-height: calc(100vh - 16px);
+  overflow-y: auto !important;
+}
+
+.wrapper {
+  max-width: 1200px;margin: 8px auto 8px auto;
+}
+
+.display-inline-block {
+  display: inline-block;
+}
+
+.display-inline {
+  display: inline;
+}
+
+.vertical-align-middle{
+  vertical-align: middle;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.material-icons.large {
+  font-size: 6rem;
+}
+
+.md-fab i.material-icons {
+  margin-top: -3px;
+  margin-left: 0px;
+  vertical-align: middle;
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+md-menu-content {
+  padding: 0;
+  //max-height: 550px!important;
+}
+md-menu-content md-menu-divider {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+md-menu-content.md-blue-theme md-menu-item, md-menu-content.md-blue-theme md-menu-item a {
+  background-color: white !important;
+  color: rgba(0,0,0,0.87) !important;
+
+  &.color-red {
+    color: rgb(198,40,40) !important;
+  }
+}
+md-menu-content.md-blue-theme md-menu-item:hover, md-menu-content.md-blue-theme md-menu-item a:hover,
+.md-button.md-blue-theme:not([disabled]).md-focused, .md-button.md-blue-theme:not([disabled]):hover {
+  background-color: #dedede !important;
+  color: rgba(0,0,0,0.87) !important;
+
+  &.color-red {
+    color: rgb(198,40,40) !important;
+  }
+}
+
+.md-fab div {
+  margin-top: -6px;
+  font-size: 36px;
+}
+.md-button.md-primary {
+  color: white !important;
+  font-weight: 400 !important;
+}
+.md-button.md-primary[disabled] {
+  color: rgba(0,0,0,0.87) !important;
+  font-weight: 400 !important;
+}
+
+md-sidenav {
+  background-color: rgb(250,250,250);
+  max-width: 65vw !important;
+  //width: 70vw !important;
+  min-width: 5vw !important;
+
+  md-content {
+    background-color: rgb(250,250,250);
+  }
+
+  hr {
+    border-color: rgba(0,0,0, .08);
+    margin: 0;
+  }
+
+  h3 {
+    margin: 0;
+    padding: 16px;
+    background-color: #006591 !important;
+    font-weight: 600;
+    color: white;
+  }
+
+  md-menu-item {
+    background-color: rgb(250,250,250);
+  }
+}
+
+md-backdrop {
+  cursor: pointer;
+}
+
+md-checkbox.md-default-theme[disabled].md-checked .md-icon, md-checkbox[disabled].md-checked .md-icon{
+  background-color: #006591 !important;
+}
+
+md-list {
+
+  md-list-item {
+
+    .pfa-label {
+      padding-top: 1px;
+    }
+  }
+}
+
+md-list-item md-select {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+md-list-item input[type="text"], md-list-item input[type="password"], md-list-item input[type="email"],
+md-list-item input[disabled][type="text"], md-list-item input[disabled][type="password"], md-list-item input[disabled][type="email"],
+md-list-item input[type="text"]:active, md-list-item input[type="password"]:active, md-list-item input[type="email"]:active,
+md-list-item input[type="text"]:focus, md-list-item input[type="password"]:focus, md-list-item input[type="email"]:focus{
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 16px;
+  width: 100%;
+  height: 48px;
+  border: none;
+  outline: none;
+  text-align: right;
+  background: white;
+}
+.text-center {
+  text-align: center;
+}
+
+.has-error, .color-red {
+  color: rgb(198,40,40);
+  p {
+	color: rgb(198,40,40);
+  }
+}

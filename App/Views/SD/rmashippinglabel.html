@@ -1,0 +1,59 @@
+{% extends "csbase.html" %}
+{% block title %}RMA Intake {% endblock %}
+{% block body %}
+<h1> Create RMA Shipping Label</h1>
+
+<h3>FROM</h3>
+<table class="table table-sm ">
+
+
+
+
+
+    {% for addy in address %}
+    <tr>
+       {# <td>{{addy.rma_id}}</td>#}
+
+        <td>{{addy.customer_first_name}}
+        {{addy.customer_last_name}}</td>
+    </tr>
+    <tr>
+        <td>{{addy.street_no}}
+        {{addy.addition}}</td>
+    </tr>
+    <tr>
+        <td>{{addy.street_name}}</td>
+    </tr>
+    <tr>
+        <td>{{addy.postcode}}</td>
+    </tr>
+    <tr>
+        <td>{{addy.city}}</td>
+    </tr>
+    <tr>
+        <td>{{addy.country}}</td>
+
+
+
+
+    </tr>
+
+
+
+    {% endfor %}
+
+
+
+
+</table>
+
+<h3>TO</h3>
+
+<h4>
+    Graaf Engelbertlaan 75<br>
+    4837 DS Breda<br>
+    The Netherlands<br>
+</h4>
+
+<a href="sendlabel"><button class="btn btn-danger">Send</button></a>
+{% endblock %}

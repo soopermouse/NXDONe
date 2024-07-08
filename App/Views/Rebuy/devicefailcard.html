@@ -1,0 +1,32 @@
+{% extends "rebuybaselocal.html" %}
+{#% extends "rebuybase.html" %#}
+
+{% block title %} Failcards {% endblock %}
+
+{% block body %}
+
+<h1>Set Failcard</h1>
+
+<table class="table-striped table-bordered">
+<thead>
+<th>device imei</th>
+<th>device Id</th>
+<th>device model</th>
+
+<th>Set Failcard</th>
+{% for result in results %}
+<tr>
+    <td>{{result.imei}}</td>
+    <td>{{result.device_id}}</td>
+    <td>{{result.device_model}}</td>
+    <td><a href="{{result.imei}}/failcard"><button class="btn btn-success">Set Failcard</button></a></td>
+
+
+
+
+</tr>
+
+{% endfor %}
+</thead>
+</table>
+{% endblock %}

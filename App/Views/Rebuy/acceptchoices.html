@@ -1,0 +1,15 @@
+{% extends "rebuybaselocal.html" %}
+{#% extends "rebuybase.html" %#}
+
+{% block title %} Rebuy {% endblock %}
+
+{% block body %}
+<h2> Thank you for confirming your choices. We will be back in contact </h2>
+
+{% for state in status %}
+
+{{state.accepted}}
+
+{% endfor %}
+
+{% endblock %}

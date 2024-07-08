@@ -1,0 +1,106 @@
+{% extends "rebuybaselocal.html" %}
+{#% extends "rebuybase.html" %#}
+{% block title %} Rebuy {% endblock %}
+
+{% block body %}
+
+<h1>Rebuy Order Device Status and Actions</h1>
+<table class="table-striped table-bordered">
+    <thead>
+
+    <td>Order Id</td>
+    <td>device_id</td>
+    <td>device imei</td>
+    <td> device model</td>
+    <td> device storage</td>
+    <td>device grade</td>
+    <td>device quote</td>
+    <td>device forza status</td>
+    <td> device customer status</td>
+    <td>Action </td>
+    <td>Manager Override</td>
+
+    </thead>
+    {#{% for check in checks %}
+    <tr>
+        <td>{{check.order_id}}</td>
+        <td>{{check.device_id}}</td>
+        <td>{{check.imei}}</td>
+        <td>{{check.device_model}}</td>
+        <td>{{check.device_storage}}</td>
+        <td>{{check.grade_name}}</td>
+        <td>{{check.offer}}</td>
+        <td>{{check.status_name}}</td>
+        <td>{{check.cust_status_name}}</td>
+        <td><a href="{{check.device_id}}/check"><button class="btn btn-success">Check IMEI</button></a></td>
+        <td><form class="form" action="override" method="POST">
+            <select class="form-control" name="action">
+                <option value="2">Check Imei</option>
+                <option value="6">Check Device</option>
+                <option value="18">Set Failcard</option>
+                <option value="7">Quote</option>
+                <option value="11">Return</option>
+                <option value="12">Recycle</option>
+                <option value="9">Send to payment</option>
+                <option value="13">Close Order</option>
+
+
+            </select>
+            <input type="hidden" name="imei" value="{{check.device_id}}" />
+            <button class="btn-success" name="submit">Submit</button>
+
+        </form>
+        </td>
+
+    </tr>
+    {% endfor %}#}
+
+    {% for result in results %}
+    <tr>
+        <td>{{result.order_id}}</td>
+        <td>{{result.device_id}}</td>
+        <td>{{result.imei}}</td>
+        <td>{{result.device_model}}</td>
+        <td>{{result.device_storage}}</td>
+        <td>{{result.grade_name}}</td>
+        <td>{{result.order_quote}}</td>
+        <td>{{result.status_name}}</td>
+        <td>{{result.cust_status_name}}</td>
+
+        <td>
+            {% if result.status_id==3 %}
+            <a href="{{result.device_id}}/{{result.button_link}}"><button class="btn btn-success">{{result.button_text}}</button></a>
+            {% else %}
+
+            <a href="{{result.imei}}/{{result.button_link}}"><button class="btn btn-success">{{result.button_text}}</button></a></td>
+        {% endif %}
+        <td> {% if result.status_id==3 %}
+        Override not available
+        {% else %}
+            <form class="form" action="override" method="POST">
+            <select class="form-control" name="action">
+                <option value="2">Check Imei</option>
+                <option value="6">Check Device</option>
+                <option value="18">Set Failcard</option>
+                <option value="7">Quote</option>
+                <option value="11">Return</option>
+                <option value="12">Recycle</option>
+                <option value="9">Send to payment</option>
+                <option value="13">Close Ordert</option>
+
+
+            </select>
+            <input type="hidden" name="imei" value="{{result.device_imei}}" />
+            <button class="btn-success" name="submit">Submit</button>
+
+            </form> {% endif %}
+        </td>
+
+    </tr>
+
+
+    {% endfor %}
+</table>
+
+
+{% endblock %}

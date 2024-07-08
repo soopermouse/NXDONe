@@ -1,0 +1,49 @@
+{% extends "rebuybaselocal.html" %}
+{#% extends "rebuybase.html" %#}
+
+{% block title %} Rebuy {% endblock %}
+
+{% block body %}
+
+<h1>Return</h1>
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <th>Customer First name</th>
+    <th>Customer Last Name</th>
+    <th>Street Name</th>
+    <th>Street Number</th>
+    <th>Addition</th>
+    <th>Postcode</th>
+        <th>City</th>
+
+   <th>Country </th>
+
+
+
+    </thead>
+
+    {% for result in results %}
+    <tr>
+        <td>{{result.customer_first_name}}</td>
+        <td>{{result.customer_last_name}}</td>
+        <td>{{result.street_name}}</td>
+        <td>{{result.street_no}}</td>
+        <td>{{result.addition}}</td>
+        <td>{{result.postcode}}</td>
+        <td>{{result.city}}</td>
+        <td>{{result.country}}</td>
+
+
+
+    </tr>
+
+
+    {% endfor %}
+</table>
+<form class="form" action="returnorder" method="POST">
+    <button class="btn btn-primary" value="submit" name="submit">Send Return</button>
+
+
+</form>
+{% endblock %}

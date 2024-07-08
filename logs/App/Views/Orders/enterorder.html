@@ -1,0 +1,141 @@
+{% extends "orderbaselocal.html" %}
+{#% extends "rebuybase.html" %#}
+{% block title %} Orders {% endblock %}
+
+{% block body %}
+
+<h1>Enter Order</h1>
+
+
+
+
+<form action ="entersubmit" method="POST">
+    <h3>Device description</h3>
+    <label>Device Type</label>
+    <select class="form-control" name="device_type">
+        <option value="1">IPhone SE</option>
+        <option value="2">IPhone 6</option>
+        <option value="3">IPhone 6S</option>
+        <option value="4">IPhone 6S Plus</option>
+        <option value="5">IPhone 7</option>
+        <option value="6">IPhone 8</option>
+        <option value="7">IPad 4</option>
+        <option value="8">IPad Mini 1</option>
+        <option value="9">IPad Mini 2</option>
+        <option value="10">IPad Mini 3</option>
+        <option value="11">IPad Mini 4</option>
+        <option value="12">IPad Air 1</option>
+        <option value="13">IPad Air 2</option>
+        <option value="14">IPad 2017</option>
+        <option value="15">IPhone 7Plus</option>
+
+    </select>
+    <br/><label>Storage</label>
+    <select class="form-control" name="device_storage">
+        <option value="1">16 GB</option>
+        <option value="2">32 GB</option>
+        <option value="3">64 GB</option>
+        <option value="4">128 GB</option>
+        <option value="5">256 GB</option>
+    </select>
+    <br/>
+    <label>Connection</label>
+    <select class="form-control" name="device_connection">
+        <option value="1">Wi Fi</option>
+        <option value="2">Wifi and 4G</option>
+        <option value="3">N/A(phone)</option>
+    </select><br/>
+    <label>Condition</label>
+    <select class="form-control" name="device_condition" >
+        <option value="A">As New</option>
+        <option value="B">Light Use</option>
+        <option value="C">Visible Use</option>
+    </select>
+    <br/>
+    <h4>Price</h4>
+    <label>€ 200 </label>
+    <input type="hidden" id="device_price" name="device_price" value="200">
+    <br/>
+
+
+    <label>Colour</label>
+    <select class="form-control" name="device_colour" >
+        <option value="1">Jet Black</option>
+        <option value="2">Red</option>
+        <option value="3">Rose Gold</option>
+        <option value="4">Silver</option>
+        <option value="5">Black</option>
+        <option value="6">Matte Black</option>
+        <option value="7">Gold</option>
+        <option value="8">White</option>
+        <option value="9">Blue</option>
+
+    </select>
+    <br/>
+
+    <h3>Customer Data</h3>
+    <label >First name</label>
+    <input class="form-control" type="text" name="first_name" placeholder="first name">
+    <br/>
+    <label >last name</label>
+    <input class="form-control" type="text" name="last_name" placeholder="last name">
+    <br/>
+    <label>Costomer Type</label>
+    <select class="form-control" name="customer_type" >
+        <option value="1">Individual</option>
+        <option value="2">Business</option>
+    </select>
+    <label >Email address</label>
+    <input class="form-control" type="email" name="email" placeholder="name@example.com">
+    <br/>
+
+    <label>Phone number</label>
+    <input class="form-control" type="text" name="phone" placeholder="phone">
+    <br/>
+    <label >street name</label>
+    <input class="form-control" type="text" name="street_name" placeholder="street name">
+    <br/>
+    <label >Street number</label>
+    <input class="form-control" type="text" name=" street_number" placeholder="Street number">
+    <br/>
+    <label >Addition</label>
+    <input class="form-control" type="text" name="addition" placeholder="addition">
+    <br/>
+
+    <label >Postcode</label>
+    <input class="form-control" type="text" name="postcode" placeholder="Postcode">
+    <br/>
+
+    <label>City</label>
+
+    <input class="form-control" type="text" name="city" placeholder="city">
+    <br>
+    <label>Country</label>
+
+    <input class="form-control" name="country" type="text" placeholder="country">
+    <br>
+
+
+
+    Payment details
+
+    <br />
+    <input class="radio" type="radio" name="payment" value="1" checked /> <span>Bank</span>
+    <input class="radio" type="radio" name="payment" value="2" /> <span>Forza Credit</span>
+
+    <br>
+
+    <br />
+    <label >IBAN</label>
+    <input class="form-control" type="text" name="IBAN" placeholder="IBAN">
+    <label >Tnv</label>
+    <input class="form-control" type="text" name="Tnv" placeholder="Tnv">
+
+
+
+    <button class="btn btn-primary" name="submit">Submit</button>
+</form>
+
+
+
+{% endblock %}

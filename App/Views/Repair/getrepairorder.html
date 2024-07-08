@@ -1,0 +1,35 @@
+{% extends "repairbase.html" %}
+
+{% block title %} Repair Order {% endblock %}
+{% block body %}
+
+
+<table class="table-bordered table-striped">
+    <thead>
+    <th>Model</th>
+    <th>Storage</th>
+    <th>Connection</th>
+
+    <th>
+        IMEI
+    </th>
+    <th>Inspection Id</th>
+    <th>Repair Type</th>
+    <th>Repair</th>
+
+    </thead>
+    {% for result in results %}
+    <tr>
+        <td>{{result.device_model}}</td>
+        <td>{{result.device_storage}}</td>
+        <td>{{result.device_connection}}</td>
+        <td>{{result.imei}} </td>
+        <td>{{result.inspection_id}}</td>
+        <td>{{result.repair_type}}</td>
+
+<td><a href="{{result.imei}}/repairdevice"><button class="btn bn-danger" name="dorepairone">Repair device</button></a></td>
+</tr>
+{% endfor %}
+
+</table>
+{% endblock %}

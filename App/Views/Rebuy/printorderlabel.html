@@ -1,0 +1,22 @@
+{% extends "rebuybaselocal.html" %}
+{#% extends "rebuybase.html" %#}
+
+{% block title %} Rebuy {% endblock %}
+
+{% block body %}
+<script type="text/javascript">
+    function printImg() {
+        pwin = window.open(document.getElementById("mainImg").src,"_blank");
+        pwin.onload = function () {window.print();}
+    }
+</script>
+<h2>Print order label</h2>
+
+
+<img src="http://www.barcodes4.me/barcode/c128b/Forza_rebuy_{{order_id}}.png?width=250&height=100&istextdrawn=1" id="mainImg" />
+<input type="button" value="Print Label"   onclick="window.print()" />
+
+
+
+
+{% endblock %}

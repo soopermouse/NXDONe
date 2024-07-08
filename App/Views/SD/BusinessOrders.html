@@ -1,0 +1,37 @@
+{% extends "csbase.html" %}
+{% block title %} Edit Orders {% endblock %}
+
+{% block body %}
+
+
+<h3>Business Orders</h3>
+<table class="table table-sm table-bordered table-striped">
+
+    <thead>
+    <th>Order Id</th>
+    <th>Customer ID</th>
+    <th>Order Date</th>
+    <th>Order Total</th>
+    <th>Payment Type</th>
+    <th>Order Status</th>
+
+
+    </thead>
+    {% for result in results %}
+    <tr>
+        <td>{{result.order_id}}</td>
+        <td>{{result.customer_id}}</td>
+        <td>{{result.order_date}}</td>
+        <td>{{result.device_price}}</td>
+        <td>{{result.payment_type_name}}</td>
+        <td>{{result.status_name}}</td>
+
+
+
+
+    </tr>
+
+
+    {% endfor %}
+</table>
+{% endblock %}

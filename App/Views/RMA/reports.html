@@ -1,0 +1,86 @@
+{% extends "rmabase.html" %}
+
+{% block title %} RMA {% endblock %}
+
+{% block body %}
+
+<h1>RMA Reports</h1>
+<ul>
+<li><a href="orders">RMA Orders</a></li>
+
+
+    <li><a href="rmastatusreports">RMA by Status</a></li>
+    <form class="form" action="rmastatusreports" method="POST">
+
+        <select class="form-control" name="status_id">
+            <option value="1">RMA CREATED</option>
+            <option value="2">LABEL SENT</option>
+            <option value="3">RECEIVED AT FORZA</option>
+            <option value="4">INSPECTED</option>
+            <option value="5">REPAIRED 1</option>
+            <option value="6">REPAIRED 2</option>
+            <option value="7">ACCEPTED</option>
+            <option value="8">REPLACED</option>
+            <option value="9">RETURNED</option>
+            <option value="10">COMPLETED</option>
+            <option value="11">RMA REFUSED</option>
+            <option value="12">PR INSPECTION PASSED</option>
+            <option value="13">PR INSPECTION FAILED</option>
+            <option value="14">LOST BY CARRIER</option>
+            <option value="15">NOT IN WARRANTY</option>
+
+        </select>
+        <button class="btn btn-danger" type="submit">Submit</button>
+    </form>
+
+    <li><a href="rmadevicereports">RMA by Device Type</a></li>
+    <form class="form" action="rmadevicereports" method="POST">
+
+        <select class="form-control" name="device_type">
+            <option value="1">IPhone SE</option>
+            <option value="2">IPhone 6</option>
+            <option value="3">IPhone 6S</option>
+            <option value="4">IPhone 6S Plus</option>
+            <option value="5">IPhone 7</option>
+            <option value="6">IPhone 8</option>
+            <option value="7">IPad 4</option>
+            <option value="8">IPad Mini 1</option>
+            <option value="9">IPad Mini 2</option>
+            <option value="10">IPad Mini 3</option>
+            <option value="11">IPad Mini 4</option>
+            <option value="12">IPad Air 1</option>
+            <option value="13">IPad Air 2</option>
+            <option value="14">IPad 2017</option>
+            <option value="15">IPhone 7Plus</option>
+            <option value="16">IPhone 4S</option>
+            <option value="17">IPhone 5</option>
+            <option value="18">IPhone 5S</option>
+            <option value="19">IPhone X</option>
+            <option value="20">Ipad Pro 9.7</option>
+            <option value="21">Iphone 8 PLUS</option>
+            <option value="22">Iphone 5c</option>
+            <option value="23">Iphone 6 PLUS</option>
+            <option value="24">IPad3</option>
+            <option value="25">IPad2</option>
+
+
+
+
+
+
+
+
+        </select>
+        <button class="btn btn-danger" type="submit">Submit</button>
+    </form>
+    <li><a href="rmaproblemreports">RMA by Problem Type</a></li>
+
+    <li><a href="rmabusiness">RMA by Business/Reseller Client</a></li>
+
+    <li><a href="refusedrma"> Refused RMAs</a> </li>
+
+    <li><a href="rmabyuser"> RMAS by User</a> </li>
+</ul>
+
+
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends "rebuybaselocal.html" %}
+{#% extends "rebuybase.html" %#}
+{% block title %} Rebuy {% endblock %}
+
+{% block body %}
+    Get device
+<form class="form" action="finddevice" method="POST">
+    <label>Please scan the IMEI here</label>
+    <input type="text" name="IMEI" />
+    <button class="btn btn-success" name="submit">Submit</button>
+</form>
+{% endblock %}

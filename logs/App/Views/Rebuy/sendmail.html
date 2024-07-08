@@ -1,0 +1,65 @@
+{% extends "rebuybaselocal.html" %}
+{#% extends "rebuybase.html" %#}
+
+{% block title %} Rebuy {% endblock %}
+
+{% block body %}
+
+<h1>Send Email</h1>
+
+
+<br />
+<br />
+<table class="table-sm table-bordered table-striped">
+    <tr>
+        <td>Order Id</td>
+        <td>Device Model</td>
+        <td>Device Storage</td>
+        <td>Device Connection</td>
+        <td>Device Condition</td>
+        <td>Quote</td>
+        <td>Customer Email</td>
+
+
+
+
+
+
+
+    </tr>
+     {% for result in results %}
+
+    <tr>
+        <td>{{ result.order_id }}</td>
+        <td>{{ result.device_model }}</td>
+        <td> {{result.storage_type_name}}</td>
+        <td>{{result.connection_type_name}}</td>
+        <td>{{result.condition_name}}</td>
+        <td>{{result.order_quote}}</td>
+        <td>{{result.customer_email}}</td>
+
+    </tr>
+     {% endfor %}
+</table>
+<br />
+
+
+<form action="mailsent" method="post" enctype="multipart/form-data">
+
+    <h2>Send Mail to Client</h2>
+    <p>  Name* <br />
+        <input type="text" name="name" id="name" required />
+    </p>
+
+    <p> Email* <br />
+        <input type="email" name="email" id="email" required />
+    </p>
+
+    <p>Email body <br />
+        <textarea name="msg" id="msg" rows="4" cols="50" >Please enter the offer amount ONLY </textarea>
+    </p>
+
+    <input type="submit" name="submit" />
+</form>
+
+{% endblock %}

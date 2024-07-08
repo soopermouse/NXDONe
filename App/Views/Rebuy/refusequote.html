@@ -1,0 +1,55 @@
+{% extends "rebuybaselocal.html" %}
+{#% extends "rebuybase.html" %#}
+
+{% block title %} Rebuy {% endblock %}
+
+{% block body %}
+<h1>Accept Offer</h1>
+Please select what we should do with your devices
+
+
+
+<table class="table-striped table-bordered">
+    <thead>
+    <th>Device IMEI</th>
+    <th>Model</th>
+    <th>Storage</th>
+    <th>Condition</th>
+    <th>Connection</th>
+    <th>Colour</th>
+    <th>Device Offer</th>
+    <th></th>
+
+    </thead>
+
+    {% for result in results %}
+    <tr>
+        <td>{{result.imei}}</td>
+        <td>{{result.device_model}}</td>
+        <td>{{result.storage_type_name}}</td>
+        <td>{{result.grade_name}}</td>
+        <td>{{result.connection_type_name}}</td>
+        <td>{{result.colour_name}}</td>
+        <td>{{result.order_quote}}</td>
+        <td>
+            <form class="form" action="refusechoices" method="POST">
+
+                <input type="radio" name="{{result.imei}}" value="return"> Return<br>
+                <input type="radio" name="{{result.imei}}" value="recycle"> Recycle<br>
+
+
+
+    </tr>
+    {% endfor %}
+    <tr>
+        <td>
+            <button class="btn btn-success" name="Submit">Submit</button>
+            </form>
+        </td> </tr>
+
+</table>
+<br />
+<br />
+
+
+{% endblock %}

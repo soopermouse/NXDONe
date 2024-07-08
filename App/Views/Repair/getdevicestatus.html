@@ -1,0 +1,24 @@
+{% extends "repairbase.html" %}
+
+{% block title %} Repair {% endblock %}
+
+{% block body %}
+<h2>Get Device Last Event</h2>
+<table>
+    <thead>
+    <th>IMEI</th>
+    <th>Event Name</th>
+    <th>Stream</th>
+    <th>Date</th>
+    </thead>
+{% for result in results %}
+    <tr>
+   <td>{{ result.imei }}</td>
+        <td> {{result.event_name}}</td>
+        <td> {{result.stream_name}}</td>
+        <td>{{result.date}}</td>
+
+    </tr>
+{% endfor %}
+</table>
+{% endblock %}

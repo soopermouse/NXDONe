@@ -1,0 +1,46 @@
+{% extends "orderbaselocal.html" %}
+{#% extends "rebuybase.html" %#}
+{% block title %} Orders {% endblock %}
+
+{% block body %}
+<h2>Orders</h2>
+
+<table class="table table-bordered table-striped">
+    <thead>
+    <td>Order Id</td>
+    <td>Order Date</td>
+    <td>Customer Id</td>
+    <td>Price</td>
+    <td>Device Type</td>
+    <td>Device Grade</td>
+    <td>Order Status</td>
+    <td>Order State</td>
+    <td>Internal Shipping Status</td>
+    <td>Customer Shipping Status</td>
+
+
+
+
+
+    </thead>
+
+    {% for result in results %}
+    <tr>
+        <td>{{result.order_id}}</td>
+        <td>{{result.order_date}}</td>
+        <td>{{result.customer_id}}</td>
+        <td>{{result.device_price}}</td>
+        <td>{{result.device_model}}</td>
+        <td>{{result.device_grade}}</td>
+        <td>{{result.status_name}}</td>
+        <td>{{result.state_name}}</td>
+        <td>{{result.ishipping_status_name}}</td>
+        <td>{{result.cshipping_status_name}}</td>
+
+
+
+    </tr>
+
+    {% endfor %}
+</table>
+{% endblock %}

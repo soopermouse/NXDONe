@@ -1,0 +1,247 @@
+{% extends "suppliersbase.html" %}
+
+{% block title %} Suppliers {% endblock %}
+
+{% block body %}
+
+
+
+<h3>Fail Card</h3>
+<form class="form" action="setfailcard" method="post">
+    Sound Damage
+    <div id="sound"  style="display:none;" class="answer_list" >
+        <input type="hidden" name="rma_id" value="{{result.rma_id}}" class="form-control">
+        <input type="hidden" name="imei" value="{{result.device_imei}}" class="form-control">
+
+        <h4>Sound</h4>
+        </br >
+        </br >
+        Speakers
+        <input class="form-control" type="checkbox"  name="sound[]"
+               value="30" />
+
+        Sound - Rear/Internal Speaker
+        <input class="form-control" type="checkbox"  name="sound[]"
+               value="26" />
+
+        Microphone Bottom/Internal
+        <input class="form-control" type="checkbox"  name="sound[]"
+               value="24" />
+
+        Microphone  back
+        <input class="form-control" type="checkbox"  name="sound[]"
+               value="13" />
+
+        Front speaker/reciever
+        <input class="form-control" type="checkbox"  name="sound[]"
+               value="7" />
+
+        Mic top/front cam mic
+        <input class="form-control" type="checkbox"  name="sound[]"
+               value="3" />
+
+
+    </div>
+    <input type="button"  name="answer" value="Open" onclick="showDiv()"/>
+
+
+
+    </br >
+
+    Power Damage
+    <div id="power"  style="display:none;" class="answer_list" >
+        <h3>Power</h3>
+        </br >
+        </br >
+
+        Battery
+        <input class="form-control" type="checkbox"  name="power[]"
+               value="29" />
+
+        Dock connector flex cable
+        <input class="form-control" type="checkbox"  name="power[]"
+               value="23" />
+        NO POWER
+        <input class="form-control" type="checkbox"  name="power[]"
+               value="12" />
+        </br >
+
+    </div>
+    <input type="button" name="answer" value="Open" onclick="showDiv1()" />
+
+    </br >
+
+    Screen
+    <div id="screen"  style="display:none;" class="answer_list" >
+        <h3> Screen</h3>
+        </br >
+
+        LCD
+        <input class="form-control" type="checkbox"  name="screen[]"
+               value="28" />
+
+        Display - Multi Touch
+        <input class="form-control" type="checkbox"  name="screen[]"
+               value="11" />
+        Display - Image Quality
+        <input class="form-control" type="checkbox"  name="screen[]"
+               value="10" />
+
+        Ambient light
+        <input class="form-control" type="checkbox"  name="screen[]"
+               value="6" />
+
+
+        Auto brightness
+        <input class="form-control" type="checkbox"  name="screen[]"
+               value="5" />
+
+
+        Proximity
+        <input class="form-control" type="checkbox"  name="screen[]"
+               value="4" />
+    </div>
+    <input type="button" name="answer" value="Open" onclick="showDiv2()" />
+    </br >
+
+    Buttons/Jacks
+
+
+    <div id="buttons"  style="display:none;" class="answer_list" >
+        Headset Jack problem
+        <input class="form-control" type="checkbox"  name="buttons[]"
+               value="25" />
+
+        Power Button
+        <input class="form-control" type="checkbox" name="buttons[]"
+               value="21" />
+
+        Volume-mute  flex cable
+        <input class="form-control" type="checkbox"  name="buttons[]"
+               value="16" />
+
+        Home Button Functionality
+        <input class="form-control" type="checkbox"  name="buttons[]"
+               value="9" />
+
+        Touch ID Functionality
+        <input class="form-control" type="checkbox"  name="buttons[]"
+               value="8" />
+    </div>
+    <input type="button" name="answer" value="Open" onclick="showDiv3()" />
+    </br >
+
+
+    Connections
+    <div id="connections"  style="display:none;" class="answer_list" >
+
+
+        </br >
+        Wifi/Bluetooth
+        <input class="form-control" type="checkbox"  name="connections[]"
+               value="20" />
+
+        Dropped Calls / Signal Strength
+        <input class="form-control" type="checkbox"  name="connections[]"
+               value="19" />
+
+        No Cellular connection
+        <input class="form-control" type="checkbox"  name="connections[]"
+               value="18" />
+
+        SIM fail/ SIM Not Detected
+        <input class="form-control" type="checkbox"  name="connections[]"
+               value="17" />
+    </div>
+    <input type="button" name="answer" value="Open" onclick="showDiv4()" />
+    </br >
+
+    Miscellaneous
+
+    <div id="misc"  style="display:none;" class="answer_list" >
+        Vibrator Motor
+        <input class="form-control" type="checkbox"  name="misc[]"
+               value="27" />
+
+        Accelerometer/Gyroscope/GPS
+        <input class="form-control" type="checkbox"  name="misc[]"
+               value="22" />
+
+        Torch/Flash light
+        <input class="form-control" type="checkbox"  name="misc[]"
+               value="14" />
+        </br >
+    </div>
+    <input type="button" name="answer" value="Open" onclick="showDiv5()" />
+    </br >
+    Camera
+    <div id="camera"  style="display:none;" class="answer_list" >
+
+
+        Rear Camera
+        <input class="form-control" type="checkbox"  name="camera[]"
+               value="15" />
+
+
+        F/Cam
+        <input class="form-control" type="checkbox"  name="camera[]"
+               value="2" />
+
+
+
+        Front camera flex cable
+        <input class="form-control" type="checkbox"  name="camera[]"
+               value="1" />
+
+    </div>
+    <input type="button" name="answer" value="Open" onclick="showDiv6()" />
+
+    <textarea class="form-control" rows="5" id="comment" name="comment">Please enter any additional comments</textarea>
+    <button class="btn btn-primary" type="submit" name="submit">Submit</button>
+
+
+</form>
+
+</br ></br >
+
+</div>
+<div class="row">
+
+
+</div>
+
+
+
+
+<script>
+    function showDiv() {
+        document.getElementById('sound').style.display = "block";
+    }
+    function showDiv1() {
+        document.getElementById('power').style.display = "block";
+    }
+    function showDiv2() {
+        document.getElementById('screen').style.display = "block";
+    }
+    function showDiv3() {
+        document.getElementById('buttons').style.display = "block";
+    }
+    function showDiv4() {
+        document.getElementById('connections').style.display = "block";
+    }
+    function showDiv5() {
+        document.getElementById('misc').style.display = "block";
+    }
+    function showDiv6() {
+        document.getElementById('camera').style.display = "block";
+    }
+</script>
+
+
+
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends "rebuybaselocal.html" %}
+{#% extends "rebuybase.html" %#}
+
+{% block title %} Rebuy Check Submit {% endblock %}
+
+{% block body %}
+<h3> Check Submitted </h3>
+{% for result in results %}
+
+
+
+<a href="{{result.button_link}}"><button class="btn btn-success" name="actionbutton">{{result.button_text}}</button></a>
+{% endfor %}
+{% endblock %}

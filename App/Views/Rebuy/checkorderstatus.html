@@ -1,0 +1,38 @@
+{% extends "rebuybaselocal.html" %}
+{#% extends "rebuybase.html" %#}
+
+{% block title %} Rebuy Overview {% endblock %}
+
+{% block body %}
+
+<h1>Order Offer</h1>
+
+Total Offer is {{quote}}
+
+<table class="table-striped table-bordered">
+    <thead>
+    <th>Device IMEI</th>
+    <th>Model</th>
+    <th>Storage</th>
+    <th>Condition</th>
+    <th>Connection</th>
+    <th>Colour</th>
+    <th>Device Offer</th>
+
+    </thead>
+    {% for result in results %}
+    <tr>
+        <td>{{result.imei}}</td>
+        <td>{{result.device_model}}</td>
+        <td>{{result.storage_type_name}}</td>
+        <td>{{result.grade_name}}</td>
+        <td>{{result.connection_type_name}}</td>
+        <td>{{result.colour_name}}</td>
+        <td>{{result.offer}}</td>
+
+
+    </tr>
+    {% endfor %}
+</table>
+<a href="sendmail"><button class="btn btn-success">Send Offer</button></a>
+{% endblock %}

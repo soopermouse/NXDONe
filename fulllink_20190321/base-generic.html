@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="http://forza-refurbished.co.uk/erp/assets/css/forza-erp.css">
+    <script src="http://forza-refurbished.co.uk/erp/assets/js/forza-erp.js"></script>
+</head>
+
+<body>
+
+<div class="container-fluid h-100">
+
+    <!-- Upper row -->
+    <div class="row forza-top-line fixed-top" style="height:30px;">
+        <div  class="col-12 forza-top-line">
+            <a class="forza-top-line" href="http://forza-refurbished.co.uk/erptest/home/login"><i class="fas fa-sign-in-alt"></i> Login</a>
+        </div>
+    </div>
+    <!-- end Upper row -->
+
+    <!-- Top menu -->
+    <div class="row">
+        <div class="col-12">
+            <nav class="navbar navbar-expand-lg mr-auto fixed-top forza-upper-menu" style="margin-top: 30px;">
+            <a class="navbar-brand" href="/">
+                <img src="http://forza-refurbished.co.uk/erptest/assets/images/L_FORZA_refurbished_RGB.png" width="200">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon">
+                    <i class="fa fa-bars"></i>
+                </span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <!-- Streams buttons -->
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="forza-upper-menu-item forza-bg-stream-1" href="http://forza-refurbished.co.uk/erptest/rebuy/index">
+                            <i class="fas fa-cash-register"></i>  &nbsp;
+                            Rebuy
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="forza-upper-menu-item forza-bg-stream-2" href="http://forza-refurbished.co.uk/erptest/RMA/index">
+                            <i class="fa fa-exchange-alt"></i>  &nbsp;
+                            RMA
+                        </a>
+                    </li>
+                    <li>
+                        <a class="forza-upper-menu-item forza-bg-stream-3" href="http://forza-refurbished.co.uk/erptest/finance/index">
+                            <i class="fas fa-euro-sign"></i>  &nbsp;
+                            Finance
+                        </a>
+                    </li>
+                    <li>
+                        <a class="forza-upper-menu-item forza-bg-stream-4" href="http://forza-refurbished.co.uk/erptest/sales/index">
+                            <i class="fas fa-funnel-dollar"></i>  &nbsp;
+                            Sales
+                        </a>
+                    </li>
+                    <li>
+                        <a class="forza-upper-menu-item forza-bg-stream-5" href="http://forza-refurbished.co.uk/erptest/repair/index">
+                            <i class="fas fa-tools"></i> &nbsp;
+                            Repair
+                        </a>
+                    </li>
+                    <li>
+                        <a class="forza-upper-menu-item forza-bg-stream-6" href="http://forza-refurbished.co.uk/erptest/logistics/index">
+                            <i class="fas fa-truck-loading"></i> &nbsp;
+                            Logistics
+                        </a>
+                    </li>
+                    <li>
+                        <a class="forza-upper-menu-item forza-bg-stream-7" href="http://forza-refurbished.co.uk/erptest/sd/index">
+                            <i class="fas fa-headset"></i> &nbsp;
+                            Service desk
+                        </a>
+                    </li>
+                    <li>
+                        <a class="forza-upper-menu-item forza-bg-stream-8" href="http://forza-refurbished.co.uk/erptest/it/index">
+                            <i class="fas fa-laptop-code"></i> &nbsp;
+                            IT
+                        </a>
+                    </li>
+                    <li>
+                        <a class="forza-upper-menu-item forza-bg-stream-9" href="http://forza-refurbished.co.uk/erptest/orders/index">
+                            <i class="fas fa-clipboard-list"></i> &nbsp;
+                            Orders
+                        </a>
+                    </li>
+                    <li>
+                        <a class="forza-upper-menu-item forza-bg-stream-11" href="http://forza-refurbished.co.uk/erptest/suppliers/index">
+                            <i class="fas fa-box-open"></i> &nbsp;
+                            Suppliers
+                        </a>
+                    </li>
+                    <li>
+                        <a class="forza-upper-menu-item forza-bg-stream-10" href="http://forza-refurbished.co.uk/erptest/admin/index">
+                            <i class="fas fa-cogs"></i> &nbsp;
+                            Admin
+                        </a>
+                    </li>
+                </ul>
+                <!-- end Streams buttons -->
+                <!-- User picture -->
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <div style="margin-left:20px;">
+                            div like
+                        </div>
+                    </li>
+                </ul>
+                <!-- end User picture -->
+            </div>
+        </nav>
+        </div>
+    </div>
+    <!-- end Top menu -->
+
+    <div class="row">
+
+        <!-- Left sidebar -->
+        <div class="col-md-2 forza-col" style="margin-top: 109px; margin-left: -15px; height: 100%">
+            {% block leftmenu %} {% endblock %}
+        </div>
+        <!-- end Left sidebar -->
+
+        <!-- Page Content -->
+        <div class="col-md-10 forza-col" style="margin-top: 140px; padding-left: 20px;">
+            {% block body %} {% endblock %}
+            <br><br>
+        </div>
+        <!-- end Page Content -->
+
+    </div>
+
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+<script>
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+    })
+</script>
+
+</body>
+</html>

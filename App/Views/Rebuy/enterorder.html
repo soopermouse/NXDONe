@@ -1,0 +1,663 @@
+{% extends "rebuybaselocal.html" %}
+{#% extends "rebuybase.html" %#}
+{% block title %} Rebuy {% endblock %}
+
+{% block body %}
+
+<h1>Enter Order</h1>
+
+
+
+
+<form action ="entersubmit" method="POST">
+
+    <!-- Enter Order accordion -->
+    <div id="accordion" class="forza-accordion">
+        <!-- Devices -->
+        <div class="card-header">
+            <h4 class="mb-0">
+                <a class="card-link text-primary" data-toggle="collapse" href="#collapse1">
+                    Devices
+                </a>
+            </h4>
+        </div>
+        <div id="collapse1" class="collapse show" data-parent="#accordion">
+            <div class="card-body">
+                <!-- Column titles -->
+                <div class="row form-group">
+                    <div class="col-2">
+                        <b>Device type</b>
+                    </div>
+                    <div class="col-2">
+                        <b>Storage</b>
+                    </div>
+                    <div class="col-2">
+                        <b>Not functional</b>
+                    </div>
+                    <div class="col-2">
+                        <b>100% functional</b>
+                        <br>
+                        Visible Use
+                    </div>
+                    <div class="col-2">
+                        <b>100% functional</b>
+                        <br>
+                        New/Light Use
+                    </div>
+                </div>
+                <div id="device_1">
+                    <div class="row form-group"  id="device1" name="device1">
+                        <div class="col-2">
+                            <b>iPhone 6</b>
+                            <input type="hidden" class="form-control" name="device1[model]" value="2" />
+                        </div>
+                        <div class="col-2">
+                            16GB
+                            <input type="hidden" class="form-control" name="device1[storage]" value="1" />
+                        </div>
+                        <div class="col-1">
+                            <input type="hidden" class="form-control" name="device1[quote]" value="1" />
+                            <input type="hidden" class="form-control" name="device1[grade]" value="3" />
+                            € 25,00
+                        </div>
+                        <div class="col-1">
+                            <input type="number" min="0" style="width: 4em" name="device1[quantity]">
+                        </div>
+                        <div class="col-1">
+                            <input type="hidden" class="form-control" name="device2[model]" value="2" />
+                            <input type="hidden" class="form-control" name="device2[storage]" value="1" />
+                            <input type="hidden" class="form-control" name="device2[quote]" value="2" />
+                            <input type="hidden" class="form-control" name="device2[grade]" value="2" />
+                            € 60,00
+                        </div>
+                        <div class="col-1">
+                            <input type="number" min="0" style="width: 4em" name="device2[quantity]">
+                        </div>
+                        <div class="col-1">
+                            <input type="hidden" class="form-control" name="device3[model]" value="2" />
+                            <input type="hidden" class="form-control" name="device3[storage]" value="1" />
+                            <input type="hidden" class="form-control" name="device3[quote]" value="3" />
+                            <input type="hidden" class="form-control" name="device3[grade]" value="1" />
+                            € 85,00
+                        </div>
+                        <div class="col-1">
+                            <input type="number" min="0" style="width: 4em" name="device3[quantity]">
+                        </div>
+                    </div>
+                    <div class="row form-group"  id="device2" name="device4">
+                        <div class="col-2">
+                            <input type="hidden" class="form-control" name="device4[model]" value="2" />
+                        </div>
+                        <div class="col-2">
+                            64GB
+                            <input type="hidden" class="form-control" name="device4[storage]" value="3" />
+                        </div>
+                        <div class="col-1">
+                            <input type="hidden" class="form-control" name="device4[quote]" value="3" />
+                            <input type="hidden" class="form-control" name="device4[grade]" value="3" />
+                            € 25,00
+                        </div>
+                        <div class="col-1">
+
+                            <input type="number" min="0" style="width: 4em" name="device4[quantity]">
+                        </div>
+                        <div class="col-1">
+                            <input type="hidden" class="form-control" name="device5[model]" value="2" />
+                            <input type="hidden" class="form-control" name="device5[storage]" value="3" />
+                            <input type="hidden" class="form-control" name="device5[quote]" value="3" />
+                            <input type="hidden" class="form-control" name="device5[grade]" value="3" />
+
+                            € 70,00
+                        </div>
+                        <div class="col-1">
+                            <input type="number" min="0" style="width: 4em" name="device5[quantity]">
+                        </div>
+                        <div class="col-1">
+                            <input type="hidden" class="form-control" name="device6[model]" value="2" />
+                            <input type="hidden" class="form-control" name="device6[storage]" value="3" />
+                            <input type="hidden" class="form-control" name="device6[quote]" value="3" />
+                            <input type="hidden" class="form-control" name="device6[grade]" value="3" />
+                            € 95,00
+                        </div>
+                        <div class="col-1">
+                            <input type="number" min="0" style="width: 4em" name="device6[quantity]">
+                        </div>
+                    </div>
+                    <div class="row form-group"  id="device7" name="device7">
+                        <div class="col-2">
+
+                        </div>
+                        <div class="col-2">
+                            32GB
+                        </div>
+                        <div class="col-1">
+                            <input type="hidden" class="form-control" name="device7[model]" value="2" />
+                            <input type="hidden" class="form-control" name="device7[storage]" value="2" />
+                            <input type="hidden" class="form-control" name="device7[quote]" value="1" />
+                            <input type="hidden" class="form-control" name="device7[grade]" value="1" />
+                            € 25,00
+                        </div>
+                        <div class="col-1">
+                            <input type="number" min="0" style="width: 4em" name="device7[quantity]">
+                        </div>
+                        <div class="col-1">
+                            <input type="hidden" class="form-control" name="device8[model]" value="2" />
+                            <input type="hidden" class="form-control" name="device8[storage]" value="2" />
+                            <input type="hidden" class="form-control" name="device8[quote]" value="2" />
+                            <input type="hidden" class="form-control" name="device8[grade]" value="2" />
+                            € 65,00
+                        </div>
+                        <div class="col-1">
+
+                            <input type="number" min="0" style="width: 4em" name="device8[quantity]">
+                        </div>
+                        <div class="col-1">
+                            <input type="hidden" class="form-control" name="device9[model]" value="2" />
+                            <input type="hidden" class="form-control" name="device9[storage]" value="2" />
+                            <input type="hidden" class="form-control" name="device9[quote]" value="3" />
+                            <input type="hidden" class="form-control" name="device9[grade]" value="3" />
+                            € 90,00
+                        </div>
+                        <div class="col-1">
+                            <input type="number" min="0" style="width: 4em" name="device9[quantity]">
+                        </div>
+                    </div>
+                </div>
+                <hr>
+              {# <div id="device_2">
+                    <div class="row form-group"  id="device10" name="device10">
+                        <div class="col-2">
+                            <b>iPhone 6S</b>
+                        </div>
+                        <div class="col-2">
+                            16GB
+                        </div>
+                        <div class="col-1">
+                            <input type="hidden" class="form-control" name="device10[model]" value="1" />
+                            <input type="hidden" class="form-control" name="device10[storage]" value="1" />
+                            <input type="hidden" class="form-control" name="device10[quote]" value="3" />
+                            <input type="hidden" class="form-control" name="device10[grade]" value="3" />
+                            € 30,00
+                        </div>
+                        <div class="col-1">
+                            <input type="number" min="0" style="width: 4em" name="device10">
+                        </div>
+                        <div class="col-1">
+                            € 80,00
+                        </div>
+                        <div class="col-1">
+                            <input type="number" min="0" style="width: 4em">
+                        </div>
+                        <div class="col-1">
+                            € 110,00
+                        </div>
+                        <div class="col-1">
+                            <input type="number" min="0" style="width: 4em">
+                        </div>
+                    </div>
+                    <div class="row form-group"  id="device5" name="device5">
+                        <div class="col-2">
+
+                        </div>
+                        <div class="col-2">
+                            64GB
+                        </div>
+                        <div class="col-1">
+                            € 30,00
+                        </div>
+                        <div class="col-1">
+                            <input type="number" min="0" style="width: 4em">
+                        </div>
+                        <div class="col-1">
+                            € 100,00
+                        </div>
+                        <div class="col-1">
+                            <input type="number" min="0" style="width: 4em">
+                        </div>
+                        <div class="col-1">
+                            € 130,00
+                        </div>
+                        <div class="col-1">
+                            <input type="number" min="0" style="width: 4em">
+                        </div>
+                    </div>
+                    <div class="row form-group"  id="device6" name="device6">
+                        <div class="col-2">
+
+                        </div>
+                        <div class="col-2">
+                            32GB
+                        </div>
+                        <div class="col-1">
+                            € 30,00
+                        </div>
+                        <div class="col-1">
+                            <input type="number" min="0" style="width: 4em">
+                        </div>
+                        <div class="col-1">
+                            € 90,00
+                        </div>
+                        <div class="col-1">
+                            <input type="number" min="0" style="width: 4em">
+                        </div>
+                        <div class="col-1">
+                            € 120,00
+                        </div>
+                        <div class="col-1">
+                            <input type="number" min="0" style="width: 4em">
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div id="device_3">
+                    <div class="row form-group"  id="device7" name="device7">
+                        <div class="col-2">
+                            <b>iPhone 6S Plus</b>
+                        </div>
+                        <div class="col-2">
+                            16GB
+                        </div>
+                        <div class="col-1">
+                            € 30,00
+                        </div>
+                        <div class="col-1">
+                            <input type="number" min="0" style="width: 4em">
+                        </div>
+                        <div class="col-1">
+                            € 80,00
+                        </div>
+                        <div class="col-1">
+                            <input type="number" min="0" style="width: 4em">
+                        </div>
+                        <div class="col-1">
+                            € 110,00
+                        </div>
+                        <div class="col-1">
+                            <input type="number" min="0" style="width: 4em">
+                        </div>
+                    </div>
+                    <div class="row form-group"  id="device8" name="device8">
+                        <div class="col-2">
+
+                        </div>
+                        <div class="col-2">
+                            64GB
+                        </div>
+                        <div class="col-1">
+                            € 30,00
+                        </div>
+                        <div class="col-1">
+                            <input type="number" min="0" style="width: 4em">
+                        </div>
+                        <div class="col-1">
+                            € 100,00
+                        </div>
+                        <div class="col-1">
+                            <input type="number" min="0" style="width: 4em">
+                        </div>
+                        <div class="col-1">
+                            € 130,00
+                        </div>
+                        <div class="col-1">
+                            <input type="number" min="0" style="width: 4em">
+                        </div>
+                    </div>
+                    <div class="row form-group"  id="device9" name="device9">
+                        <div class="col-2">
+
+                        </div>
+                        <div class="col-2">
+                            32GB
+                        </div>
+                        <div class="col-1">
+                            € 30,00
+                        </div>
+                        <div class="col-1">
+                            <input type="number" min="0" style="width: 4em">
+                        </div>
+                        <div class="col-1">
+                            € 90,00
+                        </div>
+                        <div class="col-1">
+                            <input type="number" min="0" style="width: 4em">
+                        </div>
+                        <div class="col-1">
+                            € 120,00
+                        </div>
+                        <div class="col-1">
+                            <input type="number" min="0" style="width: 4em">
+                        </div>
+                    </div>
+                </div>#}
+                <!-- end Column titles -->
+                <!-- Devices info -->
+
+                <!-- end Devices info -->
+            </div>
+        </div>
+        <!-- end Devices -->
+        <!-- Customer data -->
+        <div class="card">
+            <div class="card-header">
+                <h4 class="mb-0">
+                    <a class="card-link text-primary" data-toggle="collapse" href="#collapse2">
+                        Customer Data
+                    </a>
+                </h4>
+            </div>
+            <div id="collapse2" class="collapse hide" data-parent="#accordion">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-4 form-group">
+                            <label><b>First name </b></label>
+                            <br>
+                            <input class="form-control" type="text" name="first_name" placeholder="">
+                        </div>
+                        <div class="col-4 form-group">
+                            <label><b>Last name </b></label>
+                            <br>
+                            <input class="form-control" type="text" name="last_name" placeholder="">
+                        </div>
+                        <div class="col-4 form-group">
+                            <label><b>Customer type</b></label>
+                            <br>
+                            <select class="form-control custom-select" name="customer_type" >
+                                <option value="1">Individual</option>
+                                <option value="2">Business</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4 form-group">
+                            <label ><b>Email address</b></label>
+                            <br>
+                            <input class="form-control" type="email" name="email" placeholder="name@example.com">
+                        </div>
+                        <div class="col-4 form-group">
+                            <label><b>Phone number</b></label>
+                            <br>
+                            <input class="form-control" type="text" name="phone" placeholder="">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4 form-group">
+                            <label><b>Street name</b></label>
+                            <br>
+                            <input class="form-control" type="text" name="street_name" placeholder="">
+                        </div>
+                        <div class="col-4 form-group">
+                            <label><b>Street number</b></label>
+                            <br>
+                            <input class="form-control" type="text" name=" street_number" placeholder="">
+                        </div>
+                        <div class="col-4 form-group">
+                            <label><b>Addition</b></label>
+                            <br>
+                            <input class="form-control" type="text" name="addition" placeholder="">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4 form-group">
+                            <label><b>Postcode</b></label>
+                            <br>
+                            <input class="form-control" type="text" name="postcode" placeholder="">
+                        </div>
+                        <div class="col-4 form-group">
+                            <label><b>City</b></label>
+                            <input class="form-control" type="text" name="city" placeholder="">
+                        </div>
+                        <div class="col-4 form-group">
+                            <label><b>Country</b></label>
+                            <br>
+                            <input class="form-control" name="country" type="text" placeholder="">
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end Customer data -->
+        <!-- Payment details -->
+        <div class="card">
+            <div class="card-header">
+                <h4 class="mb-0">
+                    <a class="card-link text-primary" data-toggle="collapse" href="#collapse3">
+                        Payment details
+                    </a>
+                </h4>
+            </div>
+            <div id="collapse3" class="collapse hide" data-parent="#accordion">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="custom-control custom-radio">
+                            <label>
+                                <input type="radio" name="payment" value="1" checked />
+                                <b>Bank</b>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="custom-control custom-radio">
+                            <label>
+                                <input type="radio" name="payment" value="2" />
+                                <b>Forza Credit</b>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6 input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">IBAN</span>
+                            </div>
+                            <input class="form-control" type="text" name="IBAN" placeholder="">
+                        </div>
+                        <div class="col-6 input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Tnv</span>
+                            </div>
+                            <input class="form-control" type="text" name="Tnv" placeholder="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end Payment details -->
+    </div>
+    <!-- end Enter Order accordion -->
+
+    <br>
+    <button class="btn btn-primary" name="submit">SUBMIT ORDER</button>
+
+</form>
+
+<!--
+<template>
+    <div class="row form-group">
+                <div class="col-2">
+        <select class="form-control" name="device_type">
+            <option value="1">IPhone SE</option>
+            <option value="2">IPhone 6</option>
+            <option value="3">IPhone 6S</option>
+            <option value="4">IPhone 6S Plus</option>
+            <option value="5">IPhone 7</option>
+            <option value="6">IPhone 8</option>
+            <option value="7">IPad 4</option>
+            <option value="8">IPad Mini 1</option>
+            <option value="9">IPad Mini 2</option>
+            <option value="10">IPad Mini 3</option>
+            <option value="11">IPad Mini 4</option>
+            <option value="12">IPad Air 1</option>
+            <option value="13">IPad Air 2</option>
+            <option value="14">IPad 2017</option>
+            <option value="15">IPhone 7Plus</option>
+        </select>
+    </div>
+    <div class="col-2">
+        <select class="form-control" name="device_storage">
+            <option value="1">16 GB</option>
+            <option value="2">32 GB</option>
+            <option value="3">64 GB</option>
+            <option value="4">128 GB</option>
+            <option value="5">256 GB</option>
+        </select>
+    </div>
+    <div class="col-2">
+        <select class="form-control" name="device_connection">
+            <option value="1">Wi Fi</option>
+            <option value="2">Wifi and 4G</option>
+            <option value="3">N/A(phone)</option>
+        </select>
+    </div>
+    <div class="col-2">
+        <select class="form-control" name="device_condition" >
+            <option value="1">Not Functional</option>
+            <option value="2">100% Functional like New/Light Use</option>
+            <option value="3">100% Functional like Visible Use</option>
+        </select>
+    </div>
+    <div class="col-2">
+        <select class="form-control" name="device_colour" >
+            <option value="1">Jet Black</option>
+            <option value="2">Red</option>
+            <option value="3">Rose Gold</option>
+            <option value="4">Silver</option>
+            <option value="5">Black</option>
+            <option value="6">Matte Black</option>
+            <option value="7">Gold</option>
+            <option value="8">White</option>
+            <option value="9">Blue</option>
+            <option value="10">Space Gray</option>
+        </select>
+    </div>
+    </div>
+</template>
+-->
+
+<!-- Device description - old
+<div class="card">
+    <div class="card-header">
+        <h4 class="mb-0">
+            <a class="card-link text-primary" data-toggle="collapse" href="#collapse1">
+                Device description
+            </a>
+        </h4>
+    </div>
+    <div id="collapse1" class="collapse show" data-parent="#accordion">
+        <div class="card-body">
+            <div class="row form-group">
+                <div class="col-2">
+                    <b>Device type</b>
+                </div>
+                <div class="col-2">
+                    <b>Storage</b>
+                </div>
+                <div class="col-2">
+                    <b>Connection</b>
+                </div>
+                <div class="col-2">
+                    <b>Condition</b>
+                </div>
+                <div class="col-2">
+                    <b>Colour</b>
+                </div>
+            </div>
+            <div id="addDevice"></div>
+            <div class="row form-group">
+                <div class="col-2">
+                    <select class="form-control" name="device_type">
+                        <option value="1">IPhone SE</option>
+                        <option value="2">IPhone 6</option>
+                        <option value="3">IPhone 6S</option>
+                        <option value="4">IPhone 6S Plus</option>
+                        <option value="5">IPhone 7</option>
+                        <option value="6">IPhone 8</option>
+                        <option value="7">IPad 4</option>
+                        <option value="8">IPad Mini 1</option>
+                        <option value="9">IPad Mini 2</option>
+                        <option value="10">IPad Mini 3</option>
+                        <option value="11">IPad Mini 4</option>
+                        <option value="12">IPad Air 1</option>
+                        <option value="13">IPad Air 2</option>
+                        <option value="14">IPad 2017</option>
+                        <option value="15">IPhone 7Plus</option>
+                    </select>
+                </div>
+                <div class="col-2">
+                    <select class="form-control" name="device_storage">
+                        <option value="1">16 GB</option>
+                        <option value="2">32 GB</option>
+                        <option value="3">64 GB</option>
+                        <option value="4">128 GB</option>
+                        <option value="5">256 GB</option>
+                    </select>
+                </div>
+                <div class="col-2">
+                    <select class="form-control" name="device_connection">
+                        <option value="1">Wi Fi</option>
+                        <option value="2">Wifi and 4G</option>
+                        <option value="3">N/A(phone)</option>
+                    </select>
+                </div>
+                <div class="col-2">
+                    <select class="form-control" name="device_condition" >
+                        <option value="1">Not Functional</option>
+                        <option value="2">100% Functional like New/Light Use</option>
+                        <option value="3">100% Functional like Visible Use</option>
+                    </select>
+                </div>
+                <div class="col-2">
+                    <select class="form-control" name="device_colour" >
+                        <option value="1">Jet Black</option>
+                        <option value="2">Red</option>
+                        <option value="3">Rose Gold</option>
+                        <option value="4">Silver</option>
+                        <option value="5">Black</option>
+                        <option value="6">Matte Black</option>
+                        <option value="7">Gold</option>
+                        <option value="8">White</option>
+                        <option value="9">Blue</option>
+                        <option value="10">Space Gray</option>
+                    </select>
+                </div>
+            </div>
+            <br>
+            <button type="button" class="btn btn-primary" name="add_device" onclick='showContent("addDevice")'>Add a new device</button>
+        </div>
+    </div>
+</div>
+ end Device description - old -->
+
+<script>
+    function includeHTML() {
+        var z, i, elmnt, file, xhttp;
+        /* Loop through a collection of all HTML elements: */
+        z = document.getElementsByTagName("*");
+        for (i = 0; i < z.length; i++) {
+            elmnt = z[i];
+            /*search for elements with a certain atrribute:*/
+            file = elmnt.getAttribute("w3-include-html");
+            if (file) {
+                /* Make an HTTP request using the attribute value as the file name: */
+                xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function() {
+                    if (this.readyState == 4) {
+                        if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+                        if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+                        /* Remove the attribute, and call this function once more: */
+                        elmnt.removeAttribute("w3-include-html");
+                        includeHTML();
+                    }
+                }
+                xhttp.open("GET", file, true);
+                xhttp.send();
+                /* Exit the function: */
+                return;
+            }
+        }
+    }
+
+    includeHTML();
+</script>
+
+
+{% endblock %}

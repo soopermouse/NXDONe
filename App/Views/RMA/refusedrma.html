@@ -1,0 +1,50 @@
+{% extends "rmabase.html" %}
+
+{% block title %} RMA {% endblock %}
+
+{% block body %}
+
+<h1>Refused RMAs</h1>
+<table class="table-lg table-stripped table-bordered">
+    <thead>
+    <th>Rma_id</th>
+    <th>Device_imei</th>
+    <th>Date</th>
+    <th>Approval By</th>
+    <th>Refusal Reason</th>
+    <th>Reseller </th>
+    <th>Business</th>
+    <th>Problem type</th>
+    <th>Comments</th>
+    <th>Action</th>
+
+
+
+
+
+    </thead>
+    {% for result in results %}
+    <tr>
+
+        <td>{{result.rma_id}}</td>
+        <td>{{result.device_imei}}</td>
+        <td>{{result.date}}</td>
+        <td>{{result.user_name}}</td>
+        <td>{{result.reason_for_refusal}}</td>
+        <td>{{result.rma_reseller_id}}</td>
+        <td>{{result.rma_business_id}}</td>
+        <td>{{result.problem_name}}</td>
+        <td>{{result.comments}}</td>
+        <td>CHOOSE ACTION</td>
+
+
+
+
+
+
+
+
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

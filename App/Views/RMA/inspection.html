@@ -1,0 +1,34 @@
+{% extends "rmabase.html" %}
+
+{% block title %} RMA {% endblock %}
+
+{% block body %}
+
+<h1>RMA Inspection</h1>
+
+<table class="table">
+    <tr>
+        <td>Order Id</td>
+        <td>Device RMA</td>
+
+        <td>RMA Date</td>
+        <td>Inspect Order</td>
+
+
+
+
+
+    </tr>
+    {% for result in results %}
+
+    <tr>
+        <td>{{ result.rma_id }}</td>
+        <td>{{ result.imei }}</td>
+
+        <td>{{result.rma_date}}</td>
+        <td><a href="{{result.imei}}/rmainspect"><button class="btn btn-danger" name="actionbutton">Inspect</button></a></td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends "returnbase.html" %}
+{% block title %} Returns{% endblock %}
+
+{% block body %}
+
+{% for result in results %}
+
+Order Id = {{result.order_id}}</br>
+Order Date= {{result.order_date}}
+
+{% endfor %}
+
+
+
+{% endblock %}

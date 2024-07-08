@@ -1,0 +1,45 @@
+{% extends "rmabase.html" %}
+
+{% block title %} RMA {% endblock %}
+
+{% block body %}
+
+
+<h1>RMA Check</h1>
+<ul>
+    <li>1. Is the device broken or the screen cracked?</li>
+<span>
+<input type="radio" class="message_pri" name="message_pri" value="1" /> YES
+<input type="radio" class="message_pri" name="message_pri" value="2" /> NO
+</span>
+<li>2. Has the device been in contact with water or other liquids?</li>
+    <span>
+<input type="radio" class="message_pri" name="message_pri" value="1" /> YES
+<input type="radio" class="message_pri" name="message_pri" value="2" /> NO
+</span>
+    <li>3. Is the device still on?</li>
+    <span>
+    <input type="radio" class="message_pri" name="message_pri" value="1" /> YES
+    <input type="radio" class="message_pri" name="message_pri" value="2" /> NO
+    </span>
+    <li>4.  Does the device get stuck or does it hang on the Apple logo?</li>
+    <span>
+    <input type="radio" class="message_pri" name="message_pri" value="1" /> YES
+    <input type="radio" class="message_pri" name="message_pri" value="2" /> NO
+    </span>
+    <li>5. Charging problems? </li>
+    <span>
+    <input type="radio" class="message_pri" name="message_pri" value="1" /> YES
+    <input type="radio" class="message_pri" name="message_pri" value="2" /> NO
+    </span>
+    <li>6. Have you tried resetting the device</li>
+    <span>
+    <input type="radio" class="message_pri" name="message_pri" value="1" /> YES
+    <input type="radio" class="message_pri" name="message_pri" value="2" /> NO
+    </span>
+
+
+</ul>
+<a href="testorder"><button class="btn btn-danger" >Create RMA</button></a>
+<button class="btn btn-neutral">No RMA</button>
+{% endblock %}

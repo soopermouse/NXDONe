@@ -1,0 +1,405 @@
+{% extends "rmabase.html" %}
+
+{% block title %} RMA {% endblock %}
+
+{% block body %}
+
+<div class="row">
+    <div class="col-md-6">
+<h1>RMA repair</h1>
+        {{message}}
+
+    </br>
+
+<table class="table-sm table stripped table-bordered">
+
+    <thead>
+    <th>RMA ID</th>
+    <th>RMA date</th>
+    <th>IMEI</th>
+    <th>Complaint</th>
+    <th>Customer Comments</th>
+
+
+
+    </thead>
+    {% for result in results %}
+    <tr>
+
+        <td>{{result.rma_id}}</td>
+        <td>{{result.rma_date}}</td>
+        <td>{{result.device_imei}}</td>
+        <td>{{result.problem_name}}</td>
+        <td>{{result.comments}}</td>
+
+
+
+    </tr>
+
+
+    {% endfor %}
+</table>
+    </div>
+    <div class="col-md-6">
+        <h1>Warranty</h1>
+    </br>
+        <table class="table-sm table striped table-bordered">
+
+            <thead>
+
+            <th>Start Date</th>
+            <th>End Date</th>
+
+            <th>Device Model</th>
+            <th>Device Condition</th>
+            <th>Device Storage</th>
+            <th>Device Connection</th>
+
+
+            </thead>
+            {% for warranty in warrantys %}
+            <tr>
+
+                <td>{{warranty.start_date}}</td>
+                <td>{{warranty.end_date}}</td>
+
+                <td>{{warranty.device_model}}</td>
+                <td>{{warranty.device_grade}}</td>
+                <td>{{warranty.storage_type_name}}</td>
+                <td>{{warranty.connection_type_name}}</td>
+
+
+
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+</div>
+    <div class="row">
+        <div class="col-md-12">
+
+            </br></br></br>
+        <button class="tablink" onclick="openPage('Home', this, 'red')" id="defaultOpen">History</button>
+        <button class="tablink" onclick="openPage('News', this, 'green')" >Sound</button>
+        <button class="tablink" onclick="openPage('Contact', this, 'blue')">Power</button>
+        <button class="tablink" onclick="openPage('About', this, 'orange')">Screen</button>
+        <button class="tablink" onclick="openPage('Misc', this, 'purple')">Misc</button>
+        <button class="tablink" onclick="openPage('Conn', this, 'turquoise')">Conns</button>
+        <button class="tablink" onclick="openPage('Camera', this, 'magenta')">Camera</button>
+        <button class="tablink" onclick="openPage('Buttons', this, 'teal')">Buttons/Jacks</button>
+
+        <div id="Home" class="tabcontent">
+            <h3>History</h3>
+            <table class="tabe table-striped table-bordered">
+
+                <thead>
+
+                <th>Inspection Comments</th>
+                <th>Failcard</th>
+                <th>Replaced Parts</th>
+                <th>Repair 1</th>
+                <th>Repair 1 Date</th>
+                <th> Repair 1 by</th>
+                <th>Repair 2</th>
+
+                <th>Repair 2 date</th>
+                <th>repair 2 by</th>
+                {# <td>Device Grading</td>
+                <th>Device Grading Date</th>
+                <td>Graded By</td>#}
+                <th>Previous RMAs</th>
+
+
+
+
+                </thead>
+                {% for his in hiss %}
+                <tr>
+
+                    <td>{{his.device_comments}}</td>
+                    <td>Failcard</td>
+                    <td>battery</td>
+                    <td>replace battery</td>
+                    <td>24/12/2018</td>
+                    {# <td>B</td>
+                    <td>22/12/2018e</td>
+                    <td>User id 5</td>#}
+                    <td>User 4</td>
+                    <td>n/a</td>
+                    <td>n/a</td>
+                    <td>n/a</td>
+                    <td>0</td>
+
+                </tr>
+
+                {% endfor %}
+            </table>
+        </div>
+
+        <div id="News" class="tabcontent">
+            <h3>Sound</h3>
+
+            <b>SOUND Inspection</b>
+            <table class="table table stripped table-bordered">
+                <thead>
+                <th>Inspection Date</th>
+                <th>Speakers</th>
+                <th>Internal Speakers</th>
+                <th>Microphone Bottom</th>
+                <th>Microphone back</th>
+                <th>Front Speaker</th>
+                <th>Microphone Top</th>
+
+                </thead>
+                {% for sound in sounds %}
+                <tr>
+                    <td>{{sound.date}}</td>
+                    <td>{{sound.speakers}}</td>
+                    <td>{{sound.internal_speakers}}</td>
+                    <td>{{sound.microphone_bottom}}</td>
+                    <td>{{sound.microphone_back}}</td>
+                    <td>{{sound.front_speaker}}</td>
+                    <td>{{sound.microphone_top}}</td>
+
+                </tr>
+
+                {% endfor %}
+            </table>
+        </div>
+
+        <div id="Contact" class="tabcontent">
+
+
+            <b>POWER Inspection</b>
+
+            <table class="table-sm table stripped table-bordered">
+                <thead>
+                <th>Inspection Date</th>
+                <th>Battery</th>
+                <th>Dock Connector Cable</th>
+                <th>No Power</th>
+
+
+                </thead>
+                {% for power in powers %}
+                <tr>
+                    <td>{{power.date}}</td>
+                    <td>{{power.battery}}</td>
+                    <td>{{power.dock_connector_cable}}</td>
+                    <td>{{power.no_power}}</td>
+
+
+                </tr>
+
+                {% endfor %}
+            </table>
+        </div>
+
+        <div id="About" class="tabcontent">
+
+            <b>SCREEN Inspection</b>
+
+            <table class="table-sm table stripped table-bordered">
+                <thead>
+                <th>Inspection Date</th>
+                <th>LCD</th>
+                <th>Multi Touch</th>
+                <th>Image Quality</th>
+                <th>Ambient Light</th>
+                <th>Auto Brightness</th>
+                <th>Proximity Sensor</th>
+
+                </thead>
+                {% for screen in screens %}
+                <tr>
+                    <td>{{screen.date}}</td>
+                    <td>{{screen.LCD}}</td>
+                    <td>{{screen.multi_touch}}</td>
+                    <td>{{screen.image_quality}}</td>
+                    <td>{{screen.ambient_light}}</td>
+                    <td>{{screen.auto_brightness}}</td>
+                    <td>{{screen.proximity}}</td>
+
+                </tr>
+
+                {% endfor %}
+            </table>
+        </div>
+
+        <div id="Misc" class="tabcontent">
+            <h3>Miscellaneous</h3>
+            <table class="table-sm table stripped table-bordered">
+                <thead>
+                <th>Inspection Date</th>
+                <th>Vibration Motor</th>
+                <th>GPS</th>
+                <th>Torch</th>
+
+
+                </thead>
+                {% for screen in screens %}
+                <tr>
+                    <td>{{misc.date}}</td>
+                    <td>{{misc.vibration_motor}}</td>
+                    <td>{{misc.GPS}}</td>
+                    <td>{{misc.torch}}</td>
+
+
+                </tr>
+
+                {% endfor %}
+            </table>
+        </div>
+
+        <div id="Conn" class="tabcontent">
+            <h3>Connections</h3>
+            <table class="table-sm table stripped table-bordered">
+                <thead>
+                <th>Inspection Date</th>
+                <th>Wifi/Bluetooth</th>
+                <th>Signal Strength/Dropped calls</th>
+                <th>No Cell Connection</th>
+                <th>SIM Fail</th>
+
+
+                </thead>
+                {% for con in cons %}
+                <tr>
+                    <td>{{con.date}}</td>
+                    <td>{{con.wifi_bt}}</td>
+                    <td>{{con.signal_strength}}</td>
+                    <td>{{con.no_cel_conn}}</td>
+                    <td>{{con.SIM_fail}}</td>
+
+
+                </tr>
+
+                {% endfor %}
+            </table>
+        </div>
+
+        <div id="Camera" class="tabcontent">
+            <h3>Camera</h3>
+            <table class="table-sm table stripped table-bordered">
+                <thead>
+                <th>Inspection Date</th>
+                <th>Rear Camera</th>
+                <th>Front Camera</th>
+                <th>Front camera flex cable</th>
+
+                </thead>
+                {% for cam in cams %}
+                <tr>
+                    <td>{{cam.date}}</td>
+                    <td>{{cam.rear_camera}}</td>
+                    <td>{{cam.front_camera}}</td>
+                    <td>{{cam.front_camera_flex_cable}}</td>
+
+
+                </tr>
+
+                {% endfor %}
+            </table>
+        </div>
+
+        <div id="Buttons" class="tabcontent">
+            <h3>Buttons/Jacks</h3>
+            <table class="table-sm table stripped table-bordered">
+                <thead>
+                <th>Inspection Date</th>
+                <th>Headset jack</th>
+                <th>Power Button</th>
+                <th>Volume Flex Cable</th>
+                <th>Home Button</th>
+                <th>Touch Id</th>
+
+
+                </thead>
+                {% for button in buttons %}
+                <tr>
+                    <td>{{button.date}}</td>
+                    <td>{{button.headset_jack}}</td>
+                    <td>{{button.power_button}}</td>
+                    <td>{{button.volume_flex_cable}}</td>
+                    <td>{{button.home_button}}</td>
+                    <td>{{button.touch_id}}</td>
+
+
+                </tr>
+
+                {% endfor %}
+            </table>
+        </div>
+
+
+</div>
+    </div>
+</div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6">
+            </br></br></br>
+        <h3>Do repair</h3>
+
+
+            <form class="form" method="post" action="repairdone">
+                <ul>
+                    <li> Replace Parts</li>
+                     Please select the parts you have replaced today
+
+                    <select class="form-control" name="part_type">
+                        {% for part in parts %}
+
+                        <option value="{{ part.part_type_name}}">{{ part.part_type_name}}</option>
+
+
+                        {% endfor %}
+
+                    </select>
+
+                    <li>Other Repair</li>
+                    <textarea class="form-control" name="comments">Enter other repairs</textarea>
+
+                </ul>
+                <button class="btn btn-success" type="submit">Finish Repair</button>
+
+            </form>
+
+            <a href="furtherrepair"><button class="btn btn-danger" name="repair2">Send to Repair 2</button></a>
+        </div>
+
+    </div>
+
+</div>
+<script>
+
+
+    function openPage(pageName, elmnt, color) {
+        // Hide all elements with class="tabcontent" by default */
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+
+        // Remove the background color of all tablinks/buttons
+        tablinks = document.getElementsByClassName("tablink");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].style.backgroundColor = "";
+        }
+
+        // Show the specific tab content
+        document.getElementById(pageName).style.display = "block";
+
+        // Add the specific color to the button used to open the tab content
+        elmnt.style.backgroundColor = color;
+    }
+
+    // Get the element with id="defaultOpen" and click on it
+    document.getElementById("defaultOpen").click();
+</script>
+
+{% endblock %}

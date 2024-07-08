@@ -1,0 +1,41 @@
+{% extends "rebuybaselocal.html" %}
+{#% extends "rebuybase.html" %#}
+
+{% block title %} Rebuy {% endblock %}
+
+{% block body %}
+<h1>Add Sales Tags</h1>
+<table class="table-bordered table-striped">
+    <thead>
+    <th>Order Id</th>
+    <th>Customer First Name</th>
+    <th>Customer last name</th>
+    <th>Customer email</th>
+
+    </thead>
+{% for result in results %}
+    <tr>
+        <td>{{result.order_id}}</td>
+        <td>{{result.customer_first_name}}</td>
+        <td>{{result.customer_last_name}}</td>
+        <td>{{result.customer_email}}</td>
+    </tr>
+</table>
+<form class="form" action="addtag" method="POST">
+<input type="hidden" name="order_id" value="{{result.order_id}}" />
+    <select class="form-control" name="sales_tag">
+        <option value="2">marleen.smulders</option>
+        <option value="4">dave.ackermans</option>
+        <option value="5">pepijn.elissen</option>
+        <option value="8">Pieter Keijzer</option>
+        <option value="9">Newten Melcherts</option>
+        <option value="11">Michael Pique</option>
+        <option value="12">brigitte.sanger</option>
+        <option value="13">femke.vandenbrand</option>
+
+    </select>
+
+    <button class="btn btn-success" name="submit">Submit</button>
+</form>
+{% endfor %}
+{% endblock %}

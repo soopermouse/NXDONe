@@ -1,0 +1,31 @@
+{% extends "csbase.html" %}
+{% block title %} {% endblock %}
+
+{% block body %}
+
+<h1>Rebuy Order Status and Actions</h1>
+
+
+<table class="table table-striped table-bordered">
+
+    <tr>
+        <td>Order Id</td>
+
+        <td>Customer Status</td>
+        <td>Forza Status</td>
+        <td>Action</td>
+
+
+    </tr>
+    {% for result in results %}
+    <tr>
+        <td>{{ result.order_id }}</td>
+
+        <td>{{result.cust_status_name}}</td>
+        <td>{{result.status_name}}</td>
+        <td><a href="{{result.order_id}}/{{result.button_link}}"><button class="btn btn-success" name="actionbutton">{{result.button_text}}</button></a> </td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}

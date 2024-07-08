@@ -1,0 +1,28 @@
+{% extends "rmabase.html" %}
+
+{% block title %} RMA {% endblock %}
+
+{% block body %}
+
+<h1>RMA </h1>
+
+RMA Workflow
+
+<ul>
+    <li>Receive RMA Order</li>
+    <li>Check IMEI</li>
+    <li>If the device was bought from us and is in warranty, contact customer</li>
+    <li>If SD is satisfied with reason for RMA, issue a RMA token</li>
+    <li>Customer uses the RMA token to create a shipping label and send the device to us</li>
+    <li>Device is received and inspected</li>
+    <li>Device is sent to repair</li>
+    <li>If necessary device is sent to repair 2</li>
+    <li>If the device is repaired, issue a shiping label and send back</li>
+    <li>If the device cannot be repaired, send a replacement</li>
+    <li>close RMA order</li>
+
+
+
+</ul>
+
+{% endblock %}

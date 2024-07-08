@@ -1,0 +1,15 @@
+{% extends "returnbase.html" %}
+{% block title %} Returns{% endblock %}
+
+{% block body %}
+
+<h2>Test return</h2>
+<form class="form" action="enterreturn" method="POST">
+   <label>Order Id</label>
+    <input type="text" name="order_id">
+    <label>Device IMEI</label>
+    <input type="text" name="imei">
+    <button class="btn btn-default" name="submit">Submit</button>
+
+</forM>
+{% endblock %}

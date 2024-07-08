@@ -1,0 +1,50 @@
+{% extends "base-generic.html" %}
+
+{% block leftmenu %}
+
+<div class="forza-bg-stream-6 forza-col">
+    <nav class="navbar fixed-left forza-left-menu">
+        <div class="container-fluid">
+            <ul class="nav flex-column list-group">
+                <li class="nav-item">
+                    <div class="forza-left-menu-item">
+                        <h4>LOGISTICS</h4>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link forza-left-menu-item" href="http://forza-refurbished.co.uk/erptest/Logistics/index">Overview</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link forza-left-menu-item" href="http://forza-refurbished.co.uk/erptest/Logistics/orders">Orders</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link forza-left-menu-item" href="http://forza-refurbished.co.uk/erptest/Logistics/pick">Pick Orders</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link forza-left-menu-item" href="http://forza-refurbished.co.uk/erptest/Logistics/rebuy">Rebuy labels</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link forza-left-menu-item" href="http://forza-refurbished.co.uk/erptest/Logistics/RMA">RMA Shipping labels</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link forza-left-menu-item" href="http://forza-refurbished.co.uk/erptest/Logistics/reports">Reports</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link forza-left-menu-item" href="http://forza-refurbished.co.uk/erptest/Logistics/returns">Returns</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col-md-12">
+        {% block body %} {% endblock %}
+    </div>
+</div>
+
+{% endblock %}

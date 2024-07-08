@@ -1,0 +1,24 @@
+{% extends "repairbase.html" %}
+
+{% block title %} Repair {% endblock %}
+
+{% block body %}
+
+<h2> Multigrade
+</h2>
+
+<form class="form" action="grademulti" method="POST">
+
+    <label for="imeis">IMEI</label>
+    <textarea class="form-control" rows="5" id="imeis"></textarea>
+
+    <select class="form-control" id="grade">
+        <option value="1">Grade A</option>
+        <option value="2">Grade B</option>
+        <option value="3">Grade C</option>
+
+    </select>
+    <button class="btn tbn-danger" name="submit">Submit</button>
+</form>
+
+{% endblock %}

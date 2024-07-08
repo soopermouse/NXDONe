@@ -1,0 +1,47 @@
+{% extends "rmabase.html" %}
+
+{% block title %} RMA {% endblock %}
+
+{% block body %}
+<h3>
+
+    Repair 2</h3>
+
+  <p>  RMA ID:   {{rma_id}} </br>
+   IMEI:     {{imei}}  </br>
+      {% for device in devices %}
+    DEVICE MODEL: {{device.device_model}}
+      {{device.storage_type_name}}
+      {{device.colour_name}}
+
+    {% endfor %}
+
+     <h4> SELECT REPAIR</h4> </br></br>
+
+</p>
+
+
+<form class="form" method="post" action="repairtwodone">
+
+    <ul>
+        <li> Replace Parts</li>
+        Please select the parts you have replaced today
+
+        <select class="form-control" name="part_name">
+            {% for result in results %}
+
+            <option value="{{ result.part_name}}">{{ result.part_name}}</option>
+
+
+            {% endfor %}
+
+        </select>
+
+        <li>Other Repair</li>
+        <textarea class="form-control" name="comments">Enter other repairs</textarea>
+
+    </ul>
+    <button class="btn btn-danger" type="submit">Finish Repair</button>
+
+</form>
+{% endblock %}

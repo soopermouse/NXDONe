@@ -1,0 +1,17 @@
+{% extends "rmabase.html" %}
+
+{% block title %} RMA {% endblock %}
+
+{% block body %}
+
+
+<h1>Device History</h1>
+
+Please enter IMEI to check history
+<form action="gethistory" method="POST" class="form-sm">
+    <label>IMEI</label>
+  <input type="text" class="form-control" name="imei">
+    <input type="submit" class="btn btn-danger" />
+    </form>
+
+{% endblock %}

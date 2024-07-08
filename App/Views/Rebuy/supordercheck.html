@@ -1,0 +1,35 @@
+{% extends "rebuybaselocal.html" %}
+{#% extends "rebuybase.html" %#}
+
+{% block title %} Supplier Order Report {% endblock %}
+
+{% block body %}
+
+<table class="table-striped table-bordered">
+
+    <thead>
+    <th>Imei</th>
+    <th>Model</th>
+    <th>Storage</th>
+    <th>Next Action</th>
+    <th>Go</th>
+
+    </thead>
+    {% for result in results %}
+    <tr>
+        <td>{{result.device_imei}}</td>
+        <td>{{result.device_model}}</td>
+        <td>{{result.storage_type_name}}</td>
+        <td>{{result.connection_type_name}}</td>
+        <td>{{result.action_name}}</td>
+        <td><a href="/rebuy/{{result.device_imei}}/{{result.button_link}}"><button class="btn btn-success">{{result.button_text}}</button></a></td>
+
+
+
+    </tr>
+
+    {% endfor %}
+</table>
+
+{% endblock %}
+

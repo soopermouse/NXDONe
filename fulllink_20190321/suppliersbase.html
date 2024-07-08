@@ -1,0 +1,49 @@
+{% extends "base-generic.html" %}
+
+{% block leftmenu %}
+
+<div class="forza-bg-stream-11 forza-col">
+    <nav class="navbar fixed-left forza-left-menu">
+        <div class="container-fluid">
+            <ul class="nav flex-column list-group">
+                <li class="nav-item">
+                    <div class="forza-left-menu-item">
+                        <h4>SUPPLIERS</h4>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link forza-left-menu-item active" href="http://forza-refurbished.co.uk/erptest/Suppliers/index">Supply Index<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link forza-left-menu-item" href="http://forza-refurbished.co.uk/erptest/Suppliers/Orders">Supply Orders</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link forza-left-menu-item" href="http://forza-refurbished.co.uk/erptest/Suppliers/createsupplier">Create Supplier</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link forza-left-menu-item" href="http://forza-refurbished.co.uk/erptest/Suppliers/createsupplierorder">Create Supplier Orders</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link forza-left-menu-item" href="http://forza-refurbished.co.uk/erptest/Suppliers/Reports">Supplier Reports</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link forza-left-menu-item" href="http://forza-refurbished.co.uk/erptest/Suppliers/Shipping">Supplier Orders Shipping</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col-md-12">
+        {% block body %} {% endblock %}
+    </div>
+</div>
+
+{% endblock %}

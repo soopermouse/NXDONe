@@ -1,0 +1,21 @@
+{% extends "rmabase.html" %}
+
+{% block title %} RMA {% endblock %}
+
+{% block body %}
+
+<div class="row">
+    <div class="col-md-6">
+        <h1>RMA repair</h1>
+        Repair completed for {{rma_id}},</br> IMEI no. {{imei}}.</br>
+        {% for device in devices %}
+        Device model:  {{device.device_model}}</br>
+        {% endfor %}
+        On {{date}}</br>
+        Parts used {{part_name}}</br>
+        Comments {{comments}}</br>
+        </br>
+    </div>
+</div>
+
+{% endblock %}

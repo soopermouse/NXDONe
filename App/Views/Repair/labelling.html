@@ -1,0 +1,40 @@
+{% extends "repairbase.html" %}
+
+{% block title %} Repair {% endblock %}
+
+{% block body %}
+
+<h1>Labelling </h1>
+
+<table class="table table-striped  table-bordered">
+    <thead>
+    <th>Device IMEI</th>
+    <th>Device Model</th>
+    <th>Storage</th>
+
+    <th>Device Colour</th>
+    <th>Label</th>
+
+
+    </thead>
+    {% for result in results %}
+    <td>{{result.device_IMEI}}</td>
+    <td>{{result.device_model}}></td>
+    <td>{{result.storage_type_name}}</td>
+    <td>{{result.colour_name}}</td>
+
+
+    <td><a href="{{result.device_IMEI}}/labels"><button class="btn btn-default">Label</button></a>
+
+    </td></tr>
+
+
+
+
+    {% endfor %}
+
+</table>
+
+<a href="multigrade">Device Multigrade</a>
+
+{% endblock %}

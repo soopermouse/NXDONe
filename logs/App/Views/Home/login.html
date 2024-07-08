@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %} Home {% endblock %}
+
+{% block body %}
+<h1>Login</h1>
+
+<p>Please login to access the erp</p>
+
+
+ <form action="/login/login" method="POST">
+     <input class="text" name="username" />
+     <input class="text" name="password" />
+     <button class="submit" name="submit">Submit</button>
+
+ </form>
+
+
+{% endblock %}

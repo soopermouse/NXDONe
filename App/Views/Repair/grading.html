@@ -1,0 +1,38 @@
+{% extends "repairbase.html" %}
+
+{% block title %} Repair {% endblock %}
+
+{% block body %}
+
+<h1>Grading</h1>
+
+<table class="table table-striped  table-bordered">
+    <thead>
+    <th>Device IMEI</th>
+    <th>Device Origin</th>
+    <th>Repair Type</th>
+    <th>Device Type</th>
+    <th>Device Model</th>
+    <th>Grade</th>
+
+
+    </thead>
+    {% for result in results %}
+    <td>{{result.imei}}</td>
+    <td>{{result.origin}}></td>
+    <td>{{result.repair}}</td>
+    <td>{{result.device_model}}</td>
+    <td>{{result.device_type}}</td>
+
+    <td><a href="{{result.imei}}/grade"><button class="btn btn-default">Grade</button></a></td>
+
+</tr>
+
+
+    {% endfor %}
+
+</table>
+
+<a href="multigrade">Device Multigrade</a>
+
+{% endblock %}

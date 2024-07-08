@@ -1,0 +1,11 @@
+{% extends "repairbase.html" %}
+
+{% block title %} Repair {% endblock %}
+{% block body %}
+<form class="form" action="getrepairorder" method="POST">
+    <label>Please scan the IMEI here</label>
+    <input type="number" name="imei" class="form-control" />
+    <button class="btn btn-alert" type="submit">Submit</button></form>
+
+
+{% endblock %}

@@ -1,0 +1,47 @@
+
+{% extends "rmabase.html" %}
+
+{% block title %} Rebuy {% endblock %}
+
+{% block body %}
+
+<h1>Edit Shipping Status</h1>
+
+<table class="table">
+    <tr>
+        <td>Order Id</td>
+        <td>Order Date</td>
+        <td>Shipping Date</td>
+        <td>Shipping status</td>
+
+
+
+
+    </tr>
+    {% for result in results %}
+
+    <tr>
+        <td>{{ result.order_id }}</td>
+        <td>{{ result.order_date }}</td>
+        <td>{{ result.shipping_date }}</td>
+        <td>{{ result.shipping_status_name }}</td>
+
+
+
+    </tr>
+    {% endfor %}
+</table>
+<br />
+
+<form  class="form" action="/rma/shippingupdate" method="POST">
+    <label>Change Shipping Status</label>
+    <select class="form-control"  name="status" >
+        <option value="3">RECEIVED</option>
+        <option value="4">SHIPPED TO CUSTOMER</option>
+        <option value="5">RECEIVED BY CUSTOMER</option>
+        <option value="6">LOST IN TRANSIT</option>
+    </select>
+    <button class="btn btn-primary" name="submit">Submit</button>
+</form>
+
+{% endblock %}

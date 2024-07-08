@@ -1,0 +1,45 @@
+{% extends "rmabase.html" %}
+
+{% block title %} RMA {% endblock %}
+
+{% block body %}
+
+
+<h1>RMA Check</h1>
+Warranty Details
+
+<table class="table table striped table-bordered">
+
+    <thead>
+    <th>Device IMEI</th>
+    <th>Warranty Start Date</th>
+    <th>Warranty End Date</th>
+    <th>Order ID</th>
+    <th>Device Model</th>
+    <th>Device Condition</th>
+    <th>Device Storage</th>
+    <th>Device Connection</th>
+    <th>View Device History</th>
+
+    </thead>
+    {% for result in results %}
+    <tr>
+       <td>{{result.device_IMEI}}</td>
+        <td>{{result.start_date}}</td>
+        <td>{{result.end_date}}</td>
+        <td>{{result.order_id}}</td>
+        <td>{{result.device_model}}</td>
+        <td>{{result.device_grade}}</td>
+        <td>{{result.storage_type_name}}</td>
+        <td>{{result.connection_type_name}}</td>
+        <td><a href="history">History</a></td>
+
+
+    </tr>
+    {% endfor %}
+</table>
+
+
+</form>
+
+{% endblock %}

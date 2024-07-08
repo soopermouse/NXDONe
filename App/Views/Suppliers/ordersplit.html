@@ -1,0 +1,31 @@
+{% extends "suppliersbase.html" %}
+
+{% block title %} Suppliers {% endblock %}
+
+{% block body %}
+
+
+<h1>Split order</h1>
+
+<table class="table-striped table-bordered">
+    <thead>
+    <td>order id</td>
+    <td>Suborder idr</td>
+    <td>Device Type</td>
+    <td>Quantity</td>
+    </thead>
+{% for result in results %}
+    <tr>
+        <td>{{result.order_id}}</td>
+        <td>{{result.suborder_id}}</td>
+        <td>{{result.device_model}}</td>
+        <td>{{result.quantity}}</td>
+        <td></td>
+
+    </tr>
+
+    {% endfor %}
+
+</table>
+
+{% endblock %}

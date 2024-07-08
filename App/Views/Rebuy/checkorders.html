@@ -1,0 +1,34 @@
+{% extends "rebuybaselocal.html" %}
+{#% extends "rebuybase.html" %#}
+{% block title %} Rebuy {% endblock %}
+
+{% block body %}
+<h1>Check Orders</h1>
+
+
+
+<table class="table">
+    <tr>
+        <th scope="col">Device Id</td>
+        <th scope="col">Device Model</td>
+
+        <th scope="col">Device Condition</td>
+        <th scope="col">Check Order</td>
+
+
+
+
+
+    </tr>
+    {% for result in results %}
+
+    <tr>
+        <td>{{ result.device_id }}</td>
+        <td>{{ result.device_model }}</td>
+
+        <td>{{result.grade_name}}</td>
+        <td><a href="{{result.device_id}}/{{result.button_link}}"><button class="btn btn-success" name="actionbutton">{{result.button_text}}</button></a></td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

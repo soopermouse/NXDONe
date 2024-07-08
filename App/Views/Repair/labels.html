@@ -1,0 +1,30 @@
+{% extends "repairbase.html" %}
+
+{% block title %} Repair {% endblock %}
+
+{% block body %}
+
+<h1>Label for Device {{result.imei}}</h1>
+<table class="table-bordered">
+{% for result in results %}
+<tr><td>
+    {{result.language_1}}</br>
+        {{result.language_2}}</br>
+        {{result.language_3}}</br>
+        {{result.language_4}}</br>
+    </td>
+    <td>
+        <b>   {{result.device_model}}</b></br>
+        {{result.storage_type_name}}  {{result.colour_name}}</br>
+        {{result.grade_name}}
+    </td>
+</tr>
+    <tr>
+      <td colspan="2">
+      CE    11111111111111111111111</br>
+      IMEI  {{result.device_IMEI}}</td>
+    </tr>
+{% endfor %}
+</table>
+
+{% endblock %}

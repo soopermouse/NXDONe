@@ -1,0 +1,37 @@
+{% extends "rmabase.html" %}
+
+{% block title %} RMA {% endblock %}
+
+{% block body %}
+
+Close orders
+
+<table class="table-striped table-bordered">
+    <thead>
+    <th>RMA ID</th>
+    <th>IMEI</th>
+    <th>RMA DATE</th>
+    <th>RESOLUTION</th>
+    <th>CLOSE ORDER</th>
+
+
+    </thead>
+    {% for result in results %}
+    <tr>
+        <td>{{result.rma_id}}</td>
+        <td>{{result.imei}}</td>
+        <td>{{result.rma_date}}</td>
+        <td>REPAIRED</td>
+        <td><a href="{{result.imei}}/{{result.button_link}}"><button class="btn btn-danger" name="actionbutton">{{result.button_text}}</button></a></td>
+
+
+
+    </tr>
+
+
+
+    {% endfor %}
+
+</table>
+
+{% endblock %}

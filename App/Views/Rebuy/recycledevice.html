@@ -1,0 +1,40 @@
+{% extends "rebuybaselocal.html" %}
+{#% extends "rebuybase.html" %#}
+
+{% block title %} Recycle orders {% endblock %}
+
+{% block body %}
+
+<h1>Recycle</h1>
+
+<h3> Recycle device</h3>
+<table class="table">
+    <tr>
+        <td>Order Id</td>
+
+        <td>Device Model</td>
+
+        <td>IMEI</td>
+        <td>Recycle</td>
+
+
+
+
+
+    </tr>
+    {% for result in results %}
+
+    <tr>
+        <td>{{ result.order_id }}</td>
+
+        <td>{{ result.device_model }}</td>
+
+        <td>{{result.IMEI}}</td>
+
+
+        <td><a href="orderrecycled"><button class="btn btn-success" >Recycle</button></a></td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}

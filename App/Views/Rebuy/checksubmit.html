@@ -1,0 +1,17 @@
+{% extends "rebuybaselocal.html" %}
+{#% extends "rebuybase.html" %#}
+
+{% block title %} Rebuy Check Submit {% endblock %}
+
+{% block body %}
+<h3> Check Submitted </h3>
+{{message}}
+
+<a href="../{{device_id}}/inspect"><button class="btn btn-success">CHECK DEVICE</button></a>
+
+<a href="../devicestatus"><button class="btn-success">Return to Status Page</button></a>
+
+
+
+{% endblock %}
+

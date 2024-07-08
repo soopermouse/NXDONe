@@ -1,0 +1,37 @@
+{% extends "repairbase.html" %}
+
+{% block title %} Repair {% endblock %}
+
+{% block body %}
+
+<h1>Post repair Inspection</h1>
+
+<TABLE CLASS="table-striped table-bordered">
+    <thead>
+    <th>Repair ID</th>
+    <th>IMEI</th>
+    <th>Repair Type</th>
+    <th>Repair Status</th>
+    <th>Action</th>
+    <th>Inspect</th>
+
+    </thead>
+
+    {% for result in results %}
+    <tr>
+       <td>{{result.repair_id}}</td>
+        <td>{{result.imei}}</td>
+        <td>{{result.repair_type}}</td>
+        <td>{{result.status_name}}</td>
+        <td>{{result.action_name}}</td>
+        <td><a href="{{result.imei}}/PRInspect"><button class="btn btn-warning">Inspect</button></a></td>
+
+
+
+    </tr>
+    {% endfor %}
+
+
+</TABLE>
+
+{% endblock %}

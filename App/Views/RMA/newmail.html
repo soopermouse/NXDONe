@@ -1,0 +1,37 @@
+{% extends "rmabase.html" %}
+
+{% block title %} RMA {% endblock %}
+
+{% block body %}
+
+<h1>RMA Mail</h1>
+
+
+<ul>
+   <li>RMA Confirmation</li>
+
+    <li>RMA Order Received at Forza</li>
+    <li>RMA Solved</li>
+    <li>RMA device replaced</li>
+    <li> RMA device return</li>
+    <li>RMA delayed</li>
+</ul>
+
+<form action ="sendmail" method="POST">
+    <h3>Send Email</h3>
+    <label>Email Type</label>
+    <select class="form-control" name="email_type">
+        <option value="1">RMA CONFIRMATION</option>
+        <option value="2">RECEIPT CONFIRMATION</option>
+        <option value="3">DEVICE REPLACEMENT</option>
+        <option value="4">DEVICE RETURN</option>
+        <option value="5">OUT OF WARRANTY</option>
+        <option value="6">DEVICE SHIPPED BACK TO CUSTOMER</option>
+        <option value="7">RMA SHIPPING PROBLEM</option>
+
+    </select>
+    <button type="submit" class="btn btn-success">Submit</button>
+
+
+</form>
+{% endblock %}

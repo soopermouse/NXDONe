@@ -1,0 +1,51 @@
+{% extends "csbase.html" %}
+
+{% block title %} Service Desk {% endblock %}
+
+{% block body %}
+
+
+<h1>Service Desk Workflow</h1>
+
+<div class="row">
+<div class="col-md-4">
+<h2>RMA Worlflow</h2>
+    <ul>
+        <li>Check the list of submitted RMAs On RMA Intake Page</li>
+        <li>Contact the customer if necessary or accept the RMA if the necessary conditions are met</li>
+        <li>If the RMA is accepted, send a shipping label to the customer</li>
+        <li>When the devices arrive book them in on the RMA Shipping Page</li>
+        <li>When the Device is repaired/ replaced, print the shipping label</li>
+        <li>Return the device or replacement and close the order</li>
+
+
+    </ul>
+</div>
+    <div class="col-md-4">
+        <h2>Rebuy Worlflow</h2>
+        <ul>
+            <li>Receive Devices</li>
+            <li>Update shipping status on Shipping Status page</li>
+            <li>Check the status of offers on the Rebuy Status page</li>
+            <li>If the offer is accepted send order for payment on the Payments Page</li>
+            <li>If the offer is not accepted return the device on the Returns page</li>
+            <li>Close Order</li>
+
+
+        </ul>
+    </div>
+
+    <div class="col-md-4">
+        <h2>Customer Support</h2>
+        <ul>
+            <li>Edit customer data on the Customer Data Page</li>
+            <li>Edit order data on the Order Edit page</li>
+            <li>Edit payment data on the Payment Edit page</li>
+
+        </ul>
+
+    </div>
+
+
+</div>
+{% endblock %}

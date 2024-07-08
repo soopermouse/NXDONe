@@ -1,0 +1,31 @@
+{% extends "rebuybaselocal.html" %}
+{#% extends "rebuybase.html" %#}
+{% block title %} Rebuy {% endblock %}
+
+{% block body %}
+
+Action Override
+
+<table class="tanle-striped table-bordered">
+    <thead>
+    <th>Order Id</th>
+    <th>Device Imei</th>
+
+    <th>New Action</th>
+
+
+    </thead>
+    {% for result in results %}
+    <tr>
+        <td>{{result.order_id}}</td>
+        <td>{{result.device_imei}}</td>
+        <td>{{result.action_name}}</td>
+
+
+
+    </tr>
+    <a href="devicestatus"><button class="btn btn-success">Return to Device Status</button></a>
+
+    {% endfor %}
+</table>
+{% endblock %}

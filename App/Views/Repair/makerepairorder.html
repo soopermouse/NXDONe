@@ -1,0 +1,22 @@
+{% extends "repairbase.html" %}
+
+{% block title %} Repair {% endblock %}
+
+{% block body %}
+
+<h2>Make Repair Order</h2>
+
+<form class="form form-md" action="enterrepair" method="POST">
+    <label >IMEI</label>
+    <input class="form-control" type="text" name="imei" />
+    <label>Repair Type</label>
+    <select class="form-control" name="repair_type" >
+        <option value="1">RMA</option>
+        <option value="2">Stock repair</option>
+        <option value="3">Customer Repair</option>
+    </select>
+    <button class="btn btn-warning" type="submit" name="submit">Submit</button>
+
+</form>
+
+ {% endblock %}

@@ -1,0 +1,60 @@
+{% extends "rebuybaselocal.html" %}
+{#% extends "rebuybase.html" %#}
+
+{% block title %} Rebuy {% endblock %}
+
+{% block body %}
+
+
+
+
+<h3>Fail Card</h3>
+<form class="form" action="setfailcard" method="post">
+<div>
+    Battery
+    <input class="form-control" type="checkbox"  name="failcard[]"
+           value="battery" />
+
+
+</div>
+<div>
+
+</div>
+    Speakers
+<input class="form-control" type="checkbox"  name="failcard[]"
+       value="speakers" />
+
+<div>
+    LCD
+    <input class="form-control" type="checkbox"  name="failcard[]"
+           value="lcd" />
+
+</div>
+
+
+<div>
+    Camera
+    <input class="form-control" type="checkbox"  name="failcard[]"
+           value="camera" />
+
+</div>
+
+<div>
+    Microphone
+    <input class="form-control" type="checkbox"  name="failcard[]"
+           value="microphone" />
+
+</div>
+
+
+
+<div>
+    Power Button
+    <input class="form-control" type="checkbox" name="failcard[]"
+           value="powerbutton" />
+
+
+</div>
+    <button type="btn btn-primary" type="submit" name="submit">Submit</button>
+
+{% endblock %}

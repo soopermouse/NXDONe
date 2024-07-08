@@ -1,0 +1,66 @@
+{% extends "suppliersbase.html" %}
+
+{% block title %} Suppliers Index {% endblock %}
+
+{% block body %}
+
+
+<h1>New Supplier Order</h1>
+
+<form class="form" action="createorder" method="POST">
+    <label>Supplier </label>
+    <select class="form-control" name="supplier_id">
+        <option value="1">Jack</option>
+        <option value="2">Larry</option>
+        <option value="3">John</option>
+    </select>
+
+    <label>Device </label>
+    <select class="form-control" name="device_model1">
+        <option value="1">IPhone SE</option>
+        <option value="2">IPhone 6</option>
+        <option value="3">IPhone 6S</option>
+        <option value="4">IPhone 6S Plus</option>
+        <option value="5">IPhone 7</option>
+        <option value="6">IPhone 8</option>
+        <option value="7">IPad 4</option>
+        <option value="8">IPad Mini 1</option>
+        <option value="9">IPad Mini 2</option>
+        <option value="10">IPad Mini 3</option>
+        <option value="11">IPad Mini 4</option>
+        <option value="12">IPad Air 1</option>
+        <option value="13">IPad Air 2</option>
+        <option value="14">IPad 2017</option>
+        <option value="15">IPhone 7Plus</option>
+        <option value="21">IPhone 8Plus</option>
+        <option value="19">IPhone X</option>
+    </select>
+
+    <label>Storage</label>
+    <select class="form-control" name="device_storage_id">
+        <option value="1">16 GB</option>
+        <option value="2">32 GB</option>
+        <option value="3">64 GB</option>
+        <option value="4">128 GB</option>
+        <option value="5">256 GB</option>
+    </select>
+
+    <label>Colour</label>
+    <select class="form-control" name="device_colour_id" >
+        <option value="1">Jet Black</option>
+        <option value="2">Red</option>
+        <option value="3">Rose Gold</option>
+        <option value="4">Silver</option>
+        <option value="5">Black</option>
+        <option value="6">Matte Black</option>
+        <option value="7">Gold</option>
+        <option value="8">White</option>
+        <option value="9">Blue</option>
+
+    </select>
+    <label>Quantity</label>
+    <input type="number" class="form-control" name="quantity1" />
+    <button class="btn btn-warning" type="submit" name="submit">Submit</button>
+</form>
+
+{% endblock %}

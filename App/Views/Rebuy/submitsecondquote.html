@@ -1,0 +1,47 @@
+{% extends "rebuybaselocal.html" %}
+{#% extends "rebuybase.html" %#}
+
+{% block title %} Rebuy Submit {% endblock %}
+{% block body %}
+<h1>Enter second quote</h1>
+
+
+<table class="table">
+    <tr>
+        <td>Order Id</td>
+        <td>Customer First Name</td>
+        <td>Customer Last Name</td>
+        <td>Customer Email</td>
+        <td>Offer</td>
+
+        <td>Send Mail</td>
+
+
+
+
+
+
+
+    </tr>
+    {% for result in results %}
+
+    <tr>
+        <td>{{ result.order_id }}</td>
+        <td>{{ result.customer_first_name }}</td>
+        <td> {{result.customer_last_name}}</td>
+        <td>{{result.customer_email}}</td>
+        <td>{{result.quote}}</td>
+
+
+        <td><a href="sendsecoffer"><button class="btn btn-success" name="actionbutton">Send Second Offer</button></a> </td>
+
+    </tr>
+    {% endfor %}
+</table>
+<br />
+
+
+
+
+
+{% endblock %}

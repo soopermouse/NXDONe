@@ -1,0 +1,90 @@
+{% extends "rebuybaselocal.html" %}
+{#% extends "rebuybase.html" %#}
+
+{% block title %} Rebuy {% endblock %}
+
+{% block body %}
+<h1>Accept Offer</h1>
+Please accept or refuse our offer below
+
+<h3></h3>
+
+<table class="table-striped table-bordered">
+    <thead>
+    <th>Order ID</th>
+    <th>Order date</th>
+    <th>Offer </th>
+
+
+    </thead>
+    {% for result in results %}
+    <tr>
+        <td>{{result.order_id}}</td>
+        <td>{{result.order_date}}</td>
+        <td>{{result.quote}}</td>
+
+
+
+    </tr>
+    {% endfor %}
+</table>
+
+<h3>Total Offer is {{quote}}</h3>
+
+<table class="table-striped table-bordered">
+    <thead>
+    <th>Device IMEI</th>
+    <th>Model</th>
+    <th>Storage</th>
+    <th>Condition</th>
+    <th>Connection</th>
+    <th>Colour</th>
+    <th>Device Offer</th>
+    <th>Accepted</th>
+    <th></th>
+
+    </thead>
+
+    {% for result in results %}
+    <tr>
+        <td>{{result.imei}}</td>
+        <td>{{result.device_model}}</td>
+        <td>{{result.storage_type_name}}</td>
+        <td>{{result.grade_name}}</td>
+        <td>{{result.connection_type_name}}</td>
+        <td>{{result.colour_name}}</td>
+        <td>{{result.quote}}</td>
+        <td>{{result.accepted}}</td>
+        <td>  <form class="form" action="acceptsecchoices" method="POST">
+
+            {% if result.accepted==1 %}
+            Already Accepted
+                <input type="hidden" name="{{result.imei}}" value="accept" />
+            {% elseif result.forza_order_status==8 %}
+            This device will be recycled
+            {% else %}
+
+
+                <input type="radio" name="{{result.imei}}" value="accept"> Accept<br>
+                <input type="radio" name="{{result.imei}}" value="refuse"> Refuse<br>
+
+            {% endif %}
+
+    </tr>
+    {% endfor %}
+    <tr>
+        <td>
+            <button class="btn btn-success" name="Submit">Submit</button>
+            </form>
+        </td> </tr>
+
+</table>
+
+
+<form class ="form" action="secconfirm" method="POST">
+
+    <button class="btn-success" name="accept_button" value="Accept" />Accept</button></form>
+<form class ="form" action="refusesecquote" method="POST">
+    <button class="btn-danger" name="refuse_button" value="Refuse" />Refuse</button></form>
+</form>
+{%endblock %}

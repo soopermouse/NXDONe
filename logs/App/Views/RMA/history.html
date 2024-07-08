@@ -1,0 +1,51 @@
+{% extends "rmabase.html" %}
+
+{% block title %} RMA {% endblock %}
+
+{% block body %}
+
+
+<h1>Device History</h1>
+
+<table class="tabe table striped table bordered">
+
+    <thead>
+    <td>Purchase date</td>
+    <td>Device IMEI</td>
+    <td>Device origin</td>
+    <td>Cost</td>
+    <td>Device Inspection</td>
+    <td>Failcard</td>
+    <td>Replaced Parts</td>
+    <td>Repair</td>
+    <td>Repair Date</td>
+    <td>Device Grading</td>
+    <td>Device Grading Date</td>
+    <td>Graded By</td>
+    <td></td>
+
+
+
+
+    </thead>
+    {% for result in results %}
+    <tr>
+        <td>{{result.date}}</td>
+        <td>{{result.device_imei}}</td>
+        <td>Device origin</td>
+        <td>Cost</td>
+        <td>Device Inspection</td>
+        <td>Failcard</td>
+        <td>Replaced Parts</td>
+        <td>Repair</td>
+        <td>Repair Date</td>
+        <td>Device Grading</td>
+        <td>Device Grading Date</td>
+        <td>Graded By</td>
+        <td></td>
+    </tr>
+
+     {% endfor %}
+</table>
+
+{% endblock %}

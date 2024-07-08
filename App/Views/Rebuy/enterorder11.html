@@ -1,0 +1,290 @@
+{% extends "rebuybaselocal.html" %}
+{#% extends "rebuybase.html" %#}
+{% block title %} Rebuy {% endblock %}
+
+{% block body %}
+
+<h1>Enter Order</h1>
+
+<form action ="entersubmit" method="POST">
+{#<template>
+    <div class="row form-group">
+                <div class="col-2">
+        <select class="form-control" name="device_type">
+            <option value="1">IPhone SE</option>
+            <option value="2">IPhone 6</option>
+            <option value="3">IPhone 6S</option>
+            <option value="4">IPhone 6S Plus</option>
+            <option value="5">IPhone 7</option>
+            <option value="6">IPhone 8</option>
+            <option value="7">IPad 4</option>
+            <option value="8">IPad Mini 1</option>
+            <option value="9">IPad Mini 2</option>
+            <option value="10">IPad Mini 3</option>
+            <option value="11">IPad Mini 4</option>
+            <option value="12">IPad Air 1</option>
+            <option value="13">IPad Air 2</option>
+            <option value="14">IPad 2017</option>
+            <option value="15">IPhone 7Plus</option>
+        </select>
+    </div>
+    <div class="col-2">
+        <select class="form-control" name="device_storage">
+            <option value="1">16 GB</option>
+            <option value="2">32 GB</option>
+            <option value="3">64 GB</option>
+            <option value="4">128 GB</option>
+            <option value="5">256 GB</option>
+        </select>
+    </div>
+    <div class="col-2">
+        <select class="form-control" name="device_connection">
+        <option value="1">Wi Fi</option>
+        <option value="2">Wifi and 4G</option>
+        <option value="3">N/A(phone)</option>
+    </select>
+    </div>
+    <div class="col-2">
+        <select class="form-control" name="device_condition" >
+            <option value="1">Not Functional</option>
+            <option value="2">100% Functional like New/Light Use</option>
+            <option value="3">100% Functional like Visible Use</option>
+        </select>
+    </div>
+    <div class="col-2">
+        <select class="form-control" name="device_colour" >
+            <option value="1">Jet Black</option>
+            <option value="2">Red</option>
+            <option value="3">Rose Gold</option>
+            <option value="4">Silver</option>
+            <option value="5">Black</option>
+            <option value="6">Matte Black</option>
+            <option value="7">Gold</option>
+            <option value="8">White</option>
+            <option value="9">Blue</option>
+            <option value="10">Space Gray</option>
+        </select>
+        <label>Quantity</label>
+        <input class="form-control" type="number" name="quantity" />
+
+    </div>
+    </div>
+</template>#}
+
+    <device_1>
+        <div class="row form-group">
+            <div class="col-2">
+               <label>Iphone SE</label>
+                <input type="hidden" name="device1_model" value="1" />
+            </div>
+            <div class="col-2">
+                <label>Storage</label>
+                <select class="form-control" name="device1_storage">
+                    <option value="1">16 GB</option>
+                    <option value="2">32 GB</option>
+                    <option value="3">64 GB</option>
+                    <option value="4">128 GB</option>
+                    <option value="5">256 GB</option>
+                </select>
+            </div>
+
+            <div class="col-2">
+                <label>Condition</label>
+                <select class="form-control" name="device1_condition" >
+                    <option value="1">Not Functional</option>
+                    <option value="2">100% Functional like New/Light Use</option>
+                    <option value="3">100% Functional like Visible Use</option>
+                </select>
+            </div>
+            <div class="col-2">
+
+                <label>Quantity</label>
+                <input class="form-control" type="number" name="device1_quantity" />
+
+            </div>
+        </div>
+
+    </device_1>
+    <device_2>
+        <div class="row form-group">
+            <div class="col-2">
+                <label>Iphone 6</label>
+                <input type="hidden" name="device2_model" value="2">
+            </div>
+            <div class="col-2">
+                <label>Storage</label>
+                <select class="form-control" name="device2_storage">
+                    <option value="1">16 GB</option>
+                    <option value="2">32 GB</option>
+                    <option value="3">64 GB</option>
+                    <option value="4">128 GB</option>
+                    <option value="5">256 GB</option>
+                </select>
+            </div>
+
+            <div class="col-2">
+                <label>Condition</label>
+                <select class="form-control" name="device2_condition" >
+                    <option value="1">Not Functional</option>
+                    <option value="2">100% Functional like New/Light Use</option>
+                    <option value="3">100% Functional like Visible Use</option>
+                </select>
+            </div>
+            <div class="col-2">
+
+                <label>Quantity</label>
+                <input class="form-control" type="number" name="device2_quantity" />
+
+            </div>
+        </div>
+
+    </device_2>
+
+</div>
+
+        <!-- Customer data -->
+        <div class="card">
+            <div class="card-header">
+                <h4 class="mb-0">
+                    <a class="card-link text-primary" data-toggle="collapse" href="#collapse2">
+                        Customer Data
+                    </a>
+                </h4>
+            </div>
+            <div id="collapse2" class="collapse hide" data-parent="#accordion">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-4 form-group">
+                            <label><b>First name </b></label>
+                            <br>
+                            <input class="form-control" type="text" name="first_name" placeholder="">
+                        </div>
+                        <div class="col-4 form-group">
+                            <label><b>Last name </b></label>
+                            <br>
+                            <input class="form-control" type="text" name="last_name" placeholder="">
+                        </div>
+                        <div class="col-4 form-group">
+                            <label><b>Customer type</b></label>
+                            <br>
+                            <select class="form-control custom-select" name="customer_type" >
+                                <option value="1">Individual</option>
+                                <option value="2">Business</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4 form-group">
+                            <label ><b>Email address</b></label>
+                            <br>
+                            <input class="form-control" type="email" name="email" placeholder="name@example.com">
+                        </div>
+                        <div class="col-4 form-group">
+                            <label><b>Phone number</b></label>
+                            <br>
+                            <input class="form-control" type="text" name="phone" placeholder="">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4 form-group">
+                            <label><b>Street name</b></label>
+                            <br>
+                            <input class="form-control" type="text" name="street_name" placeholder="">
+                        </div>
+                        <div class="col-4 form-group">
+                            <label><b>Street number</b></label>
+                            <br>
+                            <input class="form-control" type="text" name=" street_number" placeholder="">
+                        </div>
+                        <div class="col-4 form-group">
+                            <label><b>Addition</b></label>
+                            <br>
+                            <input class="form-control" type="text" name="addition" placeholder="">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4 form-group">
+                            <label><b>Postcode</b></label>
+                            <br>
+                            <input class="form-control" type="text" name="postcode" placeholder="">
+                        </div>
+                        <div class="col-4 form-group">
+                            <label><b>City</b></label>
+                            <input class="form-control" type="text" name="city" placeholder="">
+                        </div>
+                        <div class="col-4 form-group">
+                            <label><b>Country</b></label>
+                            <br>
+                            <input class="form-control" name="country" type="text" placeholder="">
+                        <br>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+        <!-- end Customer data -->
+        <!-- Payment details -->
+        <div class="card">
+            <div class="card-header">
+                <h4 class="mb-0">
+                    <a class="card-link text-primary" data-toggle="collapse" href="#collapse3">
+                        Payment details
+                    </a>
+                </h4>
+            </div>
+            <div id="collapse3" class="collapse hide" data-parent="#accordion">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="custom-control custom-radio">
+                            <label>
+                                <input type="radio" name="payment" value="1" checked />
+                                <b>Bank</b>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="custom-control custom-radio">
+                            <label>
+                                <input type="radio" name="payment" value="2" />
+                                <b>Forza Credit</b>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6 input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">IBAN</span>
+                            </div>
+                            <input class="form-control" type="text" name="IBAN" placeholder="">
+                        </div>
+                        <div class="col-6 input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Tnv</span>
+                            </div>
+                            <input class="form-control" type="text" name="Tnv" placeholder="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end Payment details -->
+    <button class="btn btn-primary" name="submit">SUBMIT ORDER</button>
+
+</form>
+    </div>
+</div>
+    <!-- end Enter Order accordion -->
+
+
+
+
+
+{#<script>
+    function showContent(elementId) {
+        var temp = document.getElementsByTagName("template")[0];
+        var clon = temp.content.cloneNode(true);
+        document.getElementById(elementId).appendChild(clon);
+    }
+
+</script>#}
+{% endblock %}

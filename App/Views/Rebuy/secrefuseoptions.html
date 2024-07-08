@@ -1,0 +1,16 @@
+{% extends "rebuybaselocal.html" %}
+{#% extends "rebuybase.html" %#}
+
+{% block title %} Rebuy {% endblock %}
+
+{% block body %}
+<h1>Refuse Offer</h1>
+Please tell us what we should do with your device
+
+<form class ="form" action="recycle" method="POST">
+
+    <button class="btn-success" name="recycle_button" value="submit" />Recycle</button></form>
+<form class ="form" action="secreturndevice" method="POST">
+    <button class="btn-danger" name="return_button" value="submit" />Return</button></form>
+
+{% endblock %}

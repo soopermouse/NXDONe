@@ -1,0 +1,29 @@
+{% extends "suppliersbase.html" %}
+
+{% block title %} Suppliers {% endblock %}
+
+{% block body %}
+
+
+<h1>Supply Orders Status</h1>
+
+<table class="table-bordered table-striped">
+    <thead>
+    <th>Order Id</th>
+    <th>Status</th>
+    <th>Next Action</th>
+    <th>See Devices</th>
+    </thead>
+
+    {% for result in results %}
+    <tr>
+        <td>{{result.order_id}}</td>
+        <td>{{result.status_name}}</td>
+        <td>{{result.action_name}}</td>
+        <td><a href="{{result.order_id}}/devicestatus"><button class="btn-warning">SEE DEVICES</button></a></td>
+
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}

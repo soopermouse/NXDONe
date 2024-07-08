@@ -1,0 +1,4 @@
+[27-Sep-2018 19:50:06 Europe/Berlin] <p>Uncaught exception :'Exception"</p><p>Message :No route matched"</p><p>Stack Trace:<pre></pre>#0 C:\xampp2\htdocs\rebuy\public\index.php(76): Core\Router->dispatch('poigiugv')
+#1 {main}"</pre></p><p>Thrown in :C:\xampp2\htdocs\rebuy\Core\Router.php'on line 104</p>
+[27-Sep-2018 19:50:08 Europe/Berlin] <p>Uncaught exception :'Exception"</p><p>Message :No route matched"</p><p>Stack Trace:<pre></pre>#0 C:\xampp2\htdocs\rebuy\public\index.php(76): Core\Router->dispatch('gome')
+#1 {main}"</pre></p><p>Thrown in :C:\xampp2\htdocs\rebuy\Core\Router.php'on line 104</p>

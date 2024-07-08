@@ -1,0 +1,36 @@
+
+{% extends "rmabase.html" %}
+
+{% block title %} RMA {% endblock %}
+
+{% block body %}
+
+<h3>RMA SHIPPING</h3>
+
+
+<table class="table table-striped table-bordered">
+    <tr>
+        <td>RMA Id</td>
+        <td>Order Date</td>
+        <td>Shipping Date</td>
+        <td>Shipping status</td>
+        <td>Edit Shipping Status</td>
+
+
+
+    </tr>
+    {% for result in results %}
+
+    <tr>
+        <td>{{result.rma_id}}</td>
+        <td>{{result.order_date}}</td>
+        <td>{{result.shipping_date}}</td>
+        <td>{{result.shipping_status_name }}</td>
+        <td><a href="{{result.rma_id}}/editshipping"><button class="btn btn-success">Edit Shipping</button></a></td>
+
+
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}

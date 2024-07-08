@@ -1,0 +1,46 @@
+{% extends "rmabase.html" %}
+
+{% block title %} RMA {% endblock %}
+
+{% block body %}
+
+<div class="row">
+    <div class="col-md-6">
+        <h1>Completed Repairs</h1>
+
+        <table class="tabe table-striped table-bordered">
+
+            <thead>
+            <th>RMA Id</th>
+            <th>RMA date</th>
+            <th>IMEI</th>
+            <th>Customer First Name</th>
+            <th>Customer last name</th>
+            <th>Customer Email</th>
+            <th>Return Device</th>
+
+
+
+
+
+            </thead>
+            {% for result in results %}
+            <tr>
+                <td>{{result.rma_id}}</td>
+                <td>{{result.rma_date}}</td>
+                <td>{{result.device_imei}}</td>
+                <td>{{result.customer_first_name}}</td>
+                <td>{{result.customer_last_name}}</td>
+                <td>{{result.customer_email}}</td>
+                <td><a href="{{result.rma_id}}/returndevice"><button class="btn btn-danger">Start Return</button></a></td>
+
+            </tr>
+
+            {% endfor %}
+        </table>
+
+        </br>
+    </div>
+</div>
+
+{% endblock %}

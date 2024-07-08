@@ -1,0 +1,18 @@
+{% extends "csbase.html" %}
+{% block title %} Returns {% endblock %}
+
+{% block body %}
+<h2>Check Return by IMEI</h2>
+<form class="form" action="checkreturn" method="POST">
+    <label>Please enter the device's IMEI</label>
+    <input type="text" name="imei" />
+    <button class="btn btn-danger" name="submit" class="form-control">Submit</button>
+</form>
+<h2>Check return by Order Id</h2>
+
+<form class="form" action="checkreturnorder" method="POST">
+    <label>Please enter the Order Id</label>
+    <input type="text" name="orderid" />
+    <button class="btn btn-danger" name="submit" class="form-control">Submit</button>
+</form>
+{% endblock %}

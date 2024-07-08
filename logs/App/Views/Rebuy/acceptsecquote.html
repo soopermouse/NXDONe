@@ -1,0 +1,43 @@
+{% extends "rebuybaselocal.html" %}
+{#% extends "rebuybase.html" %#}
+
+{% block title %} Rebuy {% endblock %}
+
+{% block body %}
+<h1>Accept Offer</h1>
+Please accept or refuse our offer below
+
+<table class="table table-striped table-bordered">
+    <thead>
+    <th>Device Model</th>
+    <th>device Storage</th>
+    <th>Device Connection</th>
+    <th>Device Condition</th>
+    <th>Device Comments</th>
+    <th>Device Offer</th>
+    </thead>
+
+    {% for result in results %}
+
+    <tr>
+        <td>{{result.device_model}}</td>
+        <td>{{result.storage_type_name}}</td>
+        <td>{{result.connection_type_name}}</td>
+        <td>{{result.condition_name}}</td>
+        <td>{{result.device_comments}}</td>
+        <td>{{result.second_quote}}</td>
+
+
+
+    </tr>
+    {% endfor %}
+
+</table>
+
+<form class ="form" action="/rebuy/secconfirm" method="POST">
+
+    <button class="btn-success" name="accept_button" value="Accept" />Accept</button></form>
+<form class ="form" action="/rebuy/secrefuseoptions" method="POST">
+    <button class="btn-danger" name="refuse_button" value="Refuse" />Refuse</button></form>
+</form>
+{%endblock %}

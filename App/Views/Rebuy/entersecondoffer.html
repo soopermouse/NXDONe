@@ -1,0 +1,86 @@
+{% extends "rebuybaselocal.html" %}
+{#% extends "rebuybase.html" %#}
+
+{% block title %} Rebuy Submit {% endblock %}
+{% block body %}
+<h1>Enter second quote</h1>
+
+
+<table class="table-striped table-bordered">
+    <tr>
+        <td>Order Id</td>
+
+        <td>First Offer</td>
+
+
+
+
+
+
+
+    </tr>
+    {% for result in results %}
+
+    <tr>
+        <td>{{ result.order_id }}</td>
+
+        <td>{{result.quote}}</td>
+
+    </tr>
+    {% endfor %}
+
+
+</table>
+
+<table class="table-striped table-bordered">
+    <thead>
+    <th>Imei</th>
+    <th>Model</th>
+    <th>Storage</th>
+    <th>Grade</th>
+    <th>Quote</th>
+    <th>Accepted</th>
+    <th>New Quote</th>
+    </thead>
+
+    {% for device in devices %}
+    <tr>
+
+   <td> {{device.imei}}</td>
+        <td> {{device.device_model}}</td>
+        <td> {{device.storage_type_name}}</td>
+        <td>{{device.grade_name}}</td>
+        <td> {{device.order_quote}}</td>
+        <td>{{device.accepted}}</td>
+        <td>
+            <form class="form" action="secquotedevices" method="POST">
+            {% if device.accepted==1 %}
+            Offer Accepted
+                <input type="hidden" name="{{device.imei}}" value="{{device.order_quote}}" />
+            {% elseif device.forza_order_status==14 %}
+                This device will be recycled
+                <input type="hidden" name="{{device.imei}}" value=0 />
+                {% else %}
+
+                <input type="text" name="{{device.imei}}" />
+            {% endif %}
+
+        </td>
+    </tr>
+    {% endfor %}
+  <tr><td>  <button class="btn btn-primary" name="submit">Submit</button>
+    </form>
+    </td></tr>
+</table>
+<br />
+<p>Please enter total offer here</p>
+<form class="form" action="submitsecondquote" method="POST">
+    <label>Set Second Offer</label>
+    <input type="hidden" name="order_id" value="{{result.order_id}}">
+    <input type="text" name="quote" />
+    <button class="btn btn-primary" name="submit">Submit</button>
+</form>
+
+{{message}}
+
+{% endblock %}

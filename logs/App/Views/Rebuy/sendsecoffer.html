@@ -1,0 +1,50 @@
+{% extends "rebuybaselocal.html" %}
+{#% extends "rebuybase.html" %#}
+{% block title %} Rebuy {% endblock %}
+
+{% block body %}
+
+<h1>Send Second Offer</h1>
+
+<table class="table">
+
+    <tr>
+
+        <td>Customer Id</td>
+        <td>Customer First Name</td>
+        <td>Customer Last Name</td>
+        <td>Customer Type</td>
+        <td>Customer Email</td>
+        <td>Customer Phone Number</td>
+        <td>Send email</td>
+        <td>contact by phone</td>
+
+
+    </tr>
+
+    {% for result in results %}
+    <tr>
+        <td>{{result.customer_id}}</td>
+        <td>{{result.customer_first_name}}</td>
+        <td>{{result.customer_last_name}}</td>
+        <td>{{result.customer_type}}</td>
+        <td>{{result.customer_email}}</td>
+        <td>{{result.customer_phone_no}}</td>
+
+        <td><a href="sendsecmail"><button class="btn btn-success" name="sendemail" >Send Mail</button></a></td>
+        <td><button class="btn btn-success" name="call" >Call By Phone</button></td>
+
+
+    </tr>
+
+
+
+
+
+    {% endfor %}
+
+
+
+</table>
+
+{% endblock %}

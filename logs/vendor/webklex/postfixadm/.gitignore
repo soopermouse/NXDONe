@@ -1,0 +1,17 @@
+/node_modules
+/public/storage
+/public/hot
+/storage/*.key
+/vendor
+/.idea
+Homestead.json
+Homestead.yaml
+.env
+/resources/assets/images/resources/
+/resources/assets/bower/
+/composer.lock
+/config/postfixadm.php
+/storage/patches/1*
+/gulp.env
+/resources/assets/tmp/
+/installer.lock

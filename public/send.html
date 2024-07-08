@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>API</title>
+    <style>
+
+        .btn{
+            border: 1px solid black;padding:10px;display:inline-block;
+
+
+        }
+    </style>
+</head>
+<body>
+
+ID: <input type="number" name="imei" id="imei" value=""><br>
+
+
+`<div class='btn' id="btncheck">Get Data</div>
+<div id="output"></div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+    //$( document ).ready(function() {
+
+    ///second button
+
+    $('#btncheck').on('click', function () {
+        //var val1 = $('#name').val();
+        var vars={
+            imei:$('#imei').val()
+
+            ,action:'GET'
+
+
+        }
+        $.ajax({
+            url:"http://forza-refurbished.co.uk/erp/imeiapi.php"
+            //url: "https://api.myjson.com/bins/16l1z"
+
+            , data: vars
+            , type: "POST"
+            , dataType: "json"
+        }).done(function (data){
+            console.log(data);
+            var output='';
+            var d=data.response[0];
+
+            if(d)
+            {
+                output+='item found IMEI '+data.imei+' warranty '+data.response[0]['warranty']+'<br>'+data.response[0]['response']+'<br><a href="'+data.response[0]['url']+'">Start Order</a><br>';
+
+            }
+            else{
+                output+='incorrect imei Please try again';
+            }
+            $('#output').html(output);
+        }).fail(function (xhr, textstatus) {
+            console.log(xhr);
+
+
+            console.log(textstatus);
+        })
+    })
+
+</script>

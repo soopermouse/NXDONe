@@ -1,0 +1,70 @@
+{% extends "rebuybaselocal.html" %}
+{#% extends "rebuybase.html" %#}
+
+{% block title %} Rebuy {% endblock %}
+
+{% block body %}
+
+<h1>Send Second Offer Email</h1>
+
+
+<br />
+<br />
+<h3>Total Offer is {{quote}}</h3>
+
+<table class="table-striped table-bordered">
+    <thead>
+    <th>Device IMEI</th>
+    <th>Model</th>
+    <th>Storage</th>
+    <th>Condition</th>
+    <th>Connection</th>
+    <th>Colour</th>
+    <th>Device Offer</th>
+
+    </thead>
+    {% for result in results %}
+    <tr>
+        <td>{{result.imei}}</td>
+        <td>{{result.device_model}}</td>
+        <td>{{result.storage_type_name}}</td>
+        <td>{{result.grade_name}}</td>
+        <td>{{result.connection_type_name}}</td>
+        <td>{{result.colour_name}}</td>
+        <td>{{result.quote}}</td>
+
+
+    </tr>
+    {% endfor %}
+</table>
+<br />
+<br />
+
+
+{#<form action="sendsecondoffermail" method="post" enctype="multipart/form-data">
+
+    <h2>Send Mail to Client</h2>
+    <p>  Name* <br />
+        <input type="text" name="name" id="name" required />
+    </p>
+
+    <p> Email* <br />
+        <input type="email" name="email" id="email" required />
+    </p>
+
+    <p>Email body <br />
+        <textarea name="msg" id="msg" rows="4" cols="50" >Please enter the offer amount ONLY </textarea>
+    </p>
+
+    <input type="submit" name="submit" />
+</form>#}
+
+<form class="form" method="POST" action="sendsecondoffermail">
+    <input type="hidden" name="firstname" value="{{firstname}}" />
+    <input type="hidden" name="lastname" value="{{lastname}}" />
+    <input type="hidden" name="quote" value="{{quote}}" />
+    <input type="hidden" name="email" value="{{email}}" />
+    <input type="submit" name="submit" />
+</form>
+
+{% endblock %}

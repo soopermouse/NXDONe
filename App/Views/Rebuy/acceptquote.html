@@ -1,0 +1,65 @@
+{% extends "rebuybaselocal.html" %}
+{#% extends "rebuybase.html" %#}
+
+{% block title %} Rebuy {% endblock %}
+
+{% block body %}
+<h1>Accept Offer</h1>
+Please accept or refuse our offer below
+
+<h3>Total Offer is {{quote}}</h3>
+
+<table class="table-striped table-bordered">
+    <thead>
+    <th>Device IMEI</th>
+    <th>Model</th>
+    <th>Storage</th>
+    <th>Condition</th>
+    <th>Connection</th>
+    <th>Colour</th>
+    <th>Device Offer</th>
+    <th></th>
+
+    </thead>
+
+    {% for result in results %}
+    <tr>
+        <td>{{result.imei}}</td>
+        <td>{{result.device_model}}</td>
+        <td>{{result.storage_type_name}}</td>
+        <td>{{result.grade_name}}</td>
+        <td>{{result.connection_type_name}}</td>
+        <td>{{result.colour_name}}</td>
+        <td>{{result.order_quote}}</td>
+        <td>
+            <form class="form" action="acceptchoices" method="POST">
+
+            <input type="radio" name="{{result.imei}}" value="accept"> Accept<br>
+            <input type="radio" name="{{result.imei}}" value="refuse"> Refuse<br>
+
+
+
+    </tr>
+    {% endfor %}
+        <tr>
+            <td>
+        <button class="btn btn-success" name="Submit">Submit</button>
+    </form>
+    </td> </tr>
+
+</table>
+<br />
+<br />
+Click here to accept the whole order
+<form class ="form" action="confirm" method="POST">
+
+
+    <button class="btn-success btn-lg" name="accept_button" value="Accept" />Accept</button></form>
+<form class ="form" action="refusequote" method="POST">
+    <button class="btn-danger btn-sm" name="refuse_button" value="Refuse" />Refuse</button></form>
+</form>
+
+
+{% endblock %}
+
+

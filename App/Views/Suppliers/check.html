@@ -1,0 +1,32 @@
+{% extends "suppliersbase.html" %}
+
+{% block title %} Suppliers {% endblock %}
+
+{% block body %}
+
+
+<h1>Device Check</h1>
+
+<table class="table-striped table-bordered">
+    <thead>
+    <th>order id</th>
+    <th>imei</th>
+    <th>device model</th>
+    <th>storage</th>
+    <th>Inspect</th>
+    </thead>
+
+    {% for result in results %}
+    <tr>
+        <td>{{result.order_id}}</td>
+        <td>{{result.device_imei}}</td>
+        <td>{{result.device_model}}</td>
+        <td>{{result.storage_name}}</td>
+        <td><a href="{{result.device_imei}}/inspect"><button class="btn-warning">Check Device</button></a></td>
+
+    </tr>
+
+    {% endfor %}
+</table>
+
+{% endblock %}

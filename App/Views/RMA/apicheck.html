@@ -1,0 +1,22 @@
+{% block title %} RMA {% endblock %}
+
+{% block body %}
+
+
+<h1>RMA Check</h1>
+Welcome to the RMA Module
+</br>
+In order to start the RMA process we first need to check your device's IMEI.
+
+Please enter the IMEI below
+</br>
+<form class="form" action="checkimeiapi" method="POST">
+
+    <label>IMEI</label>
+    <input name="imei" type="text" />
+    <button class="btn btn-success" type="submit" name="submit">Submit</button>
+
+
+
+</form>
+{% endblock %}

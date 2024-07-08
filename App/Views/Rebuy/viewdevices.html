@@ -1,0 +1,45 @@
+{% extends "rebuybaselocal.html" %}
+{#% extends "rebuybase.html" %#}
+{% block title %} Rebuy {% endblock %}
+
+{% block body %}
+
+<h1>Rebuy Order Device Status and Actions</h1>
+<table class="table-striped table-bordered">
+    <thead>
+
+    <th>Order Id</th>
+    <th>device_id</th>
+    <th>device imei</th>
+    <th> device model</th>
+    <th> device storage</th>
+    <th>device grade</th>
+    <th>device quote</th>
+    <th>device forza status</th>
+    <th> device customer status</th>
+
+    </thead>
+
+    {% for result in results %}
+    <tr>
+        <td>{{result.order_id}}</td>
+        <td>{{result.device_id}}</td>
+        <td>{{result.device_imei}}</td>
+        <td>{{result.device_model}}</td>
+        <td>{{result.device_storage}}</td>
+        <td>{{result.grade_name}}</td>
+        <td>{{result.device_quote}}</td>
+        <td>{{result.status_name}}</td>
+        <td>{{result.cust_status_name}}</td>
+
+
+
+
+
+
+    </tr>
+
+
+    {% endfor %}
+</table>
+{% endblock %}

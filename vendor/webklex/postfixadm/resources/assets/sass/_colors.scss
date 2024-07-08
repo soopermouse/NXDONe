@@ -1,0 +1,33 @@
+/*
+ * File: _colors.scss
+ * Category: -
+ * Author: MSG
+ * Created: 22.03.17 10:46
+ * Updated: -
+ *
+ * Description:
+ *  -
+ */
+
+
+$color-black: rgba(0,0,0,0.87);
+$color-white: rgba(197, 197, 197, 0.84);
+$color-disabled: $color-white;
+
+$brand-primary: rgb(0, 76, 110);
+$brand-primary-2: rgba(0, 101, 145, 1);
+$brand-info: $brand-primary-2;
+$brand-success: rgb(32, 114, 50);
+$brand-warning: rgb(198, 84, 56);
+$brand-danger: rgb(198,40,40);
+
+
+$color-success: $brand-success;
+$color-info: $brand-primary-2;
+$color-warning: $brand-warning;
+$color-danger:  $brand-danger;
+
+
+// Brands
+//$brand-primary: #234891;
+//$brand-primary-2: #0D296A;

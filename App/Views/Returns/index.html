@@ -1,0 +1,33 @@
+{% extends "returnbase.html" %}
+{% block title %} Returns{% endblock %}
+
+{% block body %}
+<h2> Return Orders</h2>
+
+<table class="table-striped table-bordered">
+    <thead>
+    <th>Return id</th>
+    <th>Order Id</th>
+    <th>Imei</th>
+    <th>Order Date</th>
+    <th>Return date</th>
+
+    </thead>
+
+    {% for result in results %}
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+
+
+
+
+
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}

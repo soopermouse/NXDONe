@@ -1,0 +1,47 @@
+{% extends "rebuybaselocal.html" %}
+{#% extends "rebuybase.html" %#}
+
+{% block title %} Rebuy {% endblock %}
+
+{% block body %}
+
+<h1>Edit Order</h1>
+
+
+
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">Order_id</th>
+        <th scope="col">Customer Email</th>
+        <th scope="col">Order Date</th>
+        <th scope="col">Device_model</th>
+        <th scope="col">Device_quote</th>
+        <th scope="col">Edit Order</th>
+
+
+
+
+
+
+
+    </tr>
+
+
+
+    </thead>
+    {% for result in results %}
+    <tr>
+        <td>{{ result.order_id }}</td>
+   <td>{{ result.customer_email }}</td>
+        <td> {{result.order_date}}</td>
+        <td> {{result.payment_type_id}}</td>
+    <td></td>
+        <td><a href="/rebuy/{{ result.order_id }}/orderedit">Edit Order</a></td>
+
+    </tr>
+    {% endfor %}
+</table>
+
+
+{% endblock %}

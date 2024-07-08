@@ -1,0 +1,39 @@
+{% extends "rebuybaselocal.html" %}
+{#% extends "rebuybase.html" %#}
+
+{% block title %} Rebuy {% endblock %}
+
+{% block body %}
+<h1>Sales Tags</h1>
+
+
+
+
+<table class="table">
+    <tr>
+        <td>Order Id</td>
+        <td>Order Date</td>
+        <td>Device Model</td>
+        <td>Customer Status</td>
+        <td>Forza Status</td>
+        <td>Action</td>
+        <td>Quote</td>
+        <td>Sales Tag</td>
+
+
+    </tr>
+    {% for result in results %}
+
+    <tr>
+        <td>{{ result.order_id }}</td>
+        <td>{{ result.order_date }}</td>
+        <td>{{ result.device_model }}</td>
+        <td>{{result.cust_status_name}}</td>
+        <td>{{result.status_name}}</td>
+        <td>{{result.next_action}} </td>
+        <td>{{result.order_quote}}</td>
+        <td>{{result.tag_name}}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

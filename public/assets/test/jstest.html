@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS test for Forza Javascript library</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="/assets/css/forza-erp.css">
+    <script src="/assets/js/forza-erp.js"></script>
+</head>
+<body>
+<h1>Forza JS test page</h1>
+<form>
+    <div class="form-group">
+        <label for="testinput">Test textarea with validation</label>
+        <textarea id="testinput" class="form-control" rows="3" onkeypress="checkScanInput(event)"></textarea>
+    </div>
+</form>
+
+<button type="button" class="btn btn-primary" onclick="test()">JS test</button>
+
+<script>
+    function checkScanInput(event) {
+        var str = document.getElementById("testinput");
+        var x = event.charCode || event.keyCode;
+        var y = String.fromCharCode(x);
+        console.log('x is ' + x + ' y is ' + y);
+
+        if (str.value.match(/[^0-9,]/g)) {
+            alert('Only digits are allowed.');
+        }
+        else if (y === ',') {
+            console.log('the whole string is ' + str.value);
+            var res = str.value.split(",");
+            res.forEach(checkLength);
+            var last = res.pop();
+            console.log('last element is ' + last);
+            checkDuplicate(res, last);
+        }
+    }
+
+    function checkLength(value, index, array) {
+        console.log('checking length of ' + value + ' length is ' + value.length);
+        if (value.length != 15) {
+            alert("This number shall be 15-digit: " + value);
+        }
+    }
+
+    function checkDuplicate(items, last) {
+        console.log('checkDuplicate is called, last is ' + last);
+        items.forEach(function(value, index, array){
+            if (value == last) {
+                alert('This value already exists in the list ' + value);
+            }
+        });
+    }
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,116 @@
+{% extends "suppliersbase.html" %}
+
+{% block title %} Suppliers {% endblock %}
+
+{% block body %}
+
+
+<h1>Inspect Device</h1>
+
+<table class="table">
+    <tr>
+        <td>Order Id</td>
+        <td>IMEI</td>
+        <td>Device Model</td>
+        <td>Device Storage</td>
+        <td>Device Connection</td>
+        <td>Device Colour</td>
+        <td>Device Condition</td>
+
+
+
+
+
+
+    </tr>
+    {% for result in results %}
+
+    <tr>
+        <td>{{result.order_id }}</td>
+        <td>{{result.IMEI}}</td>
+        <td>{{result.device_model }}</td>
+        <td>{{result.storage_type_name}}</td>
+        <td>{{result.connection_type_name}}</td>
+        <td>{{result.colour_name}}</td>
+        <td>{{result.condition_name}}</td>
+
+    </tr>
+    {% endfor %}
+</table>
+
+Inspect Device
+
+<form action ="inspectsubmit" method="POST">
+    <input type="hidden" name="order_id" value="" />
+    <h3>Device description</h3>
+    <label>Device Type</label>
+    <select class="form-control" name="device_type">
+        <option value="1">IPhone SE</option>
+        <option value="2">IPhone 6</option>
+        <option value="3">IPhone 6S</option>
+        <option value="4">IPhone 6S Plus</option>
+        <option value="5">IPhone 7</option>
+        <option value="6">IPhone 8</option>
+        <option value="7">IPad 4</option>
+        <option value="8">IPad Mini 1</option>
+        <option value="9">IPad Mini 2</option>
+        <option value="10">IPad Mini 3</option>
+        <option value="11">IPad Mini 4</option>
+        <option value="12">IPad Air 1</option>
+        <option value="13">IPad Air 2</option>
+        <option value="14">IPad 2017</option>
+        <option value="15">IPhone 7Plus</option>
+
+    </select>
+    <br/><label>Storage</label>
+    <select class="form-control" name="device_storage">
+        <option value="1">16 GB</option>
+        <option value="2">32 GB</option>
+        <option value="3">64 GB</option>
+        <option value="4">128 GB</option>
+        <option value="5">256 GB</option>
+    </select>
+    <br/>
+    <label>Connection</label>
+    <select class="form-control" name="device_connection">
+        <option value="1">Wi Fi</option>
+        <option value="2">Wifi and 4G</option>
+        <option value="3">N/A (phone)</option>
+    </select><br/>
+    <label>Condition</label>
+    <select class="form-control" name="device_condition" >
+        <option value="1">Not Functional</option>
+        <option value="2">100% Functional like New/Light Use</option>
+        <option value="3">100% Functional like Visible Use</option>
+    </select>
+    <br/>
+
+
+
+    <label>Colour</label>
+    <select  class="form-control" name="device_colour" >
+        <option value="1">Jet Black</option>
+        <option value="2">Red</option>
+        <option value="3">Rose Gold</option>
+        <option value="4">Silver</option>
+        <option value="5">Black</option>
+        <option value="6">Matte Black</option>
+        <option value="7">Gold</option>
+        <option value="8">White</option>
+        <option value="9">Blue</option>
+        <option value="10">Space Gray</option>
+
+    </select>
+    <br/>
+    <label>Comments</label>
+    <textarea class="form-control" name="device_comments">Enter comments here...</textarea>
+
+
+
+
+    <button class="btn btn-primary" name="submit">Submit</button>
+</form>
+
+
+
+{% endblock %}

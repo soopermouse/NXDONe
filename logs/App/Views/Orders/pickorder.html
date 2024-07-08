@@ -1,0 +1,57 @@
+{% extends "orderbaselocal.html" %}
+{#% extends "rebuybase.html" %#}
+
+{% block title %}   Reports {% endblock %}
+
+
+{% block body %}
+
+<H1> Pick Orders</H1>
+
+<table class="table table-bordered table-striped">
+    <thead>
+    <td>Order Id</td>
+    <td>Order Date</td>
+    <td>Customer Id</td>
+    <td>Price</td>
+    <td>Device Type</td>
+    <td>Device Grade</td>
+    <td>Device Storage</td>
+
+
+
+
+
+
+    </thead>
+
+    {% for result in results %}
+    <tr>
+        <td>{{result.order_id}}</td>
+        <td>{{result.order_date}}</td>
+        <td>{{result.customer_id}}</td>
+        <td>{{result.device_price}}</td>
+        <td>{{result.device_model}}</td>
+        <td>{{result.device_grade}}</td>
+        <td>{{result.storage_type_name}}</td>
+
+
+
+
+    </tr>
+
+    {% endfor %}
+</table>
+
+<form class="form" action="picksubmit" method="POST">
+
+
+    <label>Scan IMEI</label>
+    <input type="text" name="imei" />
+
+    <button class="btn btn-primary" name="submit">Submit</button>
+
+
+
+</form>
+{% endblock %}

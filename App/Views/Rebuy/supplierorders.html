@@ -1,0 +1,36 @@
+{% extends "rebuybaselocal.html" %}
+
+{% block title %} Suppliers {% endblock %}
+
+{% block body %}
+
+
+<h1>Supply Orders</h1>
+
+<table class="table-striped table bordered">
+
+    <thead>
+    <th>Order_id</th>
+    <th>order date</th>
+    <th>supplier codename</th>
+    <th>device model</th>
+    <th>device quantity</th>
+    <th>Order details</th>
+
+    </thead>
+    {% for result in results %}
+    <tr>
+        <td>{{result.order_id}}</td>
+        <td>{{result.order_date}}</td>
+        <td>{{result.supplier_codename}}</td>
+        <td>{{result.device_model}}</td>
+        <td>{{result.device_quantity}}</td>
+        <td><a href="{{result.order_id}}/orderdetails"><button class="btn btn-warning">Order Details</button></a></td>
+
+
+
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}

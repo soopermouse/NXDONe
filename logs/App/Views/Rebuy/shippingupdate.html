@@ -1,0 +1,37 @@
+{% extends "rebuybaselocal.html" %}
+{#% extends "rebuybase.html" %#}
+
+{% block title %} Rebuy {% endblock %}
+
+{% block body %}
+
+<h1>Shipping Status Updated</h1>
+
+<table class="table">
+    <tr>
+        <td>Order Id</td>
+        <td>Order Date</td>
+        <td>Shipping Date</td>
+        <td>Shipping status</td>
+        <td>Next Action</td>
+
+
+
+
+    </tr>
+    {% for result in results %}
+
+    <tr>
+        <td>{{ result.order_id }}</td>
+        <td>{{ result.order_date }}</td>
+        <td>{{ result.shipping_date }}</td>
+        <td>{{ result.shipping_status_name }}</td>
+         <td><a href="{{result.order_id}}/{{result.button_link}}"><button class="btn btn-success" name="actionbutton">{{result.button_text}}</button></a> </td>
+
+
+
+
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

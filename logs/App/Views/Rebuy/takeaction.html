@@ -1,0 +1,38 @@
+
+{% extends "rebuybaselocal.html" %}
+{#% extends "rebuybase.html" %#}
+{% block title %} Rebuy {% endblock %}
+
+{% block body %}
+<h1>Take Action</h1>
+
+<table class="table">
+    <tr>
+        <th scope="col">Order Id</td>
+        <th scope="col">Device Model</td>
+        <th scope="col">Device Storage</td>
+        <th scope="col">Device Connection</td>
+        <th scope="col">Device Condition</td>
+        <th scope="col">Return</td>
+        <th scope="col">Second Offer</td>
+
+
+
+
+
+    </tr>
+    {% for result in results %}
+
+    <tr>
+        <td>{{ result.order_id }}</td>
+        <td>{{ result.device_model }}</td>
+        <td> {{result.storage_type_name}}</td>
+        <td>{{result.connection_type_name}}</td>
+        <td>{{result.condition_name}}</td>
+        <td><a href="{{result.button_link}}"><button class="btn btn-success" name="actionbutton">{{result.button_text}}</button></a></td>
+        <td><a href="entersecondoffer"><button class="btn btn-primary">SECOND OFFER</button></a></td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}

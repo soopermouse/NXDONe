@@ -1,0 +1,44 @@
+{% extends "csbase.html" %}
+{% block title %}RMA Intake {% endblock %}
+{% block body %}
+<h1> RMA Accept</h1>
+
+
+<table class="table table-md table-striped table-bordered">
+    <thead>
+    <th>RMA ID</th>
+    <th>RMA Date</th>
+    <th>Device Imei</th>
+    <th>Defect</th>
+    <th>Comments</th>
+
+    <th>Create shipping label</th>
+
+
+    </thead>
+    {% for result in results %}
+    <tr>
+        <td>{{result.rma_id}}</td>
+        <td>{{result.rma_date}}</td>
+        <td>{{result.device_imei}}</td>
+        <td>{{result.problem_name}}</td>
+        <td>{{result.comments}}</td>
+
+        <td><a href="rmashippinglabel"><button class="btn btn-danger">Send Label</button></a></td>
+
+
+
+
+    </tr>
+
+
+
+    {% endfor %}
+
+
+
+
+</table>
+
+
+{% endblock %}

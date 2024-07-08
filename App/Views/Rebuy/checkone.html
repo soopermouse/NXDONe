@@ -1,0 +1,55 @@
+{% extends "rebuybaselocal.html" %}
+{#% extends "rebuybase.html" %#}
+
+{% block title %} Rebuy {% endblock %}
+
+{% block body %}
+
+<h1>Check Order</h1>
+<table class="table-striped table-bordered">
+    <thead>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+
+
+    </thead>
+
+</table>
+
+
+<form method="post" action="checksubmitone">
+    Device Check
+
+    <div>
+        <input type="checkbox"  name="check[]"
+               value="simlock" />
+        <label for="simlock">Sim Lock</label>
+    </div>
+
+    <div>
+        <input type="checkbox" name="check[]"
+               value="icloud" />
+        <label for="ICloud">I-Cloud</label>
+    </div>
+
+    <div>
+        <input type="checkbox"  name="check[]"
+               value="notstolen" />
+        <label for="notstolen">Not Stolen</label>
+    </div>
+
+    <div>
+
+        <label for IMEL>IMEI</label>
+        <input type="text" name="IMEI" />
+
+
+    </div>
+    <button class="submit" name="submit">Submit</button>
+
+</form>
+
+{% endblock %}

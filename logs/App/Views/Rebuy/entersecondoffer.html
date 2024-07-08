@@ -1,0 +1,48 @@
+{% extends "rebuybaselocal.html" %}
+{#% extends "rebuybase.html" %#}
+
+{% block title %} Rebuy Submit {% endblock %}
+{% block body %}
+<h1>Enter second quote</h1>
+
+
+<table class="table">
+    <tr>
+        <td>Order Id</td>
+        <td>Device Model</td>
+        <td>Device Storage</td>
+        <td>Device Connection</td>
+        <td>Device Condition</td>
+        <td>First Offer</td>
+
+
+
+
+
+
+
+    </tr>
+    {% for result in results %}
+
+    <tr>
+        <td>{{ result.order_id }}</td>
+        <td>{{ result.device_model }}</td>
+        <td> {{result.storage_type_name}}</td>
+        <td>{{result.connection_type_name}}</td>
+        <td>{{result.condition_name}}</td>
+        <td>{{result.order_quote}}</td>
+
+    </tr>
+    {% endfor %}
+</table>
+<br />
+
+<form class="form" action="submitsecondquote" method="POST">
+    <label>Set Second Offer</label>
+    <input type="text" name="quote" />
+    <button class="btn btn-primary" name="submit">Submit</button>
+</form>
+
+
+
+{% endblock %}

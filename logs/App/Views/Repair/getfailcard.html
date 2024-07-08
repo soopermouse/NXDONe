@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %} Repair{% endblock %}
+
+{% block body %}
+
+<h1>Get Failcard</h1>
+
+{% for result in results %}
+
+<p>
+    Battery: {{result.battery}}<br />
+    Speakers  {{result.speakers}}<br />
+    LCD     {{result.lcd}}<br />
+    Camera   {{result.camera}}<br />
+    Microphone  {[result.microphone}}<br />
+    Powerbutton  {{result.powerbutton}}<br />
+
+
+
+<a href="{{result.order_id}}/repair"><button class="btn btn-danger">Start Repair</button></a>
+
+</p>
+
+{% endfor %}
+
+{% endblock %}

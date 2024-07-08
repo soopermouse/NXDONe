@@ -1,0 +1,27 @@
+{% extends "rmabase.html" %}
+
+{% block title %} RMA {% endblock %}
+
+{% block body %}
+
+<div class="row">
+    <div class="col-md-6">
+        <h1>Create Return Label</h1>
+        {% for result in results %}
+
+        {{result.customer_first_name}}  {{result.customer_last_name}}</br>
+        {{result.street_no}}</br>
+        {{result.addition}}</br>
+        {{result.street_name}}</br>
+        {{result.city}}</br>
+        {{result.country}}</br>
+
+
+        {% endfor %}
+        <a href="printlabel"><button class="btn btn-danger">Print Label</button></a>
+        <a href="closeorder"><button class="btn btn-danger">Close Order</button></a>
+    </div>
+</div>
+
+
+  {% endblock %}

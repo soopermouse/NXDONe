@@ -1,0 +1,39 @@
+{% extends "suppliersbase.html" %}
+
+{% block title %} Suppliers Index {% endblock %}
+
+{% block body %}
+
+
+<h1>Order Details</h1>
+
+<table class="table-bordered table-striped">
+    <thead>
+    <th>Order Id</th>
+    <th>Supplier</th>
+    <th>Device Model</th>
+    <th>Device storage</th>
+    <th>Quantity</th>
+    <th>Split</th>
+
+
+    </thead>
+
+    {% for result in results %}
+    <tr>
+        <td>{{result.order_id}}</td>
+        <td>{{result.supplier_codename}}</td>
+        <td>{{result.device_model}}</td>
+        <td>{{result.storage_type_name}}</td>
+        <td>{{result.device_quantity}}</td>
+        <td><a href="ordersplit"><button class="btn btn-warning">Split Order</button></a></td>
+
+
+
+
+    </tr>
+    {% endfor %}
+</table>
+{{suborders}}</br>
+{{rest}}
+{% endblock %}

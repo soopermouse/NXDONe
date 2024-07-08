@@ -1,0 +1,16 @@
+{% extends "rebuybaselocal.html" %}
+{#% extends "rebuybase.html" %#}
+
+{% block title %} Rebuy {% endblock %}
+
+{% block body %}
+
+<h1>Check Mass Order</h1>
+
+{% for result in results %}
+
+{{result}}<br>
+{% endfor %}
+
+<a href="supordercheck"><button  class="btn tbn-success">Order Report</button></a>
+{% endblock %}

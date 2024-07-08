@@ -1,0 +1,43 @@
+{% extends "base-generic.html" %}
+
+{% block leftmenu %}
+
+<div class="forza-bg-stream-8 forza-col">
+    <nav class="navbar fixed-left forza-left-menu">
+        <div class="container-fluid">
+            <ul class="nav flex-column list-group">
+                <li class="nav-item">
+                    <div class="forza-left-menu-item">
+                        <h4>IT</h4>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link forza-left-menu-item active" href="http://forza-refurbished.co.uk/erptest/IT/index">IT Overview <span class="sr-only">(current)</span></a>
+                <li class="nav-item">
+                    <a class="nav-link forza-left-menu-item" href="http://forza-refurbished.co.uk/erptest/IT/API">API control</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link forza-left-menu-item" href="http://forza-refurbished.co.uk/erptest/IT/users">Users</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link forza-left-menu-item" href="http://forza-refurbished.co.uk/erptest/IT/Tickets">Tickets</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link forza-left-menu-item" href="http://forza-refurbished.co.uk/erptest/IT/reports">Reports</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col-md-12">
+        {% block body %} {% endblock %}
+    </div>
+</div>
+
+{% endblock %}

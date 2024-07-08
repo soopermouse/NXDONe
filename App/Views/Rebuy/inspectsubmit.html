@@ -1,0 +1,54 @@
+{% extends "rebuybaselocal.html" %}
+{#% extends "rebuybase.html" %#}
+
+{% block title %} Inspection Results {% endblock %}
+
+{% block body %}
+
+<h3>Inspection submitted successfully</h3>
+
+<table class="table">
+    <tr>
+        <td>Device Type</td>
+        <td>Device Storage</td>
+        <td>Device Connection</td>
+        <td>Device Condition</td>
+        <td>Device Colour</td>
+        <td>Device Comments</td>
+
+        <td>Next Action</td>
+
+
+
+
+
+    </tr>
+{% for result in results %}
+
+<tr>
+   <td>{{result.device_model}}</td>
+    <td>{{result.storage_type_name}}</td>
+    <td>{{result.connection_type_name}}</td>
+    <td>{{result.condition_name}}</td>
+    <td>{{result.colour_name}}</td>
+    <td>{{result.device_comments}}</td>
+    {#<td><a href="failcard"><button class="btn btn-primary" >Set Failcard</button></a></td>#}
+    <td><a href="{{result.button_link}}"><button class="btn btn-success" name="actionbutton">{{result.button_text}}</button></a></td>
+
+
+
+
+
+
+
+
+
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+{{message}}
+{% endblock %}

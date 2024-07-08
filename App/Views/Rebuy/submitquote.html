@@ -1,0 +1,40 @@
+{% extends "rebuybaselocal.html" %}
+{#% extends "rebuybase.html" %#}
+
+{% block title %} Rebuy Submit {% endblock %}
+
+{% block body %}
+<h1>Quote Submit</h1>
+
+{{message}}
+
+<table class="table table-bordered table-striped">
+    <thead>
+    <th>Order Id</th>
+    <th>Device Model</th>
+    <th>Device Condition</th>
+    <th>Quote</th>
+    <th>Next Action</th>
+
+    </thead>
+    {% for result in results %}
+    <tr>
+        <td>{{result.order_id}}</td>
+        <td>{{result.device_model}}</td>
+        <td>{{result.condition_name}}</td>
+        <td>{{result.order_quote}}</td>
+        <td><a href="../{{result.order_id}}/viewdevices"><button class="btn btn-success" name="actionbutton">Order Devices</button></a> </td>
+
+
+    </tr>
+{% endfor %}
+
+
+
+</table>
+
+
+
+
+
+{% endblock %}

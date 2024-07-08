@@ -1,0 +1,29 @@
+{% extends "rebuybaselocal.html" %}
+{#% extends "rebuybase.html" %#}
+{% block title %} Rebuy {% endblock %}
+
+{% block body %}
+<h2> Device Status</h2>
+<table class="table-striped table-bordered">
+
+    <thead>
+    <th>Imei</th>
+    <th>Status Name</th>
+    <th>Next Action name</th>
+    <th>Date Last Ation</th>
+    <th>Next Action </th>
+
+
+
+    </thead>
+    {% for result in results %}
+<tr>
+<td>{{result.imei}}</td>
+    <td>{{result.status_name}}</td>
+    <td>{{result.action_name}}</td>
+    <td>{{result.date_last_action}}</td>
+    <td><a href="{{result.imei}}/{{result.button_link}}"><btn class="btn-success">{{result.button_text}}</btn></a></td>
+</tr>
+</table>
+{% endfor %}
+{% endblock %}

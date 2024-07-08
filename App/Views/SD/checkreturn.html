@@ -1,0 +1,30 @@
+{% extends "csbase.html" %}
+{% block title %} Returns {% endblock %}
+
+{% block body %}
+<h2>Check Return by IMEI</h2>
+
+<table class="table-bordered table-striped">
+    <thead>
+    <th>Order ID</th>
+    <th>Device Imei</th>
+    <th>Order date</th>
+    <th></th>
+    <th></th>
+
+    </thead>
+
+    {% for result in results %}
+        <tr>
+            <td>{{result.order_id}}</td>
+            <td>{{result.device_imei}}</td>
+            <td>{{result.order_date}}</td>
+            <td></td>
+            <td></td>
+
+
+        </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}

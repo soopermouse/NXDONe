@@ -1,0 +1,128 @@
+{% extends "rebuybaselocal.html" %}
+{#% extends "rebuybase.html" %#}
+{% block title %} Rebuy {% endblock %}
+
+{% block body %}
+
+<h1>Rebuy</h1>
+
+welcome {{username}}
+ {#
+  {% if user_department=="rebuy" and user_role!="manager" %}
+<nav>
+
+
+        <a href="/rebuy">Index</a>|
+        <a href="/rebuy/overview">Overview</a>
+        <a href="/rebuy/checkorders">Check</a>|
+        <a href="/rebuy/status">Status</a>|
+        <a href="/rebuy/inspection">Inspection</a>|
+        <a href="/rebuy/quoteorders">Quote</a>|
+        <a href="/rebuy/mail">Mail</a>|
+        <a href="/rebuy/edit">Order Edit</a>|
+        <a href="/rebuy/reports">Reports</a>|
+        <a href="/rebuy/enterorder">Enter Test Orders</a>|
+
+
+</nav>
+{% endif %}
+{% if user.department!= "rebuy" and user.role!="administrator" %}
+ <h3>You are not authorized to see this page</h3>
+{% endif %}
+
+{% if user.role=="manager" %}
+<nav>
+    
+    <a href="/rebuy">Index</a>|
+    <a href="/rebuy/status">Status</a>|
+    <a href="/rebuy/inspect">Inspection</a>|
+    <a href="/rebuy/mail">Mail</a>|
+    <a href="/rebuy/edit">Order Edit</a>|
+    <a href="/rebuy/reports">Reports</a>|
+</nav>
+{% endif %}
+{% if user.department=="customer support" %}
+<nav>
+
+    <a href="/rebuy">Index</a>|
+    <a href="/rebuy/status">Status</a>|
+    <a href="/rebuy/mail">Mail</a>|
+    <a href="/rebuy/edit">Order Edit</a>|
+</nav>
+
+{% endif %} #}
+
+<div class="row">
+    <div class="col-md-3">
+        <h4>Service Desk Workflow</h4>
+        <p> <ul>
+            <li>Receive and scan in device</li>
+            <li>Update shipping status on <a href="shipping">Shipping Status</a> page</li>
+            <li>Check offers and send them to the customer from the <a href="mail">Mail</a> page</li>
+            <li>Check the status of offers on the <a href="status"> Status</a> page</li>
+            <li>If the offer is accepted, send it for payment on the <a href="payment">Payment</a> page</li>
+            <li>If the offer is rejected, send a second offer on <a href="secondoffer">Second Offer</a> page</li>
+            <li>If second offer is accepted, send it for payment on the <a href="payment">Payment</a> page</li>
+            <li>If the second offer is rejected, return the device on <a href="returns">Returns</a> page</li>
+            <li>If the customer requested it, send the device to be recycled on <a href="recycle">Recycle</a> page</li>
+            <li>Close the Order on <a href="close">Close Orders</a> page</li>
+        </ul></p>
+
+    </div>
+    <div class="col-md-1"></div>
+    <div class="col-md-3">
+    <h4>Technician Workflow</h4>
+        <p><ul>
+        <li>Check orders on the <a href="checkorders">Check</a> page and enter the details</li>
+        <li>If the device passes the check start Inspection on the <a href="Inspection">Inspection </a>page </li>
+        <li>Recycle the devices sent to Recycle on <a href="DoRecycle">Do Recycle</a> page</li>
+
+
+
+    </ul></p>
+</div>
+    <div class="col-md-1"></div>
+    <div class="col-md-3">
+        <h4>Manager Workflow</h4>
+        <ul><p>
+            <li>Check new orders on <a href="latestorders">Latest Orders</a> page</li>
+            <li>Check the status of orders on the <a href="reports">Reports</a> page</li>
+            <li>Set offers on <a href="quote">Offer</a> page</li>
+            <li>Send offers from <a href="mail">Mail</a> page</li>
+            <li>Set and send second offers from <a href="secondoffer">Second Offer</a>page</li>
+
+
+
+        </p></ul>
+    </div>
+</div>
+<div class="row">
+
+<h2> Orders by status</h2>
+
+<table class="table">
+    <tr>
+        <td>Order Id</td>
+
+        <td>Customer Status</td>
+        <td>Forza Status</td>
+        <td>Action</td>
+
+
+    </tr>
+    {% for result in results %}
+
+    <tr>
+        <td>{{ result.order_id }}</td>
+
+        <td>{{result.cust_status_name}}</td>
+        <td>{{result.status_name}}</td>
+        <td>{{result.action_name}} </td>
+    </tr>
+    {% endfor %}
+
+
+
+</table>
+</div>
+{% endblock %}

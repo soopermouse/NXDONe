@@ -1,0 +1,96 @@
+# Website Sitemap
+Sitemap: http://forza-refurbished.nl/sitemap.xml
+
+# Crawlers Setup
+User-agent: *
+
+# Allowable Index
+Allow: /*?p=
+Allow: /index.php/blog/
+Allow: /catalog/seo_sitemap/category/
+Allow: /catalogsearch/result/
+
+# Directories
+Disallow: /404/
+Disallow: /app/
+Disallow: /cgi-bin/
+Disallow: /downloader/
+Disallow: /errors/
+Disallow: /includes/
+Disallow: /lib/
+Disallow: /magento/
+Disallow: /pkginfo/
+Disallow: /report/
+Disallow: /scripts/
+Disallow: /shell/
+Disallow: /stats/
+Disallow: /var/
+
+# Paths (clean URLs)
+Disallow: /index.php/
+Disallow: /catalog/product_compare/
+Disallow: /catalog/category/view/
+Disallow: /catalog/product/view/
+Disallow: /catalogsearch/
+Disallow: /checkout/
+Disallow: /control/
+Disallow: /contacts/
+Disallow: /customer/
+Disallow: /customize/
+Disallow: /newsletter/
+Disallow: /poll/
+Disallow: /review/
+Disallow: /sendfriend/
+Disallow: /tag/
+Disallow: /wishlist/
+Disallow: /index.php/catalogsearch/result/
+Disallow: /index.php/catalog/product_compare/
+Disallow: /index.php/catalog/category/view/
+Disallow: /index.php/catalog/product/view/
+Disallow: /index.php/catalogsearch/
+Disallow: /index.php/checkout/
+Disallow: /index.php/control/
+Disallow: /index.php/contacts/
+Disallow: /index.php/customer/
+Disallow: /index.php/customize/
+Disallow: /index.php/newsletter/
+Disallow: /index.php/poll/
+Disallow: /index.php/review/
+Disallow: /index.php/sendfriend/
+Disallow: /index.php/tag/
+Disallow: /index.php/wishlist/
+Disallow: /*order=
+Disallow: /*dir=
+Disallow: /*limit=
+Disallow: /*id=
+Disallow: /*max=
+Disallow: /*min=
+Disallow: /*gclid=
+Disallow: /*___from_store=
+Disallow: /*___store=
+Disallow: /*description=
+Disallow: /*name=
+Disallow: /*short_description=
+
+# Files
+Disallow: /cron.php
+Disallow: /cron.sh
+Disallow: /error_log
+Disallow: /install.php
+Disallow: /LICENSE.html
+Disallow: /LICENSE.txt
+Disallow: /LICENSE_AFL.txt
+Disallow: /STATUS.txt
+
+# Paths (no clean URLs)
+Disallow: /*?selector_*=*
+Disallow: /*.css$
+Disallow: /*.php$
+Disallow: /*?p=*&
+Disallow: /*?SID=
+Disallow: *PHPSESSID
+
+# Category Filter
+Disallow: /*?category=
+Disallow: /*?color=
+Disallow: /*?memory=

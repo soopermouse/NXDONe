@@ -1,0 +1,36 @@
+{% extends "rmabase.html" %}
+
+{% block title %} Rebuy {% endblock %}
+
+{% block body %}
+
+<h1>Shipping Status Updated</h1>
+
+<table class="table">
+    <tr>
+        <td>Order Id</td>
+        <td>Order Date</td>
+        <td>Shipping Date</td>
+        <td>Shipping status</td>
+
+
+
+
+
+    </tr>
+    {% for result in results %}
+
+    <tr>
+        <td>{{ result.rma_id }}</td>
+        <td>{{ result.rma_date }}</td>
+        <td>{{ result.shipping_date }}</td>
+        <td>{{ result.shipping_status_name }}</td>
+
+
+
+
+
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

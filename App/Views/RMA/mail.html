@@ -1,0 +1,50 @@
+{% extends "rmabase.html" %}
+
+{% block title %} RMA {% endblock %}
+
+{% block body %}
+
+<h1>RMA Mail</h1>
+
+<table class="table-striped table-bordered">
+    <thead>
+       <th>Rma ID</th>
+       <th>RMA Date</th>
+       <th>Customer First Name</th>
+       <th>Customer Last Name</th>
+       <th>Customer Email</th>
+       <th>RMA Status</th>
+       <th>NEXT ACTION</th>
+    <th>Send Email</th>
+
+
+
+    </thead>
+
+    {% for result in results %}
+
+    <tr>
+        <td>{{result.rma_id}}</td>
+        <td>{{result.rma_date}}</td>
+        <td>{{result.customer_first_name}}</td>
+        <td>{{result.result_customer_last_name}}</td>
+        <td>{{result.customer_email}}</td>
+        <td>{{result.status_type}}</td>
+        <td>{{result.next_action}}</td>
+        <td><a href="{{result.rma_id}}/mailsent"><button class="btn btn-success">Send Email</button></a></td>
+
+
+
+
+
+
+
+    </tr>
+
+
+    {% endfor %}
+
+</table>
+
+
+ {% endblock %}

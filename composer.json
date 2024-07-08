@@ -1,0 +1,26 @@
+{
+  "require": {
+    
+    "phpmailer/phpmailer": "^6.0",
+"monolog/monolog": "^1.23",
+"ext-PDO": "^7.1",
+"webklex/postfixadm": "1.0.0.1",
+    "jakub-onderka/php-console-color": "^0.2.0",
+    "twig/twig": "^3.4"
+},
+
+
+"autoload" : {
+"psr-4":{
+"Core\\":"Core/",
+"App\\":"App/"
+
+}
+
+},
+  "config": {
+    "allow-plugins": {
+      "kylekatarnls/update-helper": true
+    }
+  }
+}

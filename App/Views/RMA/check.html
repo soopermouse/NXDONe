@@ -1,0 +1,19 @@
+{% extends "rmabase.html" %}
+
+{% block title %} RMA {% endblock %}
+
+{% block body %}
+
+
+<h1>RMA Check</h1>
+Check by IMEI
+<form class="form" action="checkIMEI" method="POST">
+
+    <label>IMEI</label>
+    <input name="imei" type="text" />
+    <button class="btn btn-success" type="submit" name="submit">Submit</button>
+
+
+
+</form>
+{% endblock %}

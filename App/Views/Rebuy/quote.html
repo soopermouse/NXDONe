@@ -1,0 +1,51 @@
+{% extends "rebuybaselocal.html" %}
+{#% extends "rebuybase.html" %#}
+{% block title %} Rebuy {% endblock %}
+
+{% block body %}
+
+<h1>Quote Order</h1>
+{{message}}
+
+<table class="table">
+    <tr>
+        <td>Order Id</td>
+        <td>Device Model</td>
+        <td>Device Storage</td>
+        <td>Device Connection</td>
+        <td>Device Condition</td>
+        <td>Comments</td>
+
+
+
+
+
+
+
+    </tr>
+     {% for result in results %}
+
+    <tr>
+        <td>{{ result.order_id }}</td>
+        <td>{{ result.device_model }}</td>
+        <td> {{result.storage_type_name}}</td>
+        <td>{{result.connection_type_name}}</td>
+        <td>{{result.condition_name}}</td>
+        <td>{{result.device_comments}}</td>
+
+
+    </tr>
+    {% endfor %}
+</table>
+<br />
+
+<form action="submitquote" method="POST">
+    <label>Set Quote</label>
+    <input type="text" name="quote" />
+    <input type="submit" value="submit">
+</form>
+
+
+
+
+{% endblock %}

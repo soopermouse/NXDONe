@@ -1,0 +1,48 @@
+{% extends "rebuybaselocal.html" %}
+{#% extends "rebuybase.html" %#}
+
+{% block title %} Rebuy {% endblock %}
+
+{% block body %}
+
+<h1>Make Payment</h1>
+
+<table class="table-bordered">
+    <tr>
+        <td>Order id</td>
+
+        <td>Offer</td>
+        <td>Customer First Name</td>
+        <td>Customer Last name</td>
+        <td>Customer Payment Type</td>
+        <td>Authorize Payment</td>
+
+
+
+
+    </tr>
+    {% for result in results %}
+    <tr>
+       <td> {{ result.order_id }}</td>
+
+        <td> {{ result.quote }}</td>
+        <td> {{ result.customer_first_name }}</td>
+        <td> {{ result.customer_last_name }}</td>
+        <td> {{ result.payment_type }}</td>
+        <td>
+            <form class="form" action="send" method="POST">
+            <button class="button btn-success" name="submit">Authorize</button>
+            </form>
+        </td>
+
+
+
+    </tr>
+
+
+
+    {% endfor %}
+
+</table>
+
+{% endblock %}

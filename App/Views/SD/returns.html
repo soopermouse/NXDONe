@@ -1,0 +1,31 @@
+{% extends "csbase.html" %}
+{% block title %} Returns {% endblock %}
+
+{% block body %}
+
+<table class="table-striped table-bordered">
+    <thead>
+        <th>Order Id</th>
+        <th>Return Id</th>
+        <th>Device Imei</th>
+        <th>Return Date</th>
+        <th>Order Status</th>
+        <th>Action</th>
+
+    </thead>
+     {% for result in results %}
+        <tr>
+            <td>{{result.order_id}}</td>
+            <td>{{result.return_id}}</td>
+            <td>{{result.device_imei}}</td>
+            <td>{{result.return_date}}</td>
+            <td>{{result.status}}</td>
+            <td></td>
+
+        </tr>
+    {% endfor %}
+
+
+
+</table>
+ {% endblock %}

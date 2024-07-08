@@ -1,0 +1,98 @@
+{% extends "rmabase.html" %}
+
+{% block title %} RMA {% endblock %}
+
+{% block body %}
+
+<div class="container">
+    <div class="row">
+
+        <h3>Enter Test RMA</h3>
+
+
+    </div>
+    <form class="form-sm" method="post" action="rmasubmit">
+        <label for name="imei">Device IMEI</label>
+        <input class="form-control" type="text" name="imei" />
+        <div class="row">
+            <div class="col-md-5">
+
+                <input class="radio" type="radio" name="Options" value="1"  /> <span>Battery</span><br/>
+                <input class="radio" type="radio" name="Options" value="2" /> <span>Display</span><br/>
+                <input class="radio" type="radio" name="Options" value="3"  /> <span>Camera</span><br/>
+                <input class="radio" type="radio" name="Options" value="4" /> <span>Network</span><br/>
+                <input class="radio" type="radio" name="Options" value="5" /> <span>Crashes</span><br/>
+
+            </div>
+            <div class="col-md-5">
+
+                <input class="radio" type="radio" name="Options" value="6"  /> <span>Microphone</span><br/>
+                <input class="radio" type="radio" name="Options" value="7" /> <span>WiFi</span><br/>
+                <input class="radio" type="radio" name="Options" value="8" /> <span>Speakers</span><br/>
+                <input class="radio" type="radio" name="Options" value="9" /> <span>Buttons</span><br/>
+                <input class="radio" type="radio" name="Options" value="10" /> <span>Other Reason</span><br/>
+
+                <br/></div>
+        </div>
+        <div class="row"><div class="col-md-10">
+
+            <textarea class="form-control" rows="5" id="comment" name="comment">Please enter description</textarea>
+
+            <p>I have removed the iCloud lock/Find my Iphone
+                <input class="form-control" type="checkbox"  name="check[]"
+                       value="lock" /></p>
+            <p> I have switched to factory settings<input class="form-control" type="checkbox"  name="check[]"
+                                                          value="reset" /></p>
+            <p> I understand that Forza is not responsible for any loss of data <input class="form-control" type="checkbox"  name="check[]"
+                                                                                       value="data" />
+
+        </div></div>
+        <div class="row">
+            <div class="col-md-10">
+                <label >First name</label>
+                <input class="form-control" type="text" name="first_name" placeholder="first name">
+                <br/>
+                <label >last name</label>
+                <input class="form-control" type="text" name="last_name" placeholder="last name">
+                <br/>
+                <label>Customer Type</label>
+                <select class="form-control" name="customer_type" >
+                    <option value="1">Individual</option>
+                    <option value="2">Business</option>
+                </select>
+                <label >Email address</label>
+                <input class="form-control" type="email" name="email" placeholder="name@example.com">
+                <br/>
+
+                <label>Phone number</label>
+                <input class="form-control" type="text" name="phone" placeholder="phone">
+                <br/>
+                <label >street name</label>
+                <input class="form-control" type="text" name="street_name" placeholder="street name">
+                <br/>
+                <label >Street number</label>
+                <input class="form-control" type="text" name=" street_number" placeholder="Street number">
+                <br/>
+                <label >Addition</label>
+                <input class="form-control" type="text" name="addition" placeholder="addition">
+                <br/>
+
+                <label >Postcode</label>
+                <input class="form-control" type="text" name="postcode" placeholder="Postcode">
+                <br/>
+
+                <label>City</label>
+
+                <input class="form-control" type="text" name="city" placeholder="city">
+                <br>
+                <label>Country</label>
+
+                <input class="form-control" name="country" type="text" placeholder="country">
+                <br>
+
+                <button class="btn btn-sm btn-success" type="submit" name="submit">Submit</button>
+    </form>
+</div>
+</div>
+</div>
+{% endblock %}

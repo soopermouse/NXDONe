@@ -1,0 +1,422 @@
+/*
+    Forza css classes
+ */
+
+@import url('https://use.fontawesome.com/releases/v5.7.1/css/all.css');
+
+html,body {
+    height: 100%;
+    font-family: 'Roboto';
+}
+
+.row-eq-height {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* For mobile phones: */
+[class*="col-"] {
+    width: 100%;
+}
+
+/* For tablet: */
+@media only screen and (min-width: 600px) {
+    .col-s-1 {width: 8.33%;}
+    .col-s-2 {width: 16.66%;}
+    .col-s-3 {width: 25%;}
+    .col-s-4 {width: 33.33%;}
+    .col-s-5 {width: 41.66%;}
+    .col-s-6 {width: 50%;}
+    .col-s-7 {width: 58.33%;}
+    .col-s-8 {width: 66.66%;}
+    .col-s-9 {width: 75%;}
+    .col-s-10 {width: 83.33%;}
+    .col-s-11 {width: 91.66%;}
+    .col-s-12 {width: 100%;}
+}
+
+/* For desktop: */
+@media only screen and (min-width: 768px) {
+    .col-1 {width: 8.33%;}
+    .col-2 {width: 16.66%;}
+    .col-3 {width: 25%;}
+    .col-4 {width: 33.33%;}
+    .col-5 {width: 41.66%;}
+    .col-6 {width: 50%;}
+    .col-7 {width: 58.33%;}
+    .col-8 {width: 66.66%;}
+    .col-9 {width: 75%;}
+    .col-10 {width: 83.33%;}
+    .col-11 {width: 91.66%;}
+    .col-12 {width: 100%;}
+}
+
+.forza-left-sidebar {
+    width: 110%;
+    margin-left: 0;
+}
+
+@media only screen and (min-width: 768px) {
+    .forza-left-sidebar {
+        width: 15%;
+        min-width: 200px;
+    }
+}
+
+.forza-content {
+    width: 100%;
+    padding-right: 3%;
+}
+
+@media only screen and (min-width: 768px) {
+    .forza-content {
+        width: 70%;
+    }
+}
+
+.forza-card {
+}
+
+@media only screen and (max-width: 768px) {
+    .forza-card {
+        width: 100%;
+    }
+}
+
+a.link,
+a.visited,
+a.hover
+{
+    color: inherit;
+    text-decoration: inherit;
+}
+
+.forza-bg {
+    /*    background-color: #343a40!important; */
+    background-color: rgba(54, 69, 79, 0.62) !important;
+}
+
+.forza-login-form {
+    margin-top: 50px;
+}
+
+.forza-login-h1 {
+    color: white!important;
+}
+
+.forza-login-p {
+    color: white!important;
+}
+
+.forza-login-text {
+    color: white!important;
+}
+
+.forza-logo {
+    min-width: 100px;
+    width: 200px;
+}
+
+.forza-col {
+    height: 100%;
+}
+
+.forza-upper-menu {
+    /*
+    background-color: #D1D6DC !important;
+    */
+    background-color: Gainsboro !important;
+    vertical-align: center;
+    width: 100%;
+    height: 110px;
+    margin-top: 30px;
+    padding-right: 3%;
+}
+
+.forza-upper-menu-item {
+    text-align: center;
+    text-transform: uppercase;
+    vertical-align: center;
+    color: white;
+    display: inline-block;
+    height: 50px;
+    width: 110%;
+    margin-left: -5%;
+    padding-top: 15px;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+@media only screen and (min-width: 768px) {
+    .forza-upper-menu-item {
+        width: 120px;
+        margin-left: 10px;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .forza-upper-menu-item:hover {
+        opacity: 0.5;
+    }
+}
+
+a.forza-upper-menu-item:link,
+a.forza-upper-menu-item:visited,
+a.forza-upper-menu-item:hover
+{
+    color: white;
+    text-decoration: none;
+}
+
+.nav {
+    width: 100%;
+}
+
+.forza-left-menu {
+    color: white;
+    height: 100%;
+    width: 100%;
+    display: block;
+    padding-top: 20px;
+    padding-left: 5%;
+    padding-right: 5%;
+    margin-bottom: 0;
+}
+
+.forza-left-menu-item,
+a.forza-left-menu-item:link,
+a.forza-left-menu-item:visited,
+a.forza-left-menu-item:hover
+{
+    color: inherit;
+    text-decoration: none;
+    height: 50px;
+    width: 100%;
+    border-bottom: 1px solid white;
+    padding-left: 0;
+    padding-right: 10px;
+    padding-top: 20px;
+    vertical-align: bottom;
+}
+
+a.forza-left-menu-item:hover {
+    opacity: 0.5;
+}
+
+.forza-button {
+}
+
+.forza-row {
+    padding: 5px 5px 5px 5px;
+}
+
+.forza-top-line {
+    background-color: #020828;
+    color: white;
+    text-align: right;
+    height:30px;
+    padding-right: 3%;
+}
+
+a.forza-top-line:visited,
+a.forza-top-line:hover
+{
+    color: white;
+    text-decoration: none;
+}
+
+.forza-href {
+    text-decoration: none;
+}
+
+.forza-accordion {
+    width: 100%;
+}
+
+.forza-card {
+    width: 95%;
+}
+
+.forza-form-prepend {
+    width: 100%;
+}
+
+.forza-button {
+    width: 100%;
+}
+
+.forza-rma-active-tab {
+    background-color: lightgray;
+    text-decoration: none;
+    font-weight: bolder;
+    font-color: black;
+}
+
+/*
+    Forza stream colors
+ */
+
+.forza-bg-stream-1 {
+    background-color: DarkRed;
+}
+
+.forza-bg-stream-2 {
+    background-color: Coral;
+}
+
+.forza-bg-stream-3 {
+    background-color: Teal;
+}
+
+.forza-bg-stream-4 {
+    background-color: RoyalBlue;
+}
+
+.forza-bg-stream-5 {
+    background-color: RebeccaPurple;
+}
+
+.forza-bg-stream-6 {
+    background-color: DarkSlateGray;
+}
+
+.forza-bg-stream-7 {
+    background-color: peru;
+}
+
+.forza-bg-stream-8 {
+    background-color: deepskyblue;
+}
+
+.forza-bg-stream-9 {
+    background-color: darkgreen;
+}
+
+.forza-bg-stream-10 {
+    background-color: navy;
+}
+
+.forza-bg-stream-11 {
+    background-color: MediumVioletRed;
+}
+
+/*
+Taken from Bootstrap css, customized for Forza
+ */
+
+/*
+.table {
+    width: 100%;
+    margin-bottom: 1rem;
+    background-color: transparent
+}
+
+.table thead th {
+    vertical-align: bottom;
+    border-bottom: 1px solid silver;
+}
+
+.table td,
+.table th {
+    padding: .75rem;
+    vertical-align: top;
+    border-top: 1px solid silver;
+}
+
+.table-bordered {
+    border: 1px solid silver;
+}
+
+.table-bordered td,
+.table-bordered th {
+    border: 1px solid silver;
+}
+
+.table-bordered thead td,
+.table-bordered thead th {
+    border-bottom-width: 1px;
+}
+
+.table-striped tbody tr:nth-of-type(even) {
+    background-color: rgba(0, 0, 0, .05)
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: transparent;
+}
+
+.table-hover tbody tr:hover {
+    background-color: rgba(0, 0, 0, .075)
+}
+ */
+
+/*
+Accordion with up/down arrows
+ */
+
+.mb-0 > a {
+    display: block;
+    position: relative;
+}
+.mb-0 > a:after {
+    content: "\f078";
+    font-family: "Font Awesome\ 5 Free";
+    position: absolute;
+    font-weight: 900;
+    right: 0;
+}
+.mb-0 > a[aria-expanded="true"]:after {
+    content: "\f077";
+}
+
+/*
+   User picture in top menu
+ */
+.userpic {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    box-shadow:
+            inset 0 0 0 2px rgba(255,255,255,0.6),
+            0 1px 1px rgba(0,0,0,0.1);
+    background-color: transparent !important;
+    display: block;
+    position: relative;
+    z-index: 999;
+}
+
+.tooltip{
+    display: inline;
+    position: relative;
+}
+
+.tooltip:hover:before{
+    border: solid;
+    border-color: #333 transparent;
+    border-width: 6px 6px 0 6px;
+    bottom: 20px;
+    content: "";
+    left: 50%;
+    position: absolute;
+    z-index: 99;
+}
+
+.tooltip:hover:after{
+    background: #333;
+    background: rgba(0,0,0,.8);
+    border-radius: 5px;
+    bottom: 26px;
+    color: #fff;
+    content: attr(title);
+    left: 20%;
+    padding: 5px 15px;
+    position: absolute;
+    z-index: 98;
+    width: 220px;
+}
+
+
+

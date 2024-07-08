@@ -1,0 +1,36 @@
+{% extends "rebuybaselocal.html" %}
+{#% extends "rebuybase.html" %#}
+{% block title %} Rebuy {% endblock %}
+
+{% block body %}
+
+<h1>View Orders by Offer </h1>
+
+<table class="table">
+    <tr>
+        <td>Order Id</td>
+
+        <td>Customer Status</td>
+        <td>Forza Status</td>
+        <td>Action</td>
+        <td> First Offer</td>
+
+
+    </tr>
+    {% for result in results %}
+
+    <tr>
+        <td>{{ result.order_id }}</td>
+
+        <td>{{result.cust_status_name}}</td>
+        <td>{{result.status_name}}</td>
+        <td>{{result.action_name}} </td>
+        <td>{{result.order_quote}}</td>
+    </tr>
+    {% endfor %}
+
+
+
+</table>
+
+{% endblock %}

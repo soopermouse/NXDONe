@@ -1,0 +1,42 @@
+{% extends "rmabase.html" %}
+
+{% block title %} RMA {% endblock %}
+
+{% block body %}
+
+<h1>RMA Reports</h1>
+<p>Reports by device type</p>
+
+<table class="table table-md table-striped table-bordered">
+    <thead>
+    <th>RMA ID</th>
+    <th>RMA Date</th>
+    <th>Device Imei</th>
+    <th>Defect</th>
+    <th>Comments</th>
+
+    <th>RMA status</th>
+
+
+    </thead>
+    {% for result in results %}
+    <tr>
+        <td>{{result.rma_id}}</td>
+        <td>{{result.rma_date}}</td>
+        <td>{{result.device_imei}}</td>
+        <td>{{result.problem_name}}</td>
+        <td>{{result.comments}}</td>
+
+        <td>{{result.status_type}}</td>
+
+
+
+
+    </tr>
+
+
+
+    {% endfor %}
+
+
+{% endblock %}

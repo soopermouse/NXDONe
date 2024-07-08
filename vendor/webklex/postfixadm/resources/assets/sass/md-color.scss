@@ -1,0 +1,113 @@
+/*
+ * File: md-color.scss
+ * Category: -
+ * Author: MSG - Webklex
+ * URL: http://webklex.com
+ * Created: 22.03.17 22:32
+ * Updated: -
+ *
+ * Description:
+ *  -
+ */
+
+$default-dark: rgba(0,0,0,0.87);
+$default: rgba(197, 197, 197, 0.84);
+
+$info-dark: rgb(0, 76, 110);
+$info: rgba(0, 101, 145, 1);
+
+$success-dark: rgb(24, 86, 38);
+$success: rgb(32, 114, 50);
+
+$danger-dark: rgb(178, 36, 36);
+$danger: rgb(198,40,40);
+
+.pfa-color-white {
+  color: #ffffff;
+}
+.md-color-default {
+  color: $default;
+}
+.md-color-success {
+  color: lighten($success, 10);
+}
+.md-color-white {
+  color: $default;
+}
+
+.pfa-label {
+  background-color: $default-dark;
+  color: $default;
+  border-radius: 2px;
+  padding: 2px 8px 2px 8px;
+  font-family: 'Open Sans', sans-serif;
+  font-size:12px;
+  font-weight: 800;
+
+  &.pfa-label-info {
+    background-color: $info;
+    color: $default;
+  }
+
+  &.pfa-label-success {
+    background-color: $success;
+    color: $default;
+  }
+
+  &.pfa-label-danger, &.pfa-label-security, &.pfa-label-bug {
+    background-color: $danger;
+    color: #ffffff;
+  }
+}
+
+
+
+.md-color-info, .md-color-blue, .md-color-ok{
+  color: $info;
+}
+
+.md-color-danger, .md-color-red, .md-color-fail{
+  color: $danger;
+}
+
+.md-color-success, .md-color-green {
+  color: $success;
+}
+
+.md-background-primary {
+  color: $default;
+  background-color: $info;
+}
+
+.md-color-white {
+  color: $default;
+}
+
+.md-icon-color-info, .md-icon-color-blue, .md-icon-color-ok{
+  fill: $info;
+}
+
+.md-icon-color-danger, .md-icon-color-red, .md-icon-color-fail{
+  fill: $danger;
+}
+
+.md-icon-color-success, .md-icon-color-green {
+  fill: $success;
+}
+
+.md-icon-background-primary {
+  fill: $default;
+  background-color: $info;
+}
+
+.md-icon-color-white {
+  fill: $default;
+}
+
+.md-icon-color-dark, .md-icon-color-black {
+  fill: $default-dark;
+}
+
+.md-color-dark, .md-color-black {
+  color: $default-dark !important;
+}
